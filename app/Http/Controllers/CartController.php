@@ -26,7 +26,7 @@ class CartController extends Controller
     public function getCart()
     {
         $userId = Auth::guard('user')->id();
-        return Cart::session($userId);
+        return Cart::session($userId)->getContent();
     }
 
     public function addToCart(Request $request)
@@ -52,5 +52,21 @@ class CartController extends Controller
                 'status' => false,
             ]);
 
+    }
+
+    public function removeFromCart(Request $request)
+    {
+        if ($id = $request->id)
+        {
+            $userId = Auth::guard('user')->id();
+            Cart::session($userId)->remove($id);
+            return response()->json([
+                'status' => true,
+            ]);
+
+        }else
+            return response()->json([
+                'status' => false,
+            ]);
     }
 }

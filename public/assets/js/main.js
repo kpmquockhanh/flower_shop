@@ -446,9 +446,45 @@
                 {
                     iziToast.success({
                         title: 'Thành công',
-                        message: 'Đã thêm vào giỏ hàng',
+                        message: 'Đã thêm thành công vào giỏ hàng',
+                        position: 'topCenter',
+                        timeout: 1500,
+                        onClosing: function(instance, toast, closedBy){
+                            window.location.reload();
+                        }
+                    });
+                }
+                else
+                {
+                    iziToast.error({
+                        title: 'Lỗi',
+                        message: 'Đã xảy ra lỗi! Vui lòng thông báo với Admin',
                         position: 'topCenter'
                     });
+                }
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    });
+
+    $('.shopping-cart-delete a').click(function (e) {
+        e.preventDefault();
+        let dataID = $(this).attr('data-id');
+        let item = $(this).parents('li');
+        let count = $(this).parents('.header-cart').find('.count-style');
+        axios.post('/cart/remove-cart', {id: dataID})
+            .then(function (res) {
+                if (res.data.status)
+                {
+                    iziToast.success({
+                        title: 'Thành công',
+                        message: 'Đã xóa thành công từ giỏ hàng',
+                        position: 'topCenter',
+                        timeout: 1500,
+                    });
+                    item.fadeOut("500", function() { $(this).remove(); } );
+                    count.text(count.text()-1);
                 }
                 else
                 {

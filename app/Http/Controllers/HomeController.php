@@ -31,8 +31,10 @@ class HomeController extends Controller
 //        dd(CartFacade::session(Auth::guard('user')->id())->getContent());
         $viewData = [
           'flowers' => Flower::all(),
-          'carts' => CartFacade::session(Auth::guard('user')->id()),
         ];
+        if (Auth::check())
+            $viewData = array_merge($viewData, ['carts'=> CartFacade::session(Auth::guard('user')->id())]);
+
         return view('home')->with($viewData);
     }
 

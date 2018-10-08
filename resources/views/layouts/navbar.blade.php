@@ -182,7 +182,7 @@
                                                         <span>{{$item->price}}</span>
                                                     </div>
                                                     <div class="shopping-cart-delete">
-                                                        <a href="#"><i class="ion ion-close"></i></a>
+                                                        <a href="#" data-id="{{$item->id}}"><i class="ion ion-close"></i></a>
                                                     </div>
                                                 </li>
                                             @endforeach

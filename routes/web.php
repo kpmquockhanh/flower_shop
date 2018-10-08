@@ -28,6 +28,7 @@ Route::middleware('locale')->group( function() {
     Route::prefix('cart')->middleware('auth:user')->group(function (){
         Route::get('/', 'CartController@index');
         Route::post('/add-cart', 'CartController@addToCart');
+        Route::post('/remove-cart', 'CartController@removeFromCart');
     });
     Route::middleware('auth:user')->prefix('account')->group(function (){
         Route::get('/', 'UserController@index')->name('user.account');
