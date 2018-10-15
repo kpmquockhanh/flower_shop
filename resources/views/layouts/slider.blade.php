@@ -3,11 +3,11 @@
         <div class="single-slider pt-175 pb-258 bg-img" style="background-image:url({{asset('assets/img/slider/slider-1.jpg')}});">
             <div class="container">
                 <div class="slider-content slider-animated-1">
-                    <h3 class="animated">New Arrivals</h3>
-                    <h1 class="animated">For Mother’s Day!</h1>
-                    <h5 class="animated">Exclusive Offer -10% Off This Week</h5>
+                    <h3 class="animated">Hoa HOT!</h3>
+                    <h1 class="animated">Chào mừng ngày phụ nữ Việt Nam</h1>
+                    <h5 class="animated">Giảm giá lên đến 30% trong tuần này</h5>
                     <div class="slider-btn mt-45">
-                        <a class="animated" href="product-details.html">shop Now</a>
+                        <a class="animated" href="product-details.html">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -15,11 +15,11 @@
         <div class="single-slider pt-175 pb-258 bg-img" style="background-image:url({{asset('assets/img/slider/slider-2.jpg')}});">
             <div class="container">
                 <div class="slider-content slider-animated-2">
-                    <h3 class="animated">New Arrivals</h3>
-                    <h1 class="animated">For Mother’s Day!</h1>
-                    <h5 class="animated">Exclusive Offer -10% Off This Week</h5>
+                    <h3 class="animated">Hoa HOT!</h3>
+                    <h1 class="animated">Chào mừng ngày phụ nữ Việt Nam</h1>
+                    <h5 class="animated">Giảm giá lên đến 30% trong tuần này</h5>
                     <div class="slider-btn mt-45">
-                        <a class="animated" href="product-details.html">shop Now</a>
+                        <a class="animated" href="product-details.html">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                             <img src="assets/img/banner/banner-1.png" alt="">
                         </a>
                         <div class="banner-content">
-                            <h4>Camellias</h4>
+                            <h4>Hoa theo mùa</h4>
                             <a href="#">shop Now</a>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                             <img src="assets/img/banner/banner-2.png" alt="">
                         </a>
                         <div class="banner-content">
-                            <h4>Bergamot</h4>
+                            <h4>Hoa theo dịp lễ</h4>
                             <a href="#">shop Now</a>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                             <img src="assets/img/banner/banner-3.png" alt="">
                         </a>
                         <div class="banner-content">
-                            <h4>Bottlebrush</h4>
+                            <h4>Hoa mới trong ngày</h4>
                             <a href="#">shop Now</a>
                         </div>
                     </div>

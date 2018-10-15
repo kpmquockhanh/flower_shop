@@ -18,7 +18,7 @@
                         </div>
                         <div class="tab-content">
                             <div id="lg1" class="tab-pane active">
-                                <div class="login-form-container">
+                                <div class="login-form-container" style="background: #f8f9f9 !important;">
                                     <div class="login-register-form">
                                         <form action="{{route('login')}}" method="post">
                                             @csrf()

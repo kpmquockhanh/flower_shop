@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="welcome-area">
-                            <p>Hihi</p>
+                            {{--<p>Chào mừng bạn đến với shop bán hoa số một Việt Nam</p>--}}
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8 col-12">
@@ -63,10 +63,10 @@
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li><a href="{{route('home')}}">home</a>
+                                    <li><a href="{{route('home')}}">trang chủ</a>
                                     </li>
-                                    <li><a href="about-us.html">about</a></li>
-                                    <li class="mega-menu-position top-hover"><a href="shop.html">shop</a>
+                                    <li><a href="about-us.html">giới thiệu</a></li>
+                                    <li class="mega-menu-position top-hover"><a href="shop.html">Danh sách shop</a>
                                         <ul class="mega-menu">
                                             <li>
                                                 <ul>
@@ -136,21 +136,21 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="top-hover"><a href="#">pages</a>
-                                        <ul class="submenu">
-                                            <li><a href="about-us.html">about us </a></li>
-                                            <li><a href="shop.html">shop Grid</a></li>
-                                            <li><a href="shop-list.html">shop list</a></li>
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="cart-page.html">cart page</a></li>
-                                            <li><a href="checkout.html">checkout</a></li>
-                                            <li><a href="wishlist.html">wishlist</a></li>
-                                            <li><a href="my-account.html">my account</a></li>
-                                            <li><a href="login-register.html">login / register</a></li>
-                                            <li><a href="contact.html">contact</a></li>
-                                            <li><a href="testimonial.html">Testimonials</a></li>
-                                        </ul>
-                                    </li>
+                                    {{--<li class="top-hover"><a href="#">pages</a>--}}
+                                        {{--<ul class="submenu">--}}
+                                            {{--<li><a href="about-us.html">about us </a></li>--}}
+                                            {{--<li><a href="shop.html">shop Grid</a></li>--}}
+                                            {{--<li><a href="shop-list.html">shop list</a></li>--}}
+                                            {{--<li><a href="product-details.html">product details</a></li>--}}
+                                            {{--<li><a href="cart-page.html">cart page</a></li>--}}
+                                            {{--<li><a href="checkout.html">checkout</a></li>--}}
+                                            {{--<li><a href="wishlist.html">wishlist</a></li>--}}
+                                            {{--<li><a href="my-account.html">my account</a></li>--}}
+                                            {{--<li><a href="login-register.html">login / register</a></li>--}}
+                                            {{--<li><a href="contact.html">contact</a></li>--}}
+                                            {{--<li><a href="testimonial.html">Testimonials</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
                                     <li><a href="contact.html">contact</a></li>
                                 </ul>
                             </nav>
@@ -177,9 +177,9 @@
                                                     </div>
                                                     <div class="shopping-cart-title">
                                                         <h4><a href="#">{{$item->name}} </a></h4>
-                                                        <h6>Qty: {{$item->quantity}}</h6>
-                                                        <h6>Sale 30%</h6>
-                                                        <span>{{$item->price}}</span>
+                                                        <h6>Qty: <strong>{{$item->quantity}}</strong></h6>
+                                                        <h6>Sale <strong>{{$item->attributes->saleoff*100}}</strong>%</h6>
+                                                        <span>Cost <strong>{{$item->price}}</strong> VNĐ</span>
                                                     </div>
                                                     <div class="shopping-cart-delete">
                                                         <a href="#" data-id="{{$item->id}}"><i class="ion ion-close"></i></a>

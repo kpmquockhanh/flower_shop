@@ -7,7 +7,7 @@
                 <div class="col-md-8">
                     <div class="card ">
                         <div class="card-header ">
-                            <h4 class="card-title">Chỉnh sửa saler</h4>
+                            <h4 class="card-title">Chỉnh sửa hoa</h4>
                         </div>
                         <div class="card-body ">
                             @csrf()
@@ -22,7 +22,7 @@
                                 <label class="col-sm-2 col-form-label">Tên hoa</label>
                                 <div class="col-sm-10">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" value="{{$flower->name}}">
+                                        <input type="text" name="name" class="form-control" value="{{old('name', $flower->name)}}">
                                         {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
                                     </div>
                                 </div>
@@ -37,52 +37,48 @@
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <textarea type="text" name="message"
-                                                  class="form-control">{{$flower->message}}</textarea>
+                                                  class="form-control">{{old('message', $flower->message)}}</textarea>
                                         {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
                                     </div>
                                 </div>
                             </div>
+                            @if ($errors->has('saleoff'))
+                                <div class="text-danger col-md-12 offset-md-2 p-0">
+                                    <strong>{{ $errors->first('saleoff') }}</strong>
+                                </div>
+                            @endif
+                            @if ($errors->has('price'))
+                                <div class="text-danger col-md-12 offset-md-2 p-0">
+                                    <strong>{{ $errors->first('price') }}</strong>
+                                </div>
+                            @endif
+                            @if ($errors->has('quantity'))
+                                <div class="text-danger col-md-12 offset-md-2 p-0">
+                                    <strong>{{ $errors->first('quantity') }}</strong>
+                                </div>
+                            @endif
                             <div class="row">
-                                @if ($errors->has('saleoff'))
-                                    <div class="text-danger col-md-12 offset-md-2">
-                                        <strong>{{ $errors->first('saleoff') }}</strong>
-                                    </div>
-                                @endif
                                 <label class="col-sm-2 col-form-label">Giảm giá</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-2">
                                     <div class="form-group">
-                                        <input type="text" name="saleoff" class="form-control"
-                                               value="{{$flower->saleoff}}">
-                                        {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
+                                        <input type="number" name="saleoff" class="form-control"
+                                               value="{{old('saleoff', $flower->saleoff)}}" placeholder="VD: 0.1, 0.15,..." step="0.01">
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                @if ($errors->has('price'))
-                                    <div class="text-danger col-md-12 offset-md-2">
-                                        <strong>{{ $errors->first('price')}}</strong>
-                                    </div>
-                                @endif
                                 <label class="col-sm-2 col-form-label">Giá</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-2">
                                     <div class="form-group">
-                                        <input type="number" name="price" class="form-control" value="{{$flower->price}}">
-                                        {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
+                                        <input type="number" name="price" class="form-control" value="{{old('price', $flower->price)}}">
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                @if ($errors->has('quantity'))
-                                    <div class="text-danger col-md-12 offset-md-2">
-                                        <strong>{{ $errors->first('quantity') }}</strong>
-                                    </div>
-                                @endif
                                 <label class="col-sm-2 col-form-label">Số lượng</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-2">
                                     <div class="form-group">
                                         <input type="number" name="quantity" class="form-control"
-                                               value="{{$flower->quantity}}">
-                                        {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
+                                               value="{{old('quantity', $flower->quantity)}}">
+
                                     </div>
                                 </div>
                             </div>

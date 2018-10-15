@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Flower;
+use Darryldecode\Cart\CartCondition;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +20,15 @@ class CartController extends Controller
 
 //        Cart::session($userId)->add(123, 'Sample Item111', 100.99, 2, array());
 //        Cart::session($userId)->add(22, 'Sample Item111', 100.99, 2, array());
-
-        dd(Cart::session($userId)->getContent());
+//        $condition = new CartCondition(array(
+//            'name' => 'VAT 12.5%',
+//            'type' => 'tax',
+//            'target' => 'cost', // this condition will be applied to cart's subtotal when getSubTotal() is called.
+//            'value' => '10%',
+//        ));
+//        Cart::session($userId)->condition($condition);
+        Cart::session($userId)->clearCartConditions();
+        dd(Cart::session($userId)->getConditions());
     }
 
     public function getCart()
@@ -38,11 +46,23 @@ class CartController extends Controller
                 'id', 'name', 'price', 'image', 'quantity', 'saleoff'
             ])->findOrFail($id);
 
-
-            if ($flower)
+            if ($flower){
                 $flower = $flower->toArray();
+                $flower['quantity'] = 1;
+            }
 
-            Cart::session($userId)->add(array_merge($flower, ['attributes' => ['image' => $flower['image']]]));
+            $condition = new CartCondition(array(
+                'name' => 'SALE 5%',
+                'type' => 'tax',
+                'value' => '-50%',
+            ));
+            Cart::session($userId)->add(array_merge($flower, [
+                'attributes' => [
+                    'image' => $flower['image'],
+                    'saleoff' => $flower['saleoff']
+                ],
+                'conditions' => $condition,
+            ]));
 
             return response()->json([
                 'status' => true,

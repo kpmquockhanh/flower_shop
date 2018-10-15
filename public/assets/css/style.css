@@ -5451,7 +5451,11 @@ h4.section-title-about::before {
 .section-padding-none .section-title {
     padding-right: 0;
 }
-
+.owl-carousel .owl-item img{
+    width: auto;
+    height: 200px;
+    margin: auto;
+}
 
 
 

@@ -176,94 +176,6 @@
             </div>
         </div>
     </div>
-    <div class="testimonials-area bg-img pt-120 pb-115" style="background-image:url({{asset('assets/img/bg/bg-1.jpg')}});">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-12 ml-auto col-12">
-                    <div class="testimonial-active owl-carousel">
-                        <div class="single-testimonial text-center">
-                            <div class="testimonial-img">
-                                <img alt="" src="{{asset('assets/img/icon-img/testi.png')}}">
-                            </div>
-                            <p>When a beautiful design is combined with powerful technology,<br> it truly is an artwork. I love how my website operates and looks with this theme. <br>Thank you for the awesome product. </p>
-                            <h4>Samia Robiul</h4>
-                        </div>
-                        <div class="single-testimonial text-center">
-                            <div class="testimonial-img">
-                                <img alt="" src="{{asset('assets/img/icon-img/testi.png')}}">
-                            </div>
-                            <p>“ Lorem ipsum dolor sit, con adipisicing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <br>exercitati ullamco laboris  ” </p>
-                            <h4> Tayeb Rayed</h4>
-                        </div>
-                        <div class="single-testimonial text-center">
-                            <div class="testimonial-img">
-                                <img alt="" src="{{asset('assets/img/icon-img/testi.png')}}">
-                            </div>
-                            <p>When a beautiful design is combined with powerful ,<br> technology it truly is an artwork. I love how my website operates and looks with this  <br>theme. Thank you for the awesome product. </p>
-                            <h4>Hamim Ahamed</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="best-selling-product pt-70 pb-75 gray-bg">
-        <div class="container">
-            <div class="product-top-bar section-border mb-35">
-                <div class="section-title-wrap">
-                    <h3 class="section-title section-bg-gray">Best Selling Products</h3>
-                </div>
-            </div>
-            <div class="best-selling-wrap">
-                <div class="best-selling-active owl-carousel product-nav">
-                    <div class="single-best-selling">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-5 col-md-6">
-                                <div class="single-best-img">
-                                    <img class="tilter" src="{{asset('assets/img/banner/deal-1.png')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-xl-7 col-md-6">
-                                <div class="deals-content text-center deal-mrg">
-                                    <img alt="" src="{{asset('assets/img/icon-img/deals-2.png')}}">
-                                    <h2>Hot Deal ! Sale Up To <span>20% Off</span></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
-                                    <div class="timer timer-style">
-                                        <div data-countdown="2018/09/01"></div>
-                                    </div>
-                                    <div class="deals-btn">
-                                        <a href="#">Shop Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-best-selling">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-5 col-md-6">
-                                <div class="single-best-img">
-                                    <img class="tilter" src="{{asset('assets/img/banner/deal-1.png')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-xl-7 col-md-6">
-                                <div class="deals-content text-center deal-mrg">
-                                    <img alt="" src="{{asset('assets/img/icon-img/deals-2.png')}}">
-                                    <h2>Hot Deal ! Sale Up To <span>20% Off</span></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
-                                    <div class="timer timer-style">
-                                        <div data-countdown="2018/09/01"></div>
-                                    </div>
-                                    <div class="deals-btn">
-                                        <a href="#">Shop Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="product-area pt-70 pb-70">
         <div class="container">
             <div class="product-top-bar section-border mb-35">
@@ -274,7 +186,7 @@
             <div class="featured-product-active hot-flower owl-carousel product-nav">
                 @foreach ($flowers as $i=>$flower)
                     <div class="product-wrapper">
-                        <div class="product-img">
+                        <div class="product-img" style="height: 200px;">
                             <a href="product-details.html">
                                 <img alt="" src="{{asset('images/'.$flower->image)}}">
                             </a>

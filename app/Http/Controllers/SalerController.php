@@ -13,7 +13,8 @@ class SalerController extends Controller
 {
     public function index(Request $request)
     {
-        $salers = Admin::where('id', '!=', Auth::guard('admin')->id());
+//        $salers = Admin::where('id', '!=', Auth::guard('admin')->id());
+        $salers = Admin::query();
         if ($search = $request->search)
         {
             $salers->orWhere('name','like', '%'.$search.'%')

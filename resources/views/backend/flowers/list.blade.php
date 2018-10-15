@@ -4,20 +4,21 @@
     <div class="content">
         <div class="row">
             <div class="col-md-10 row no-gutters">
-                <form action="" class="m-0 d-flex justify-content-around align-items-center w-100">
-                   <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3">
-                       <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round"
+                <form action="" class="m-0 d-flex align-items-center w-100">
+                   <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3 pl-0">
+                       <select class="selectpicker" data-size="7" data-style="btn btn-primary"
                                title="Sắp xếp theo" tabindex="-98" id="paginate" name="paginate">
                           <option class="bs-title-option" value="">Phân trang</option>
                           <option value="1" {{isset($queries['paginate'])?$queries['paginate'] == '1'?'selected':'':''}}>1 item / page</option>
-                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '5'?'selected':'':''}}>5 items / page</option>
-                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '20'?'selected':'':''}}>20 items / page</option>
-                          <option value="50" {{isset($queries['paginate'])?$queries['paginate'] == '50'?'selected':'':''}}>50 items / page</option>
+                          <option value="4" {{isset($queries['paginate'])?$queries['paginate'] == '4'?'selected':'':''}}>4 items / page</option>
+                          <option value="8" {{isset($queries['paginate'])?$queries['paginate'] == '8'?'selected':'':''}}>8 items / page</option>
+                          <option value="12" {{isset($queries['paginate'])?$queries['paginate'] == '12'?'selected':'':''}}>12 items / page</option>
+                          <option value="16" {{isset($queries['paginate'])?$queries['paginate'] == '16'?'selected':'':''}}>16 items / page</option>
                           <option value="100" {{isset($queries['paginate'])?$queries['paginate'] == '100'?'selected':'':''}}>100 items / page</option>
                        </select>
                     </span>
                     <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3">
-                       <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round"
+                       <select class="selectpicker" data-size="7" data-style="btn btn-primary"
                                title="Sắp xếp theo" tabindex="-98" id="sort" name="sort">
                           <option class="bs-title-option" value="" >Sắp xếp theo</option>
                           <option value="id" {{isset($queries['sort'])?$queries['sort'] == 'id'?'selected':'':''}}>ID</option>
@@ -43,9 +44,9 @@
                    </span>
                 </form>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 m-auto pr-5">
                 <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-50 pull-right"><i
-                            class="fa fa-plus-circle" style="font-size: 30px"></i></a>
+                            class="fa fa-plus-circle"></i></a>
             </div>
             @if (!count($flowers))
                 <div class="alert alert-info m-auto w-100">Không có hoa nào trong cơ sở dữ liệu. <a href="{{route('admin.flowers.list')}}" class="text-light font-weight-bold">Quay lại trang danh sách</a></div>
@@ -77,12 +78,12 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div id="my-tab-content" class="tab-content text-center">
+                                <div id="my-tab-content" class="tab-content text-center" style="height: 300px;">
                                     <div class="tab-pane active show" id="home{{$flower->id}}" role="tabpanel"
                                          aria-expanded="true">
                                         <div class=" position-relative">
                                             <img src="{{$flower->image?asset('images/'.$flower->image):asset('assets/admin/assets/img/image_placeholder.jpg')}}"
-                                                 alt="" style="width: 100%;">
+                                                 alt="" style="height: 250px;">
                                             <div class="position-absolute w-100" style="bottom: 0px;left: 0px;">
                                                 <div class="btn btn-danger w-100 m-0 rounded-bottom p-1"
                                                      style="background-color: rgba(15,15,15,.5)">

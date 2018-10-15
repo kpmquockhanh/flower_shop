@@ -20,7 +20,7 @@ class FlowerController extends Controller
 
         if ($search = $request->search)
         {
-            $flowers->orWhere('name','like', '%'.$search.'%')
+            $flowers->Where('name','like', '%'.$search.'%')
                     ->orWhere('message','like', '%'.$search.'%');
         }
 

@@ -464,7 +464,15 @@
                 }
             })
             .catch(function (err) {
-                console.log(err);
+                iziToast.warning({
+                    title: '',
+                    message: 'Vui lòng đăng nhập!',
+                    position: 'topCenter',
+                    timeout: 1000,
+                    onClosing: function(instance, toast, closedBy){
+                        window.location = '/login';
+                    }
+                });
             });
     });
 
