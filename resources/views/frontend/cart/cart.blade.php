@@ -17,16 +17,16 @@
                         @foreach ($carts as $item)
                             <li class="itemlast">
                                 <div class="item-inner">
-                                    <a class="product-image" href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase">
+                                    <a class="product-image" href="#" title="Bunch of Assorted Gerberas in a Glass Vase">
                                         <img width="300" height="300" src="{{asset('images/'.$item->flower->image)}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="">
                                     </a>
                                     <div class="product-details">
                                         <div class="access">
-                                            {{--<a class="btn-edit" title="Edit item" href="http://wpdemo.magikthemes.com/creta/cart/"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a>--}}
+                                            {{--<a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a>--}}
                                             <a href="#" title="Remove This Item" data-id="{{$item->id}}" class="btn-remove1">Remove</a>
                                         </div>
                                         <strong>{{$item->quantity}}</strong> x <span class="price"><span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{number_format($item->flower->price,0,',','.')}} VNĐ</span></span></span>
-                                        <p class="product-name"><a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase">{{$item->flower->name}}</a> </p>
+                                        <p class="product-name"><a href="#" title="Bunch of Assorted Gerberas in a Glass Vase">{{$item->flower->name}}</a> </p>
                                     </div>
                                 </div>
                             </li>

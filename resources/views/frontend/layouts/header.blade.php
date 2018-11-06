@@ -21,10 +21,10 @@
 
 
                         <div class="dropdown block-currency-wrapper">
-                            <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="http://wpdemo.magikthemes.com/creta/?currency=USD">USD <span class="caret"></span></a>
+                            <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#">USD <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="http://wpdemo.magikthemes.com/creta/?currency=USD">
+                                    <a role="menuitem" tabindex="-1" href="#">
                                         $ - Dollar        </a>
                                 </li>
 
@@ -46,20 +46,20 @@
                                 <!-- Header Top Links -->
                                 <ul id="menu-toplinks" class="top-links1 mega-menu1">
                                     {{--<li id="nav-menu-item-2118" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">--}}
-                                        {{--<a href="http://wpdemo.magikthemes.com/creta/my-account/" class=""><span>My Account</span></a>--}}
+                                        {{--<a href="#" class=""><span>My Account</span></a>--}}
                                     {{--</li>--}}
                                     <li id="nav-menu-item-2077" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                        <a href="http://wpdemo.magikthemes.com/creta/shop/" class=""><span>Shop</span></a>
+                                        <a href="#" class=""><span>Shop</span></a>
                                     </li>
                                     <li id="nav-menu-item-2125" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                        <a href="http://wpdemo.magikthemes.com/creta/wishlist-2/" class=""><span>Wishlist</span></a>
+                                        <a href="#" class=""><span>Wishlist</span></a>
                                     </li>
                                     <li id="nav-menu-item-2119" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
                                         <a href="{{route('cart.checkout')}}" class=""><span>Checkout</span></a>
                                     </li>
                                     @if (!\Illuminate\Support\Facades\Auth::guard('user')->check())
                                         <li id="nav-menu-item-2290" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                            <a href="http://wpdemo.magikthemes.com/creta/track-order/" class=""><span>Track Order</span></a>
+                                            <a href="#" class=""><span>Track Order</span></a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="{{route('login')}}"> Login/Register</a>
@@ -88,7 +88,7 @@
 
 
                     <div class="search-box">
-                        <form name="myform"  method="GET" action="http://wpdemo.magikthemes.com/creta/">
+                        <form name="myform"  method="GET" action="#">
                             <input type="text" placeholder="Search entire store here..." maxlength="70" name="s" class="mgksearch" value="">
 
                             <input type="hidden" value="product" name="post_type">
@@ -105,7 +105,7 @@
                     <!-- Header Logo -->
                     <div class="logo">
                         <a class="logo" title="Creta Demo" href="{{route('home')}}"> <img
-                                    alt="Creta Demo" src="{{asset('assets/uploads/sites/26/2016/02/logo.png')}}"
+                                    alt="Creta Demo" src="{{asset('img/logo small.png')}}"
                                     height="35"
                                     width="116"> </a>
                     </div>

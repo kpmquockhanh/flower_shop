@@ -8,7 +8,7 @@
             </div>
             <div class="page-content">
                 <div class="woocommerce">
-                    <form class="woocommerce-cart-form" action="http://wpdemo.magikthemes.com/creta/cart/" method="post">
+                    <form class="woocommerce-cart-form" action="#" method="post">
                         <div class="col-main">
                             <div class="cart wow bounceInUp animated" style="visibility: visible;">
                                 @if (!$carts->count())
@@ -35,11 +35,11 @@
                                             @foreach ($carts as $item)
                                                 <tr class="woocommerce-cart-form__cart-item cart_item">
                                                     <td class="image">
-                                                        <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"><img width="300" height="300" src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product4.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt=""></a>
+                                                        <a href="#"><img width="300" height="300" src="#" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt=""></a>
                                                     </td>
                                                     <td>
                                                         <h2 class="product-name">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/">Bunch of Assorted Gerberas in a Glass Vase</a>
+                                                            <a href="#">Bunch of Assorted Gerberas in a Glass Vase</a>
                                                         </h2>
                                                     </td>
                                                     <td class="a-center hidden-table">
@@ -66,7 +66,7 @@
                                                         <span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>99.98</span></span>
                                                     </td>
                                                     <td class="product-remove">
-                                                        <a href="http://wpdemo.magikthemes.com/creta/cart/?remove_item=34173cb38f07f89ddbebc2ac9128303f&amp;_wpnonce=ec78d0edc0" class="button remove-item" aria-label="Remove this item" data-product_id="30" data-product_sku="tsh3432"></a>
+                                                        <a href="#" class="button remove-item" aria-label="Remove this item" data-product_id="30" data-product_sku="tsh3432"></a>
                                                     </td>
                                                 </tr>
 
@@ -396,7 +396,7 @@
                                                     </tbody>
                                                 </table>
                                                 <div class="wc-proceed-to-checkout">
-                                                    <a href="http://wpdemo.magikthemes.com/creta/checkout/" class="button btn-proceed-checkout">
+                                                    <a href="#" class="button btn-proceed-checkout">
                                                         <span>Proceed to Checkout</span></a>
                                                 </div>
                                             </div>

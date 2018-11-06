@@ -14,7 +14,7 @@
                             </div>
                             <div class="page-content">
                                 <div class="woocommerce">
-                                    <form class="woocommerce-cart-form" action="http://wpdemo.magikthemes.com/creta/cart/" method="post">
+                                    <form class="woocommerce-cart-form" action="#" method="post">
                                         <div class="col-main">
                                             <div class="cart wow bounceInUp animated" style="visibility: visible;">
                                                 @if (!$carts->count())
@@ -41,11 +41,11 @@
                                                             @foreach ($carts as $item)
                                                                 <tr class="woocommerce-cart-form__cart-item cart_item">
                                                                     <td class="image">
-                                                                        <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"><img width="300" height="300" src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product4.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt=""></a>
+                                                                        <a href="#"><img width="300" height="300" src="#" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt=""></a>
                                                                     </td>
                                                                     <td>
                                                                         <h2 class="product-name">
-                                                                            <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/">{{$item->flower->name}}</a>
+                                                                            <a href="#">{{$item->flower->name}}</a>
                                                                         </h2>
                                                                     </td>
                                                                     <td class="a-center hidden-table">

@@ -22,8 +22,8 @@
 
                 {{--<div class="col-md-4 col-sm-6">--}}
                     {{--<div class="bottom-banner-img1">--}}
-                        {{--<a href="http://wpdemo.magikthemes.com/creta/">--}}
-                            {{--<img src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/ads-01.jpg"--}}
+                        {{--<a href="#">--}}
+                            {{--<img src="#"--}}
                                  {{--alt="offer banner">--}}
 
                             {{--<div class="bottom-img-info">--}}
@@ -38,8 +38,8 @@
                 {{--<div class="col-md-4 col-sm-6">--}}
 
                     {{--<div class="bottom-banner-img1">--}}
-                        {{--<a href="http://wpdemo.magikthemes.com/creta/">--}}
-                            {{--<img src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/ads-02.jpg"--}}
+                        {{--<a href="#">--}}
+                            {{--<img src="#"--}}
                                  {{--alt="offer banner">--}}
                             {{--<div class="bottom-img-info">--}}
                                 {{--<h3>Occasion</h3>--}}
@@ -52,8 +52,8 @@
 
                 {{--<div class="col-md-4 col-sm-6">--}}
                     {{--<div class="bottom-banner-img1">--}}
-                        {{--<a href="http://wpdemo.magikthemes.com/creta/">--}}
-                            {{--<img src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/ads-03.jpg"--}}
+                        {{--<a href="#">--}}
+                            {{--<img src="#"--}}
                                  {{--alt="offer banner">--}}
                             {{--<div class="bottom-img-info">--}}
                                 {{--<h3>Birthday</h3>--}}
@@ -65,8 +65,8 @@
 
                 {{--<div class="col-md-4 col-sm-6">--}}
                     {{--<div class="bottom-banner-img1">--}}
-                        {{--<a href="http://wpdemo.magikthemes.com/creta/">--}}
-                            {{--<img src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/ads-04.jpg"--}}
+                        {{--<a href="#">--}}
+                            {{--<img src="#"--}}
                                  {{--alt="offer banner">--}}
                             {{--<div class="bottom-img-info"> <span class="banner-overly"></span>--}}
                                 {{--<h3>GET WELL</h3>--}}
@@ -79,8 +79,8 @@
                 {{--<div class="col-md-8 col-sm-12">--}}
                     {{--<div class="bottom-banner-img1 last">--}}
 
-                        {{--<a href="http://wpdemo.magikthemes.com/creta/">--}}
-                            {{--<img src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2016/02/ads-05.jpg"--}}
+                        {{--<a href="#">--}}
+                            {{--<img src="#"--}}
                                  {{--alt="offer banner"> <span class="banner-overly"></span>--}}
                             {{--<div class="bottom-img-info">--}}
                                 {{--<h3>up to <span>25%</span> off</h3><h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h6>               </div>--}}
@@ -117,7 +117,7 @@
 <div id="nav-panel" class="">
     <div class="mobile-search">
         <div class="search-box">
-            <form name="myform"  method="GET" action="http://wpdemo.magikthemes.com/creta/">
+            <form name="myform"  method="GET" action="#">
                 <input type="text" placeholder="Search entire store here..." maxlength="70" name="s" class="mgksearch" value="">
 
                 <input type="hidden" value="product" name="post_type">
@@ -126,170 +126,170 @@
 
             </form>
         </div>
-        <div class="search-autocomplete" id="search_autocomplete1" style="display: none;"></div></div><div class="menu-wrap"><ul id="menu-mainmenu-1" class="mobile-menu accordion-menu"><li id="accordion-menu-item-2127" class="homecustom menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children active has-sub"><a href="http://wpdemo.magikthemes.com/creta/" class=" current "><i class="fa fa-home"></i></a>
+        <div class="search-autocomplete" id="search_autocomplete1" style="display: none;"></div></div><div class="menu-wrap"><ul id="menu-mainmenu-1" class="mobile-menu accordion-menu"><li id="accordion-menu-item-2127" class="homecustom menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children active has-sub"><a href="#" class=" current "><i class="fa fa-home"></i></a>
                 <span class="arrow"></span><ul class="sub-menu">
-                    <li id="accordion-menu-item-2040" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active"><a href="http://wpdemo.magikthemes.com/creta/" class="">Home Layout 1</a></li>
-                    <li id="accordion-menu-item-2039" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="http://wpdemo.magikthemes.com/creta2/" class="">Home Layout 2</a></li>
+                    <li id="accordion-menu-item-2040" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active"><a href="#" class="">Home Layout 1</a></li>
+                    <li id="accordion-menu-item-2039" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class="">Home Layout 2</a></li>
                 </ul>
             </li>
-            <li id="accordion-menu-item-2008" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/women/" class="">Occasion</a>
+            <li id="accordion-menu-item-2008" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Occasion</a>
                 <span class="arrow"></span><ul class="sub-menu">
-                    <li id="accordion-menu-item-2009" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/" class="">Special</a>
+                    <li id="accordion-menu-item-2009" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Special</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2010" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/dresses-apparel/" class="">Valentine Day Flowers</a></li>
-                            <li id="accordion-menu-item-2011" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/" class="">Friendship Day Flowers</a></li>
-                            <li id="accordion-menu-item-2012" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/camisoles/" class="">Rose Day Flowers</a></li>
-                            <li id="accordion-menu-item-2013" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/tshirts/" class="">New Year Flowers</a></li>
+                            <li id="accordion-menu-item-2010" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Valentine Day Flowers</a></li>
+                            <li id="accordion-menu-item-2011" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Friendship Day Flowers</a></li>
+                            <li id="accordion-menu-item-2012" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Rose Day Flowers</a></li>
+                            <li id="accordion-menu-item-2013" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">New Year Flowers</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2023" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/" class="">Upcoming</a>
+                    <li id="accordion-menu-item-2023" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Upcoming</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2024" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/beach-clothing/" class="">Diwali</a></li>
-                            <li id="accordion-menu-item-2025" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/bikinis/" class="">Rakhi</a></li>
-                            <li id="accordion-menu-item-2026" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/clothing-swimwear/" class="">Christmas</a></li>
-                            <li id="accordion-menu-item-2027" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/swimsuits/" class="">New Year</a></li>
+                            <li id="accordion-menu-item-2024" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Diwali</a></li>
+                            <li id="accordion-menu-item-2025" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Rakhi</a></li>
+                            <li id="accordion-menu-item-2026" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Christmas</a></li>
+                            <li id="accordion-menu-item-2027" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">New Year</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2014" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/" class="">Everyday</a>
+                    <li id="accordion-menu-item-2014" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Everyday</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2015" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/beaded-handbags/" class="">Birthday Flowers</a></li>
-                            <li id="accordion-menu-item-2016" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/fabric-handbags/" class="">Anniversary Flowers</a></li>
-                            <li id="accordion-menu-item-2047" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/backpack/" class="">Wedding Flowers</a></li>
-                            <li id="accordion-menu-item-2048" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/sling-bag/" class="">Flower Bouquets</a></li>
+                            <li id="accordion-menu-item-2015" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Birthday Flowers</a></li>
+                            <li id="accordion-menu-item-2016" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Anniversary Flowers</a></li>
+                            <li id="accordion-menu-item-2047" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Wedding Flowers</a></li>
+                            <li id="accordion-menu-item-2048" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower Bouquets</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2018" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/" class="">Occasional Day</a>
+                    <li id="accordion-menu-item-2018" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Occasional Day</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2019" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/bracelets/" class="">Womens Day Flowers</a></li>
-                            <li id="accordion-menu-item-2020" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/necklaces-pendants/" class="">Fathers Day Flowers</a></li>
-                            <li id="accordion-menu-item-2021" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/pendants/" class="">Teachers Day Flowers</a></li>
-                            <li id="accordion-menu-item-2022" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/pins-brooches/" class="">Mothers Day Flowers</a></li>
+                            <li id="accordion-menu-item-2019" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Womens Day Flowers</a></li>
+                            <li id="accordion-menu-item-2020" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Fathers Day Flowers</a></li>
+                            <li id="accordion-menu-item-2021" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Teachers Day Flowers</a></li>
+                            <li id="accordion-menu-item-2022" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Mothers Day Flowers</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2056" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/" class="">Favourite</a>
+                    <li id="accordion-menu-item-2056" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Favourite</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2057" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/blazers/" class="">Roses Bouquet</a></li>
-                            <li id="accordion-menu-item-2058" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/coats/" class="">Lilies</a></li>
-                            <li id="accordion-menu-item-2059" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/formal-jackets/" class="">Orchids</a></li>
-                            <li id="accordion-menu-item-2060" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/leather-jackets/" class="">Tulips</a></li>
+                            <li id="accordion-menu-item-2057" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Roses Bouquet</a></li>
+                            <li id="accordion-menu-item-2058" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Lilies</a></li>
+                            <li id="accordion-menu-item-2059" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Orchids</a></li>
+                            <li id="accordion-menu-item-2060" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Tulips</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2061" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/" class="">Combos</a>
+                    <li id="accordion-menu-item-2061" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Combos</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2062" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/casual/" class="">Flower &#038; Dry Fruit</a></li>
-                            <li id="accordion-menu-item-2063" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/designer/" class="">Flower &#038; Card</a></li>
-                            <li id="accordion-menu-item-2064" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/evening/" class="">Flower &#038; Teddy Bear</a></li>
-                            <li id="accordion-menu-item-2065" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/hoodies-dresses/" class="">Flower &#038; Chocolates</a></li>
+                            <li id="accordion-menu-item-2062" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Dry Fruit</a></li>
+                            <li id="accordion-menu-item-2063" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Card</a></li>
+                            <li id="accordion-menu-item-2064" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Teddy Bear</a></li>
+                            <li id="accordion-menu-item-2065" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Chocolates</a></li>
                         </ul>
                     </li>
                     <li id="accordion-menu-item-2054" class="women-img menu-item menu-item-type-custom menu-item-object-custom "></li>
                     <li id="accordion-menu-item-2066" class="women-img menu-item menu-item-type-custom menu-item-object-custom "></li>
                 </ul>
             </li>
-            <li id="accordion-menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/" class="">Anniversary</a>
+            <li id="accordion-menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Anniversary</a>
                 <span class="arrow"></span><ul class="sub-menu">
-                    <li id="accordion-menu-item-2003" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/" class="">Flowers &#038; Combos</a>
+                    <li id="accordion-menu-item-2003" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Flowers &#038; Combos</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2004" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/casual/" class="">Flower &#038; Dry Fruit</a></li>
-                            <li id="accordion-menu-item-2028" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/designer/" class="">Flower &#038; Card</a></li>
-                            <li id="accordion-menu-item-2029" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/evening/" class="">Flower &#038; Teddy Bear</a></li>
-                            <li id="accordion-menu-item-2017" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/hoodies-dresses/" class="">Flower &#038; Chocolates</a></li>
+                            <li id="accordion-menu-item-2004" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Dry Fruit</a></li>
+                            <li id="accordion-menu-item-2028" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Card</a></li>
+                            <li id="accordion-menu-item-2029" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Teddy Bear</a></li>
+                            <li id="accordion-menu-item-2017" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Chocolates</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2005" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/" class="">Flower with</a>
+                    <li id="accordion-menu-item-2005" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Flower with</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2006" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/leather-shoes/" class="">Get Well Soon</a></li>
-                            <li id="accordion-menu-item-2035" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/canvas-shoes/" class="">Congratulations</a></li>
-                            <li id="accordion-menu-item-2007" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/sports-shoes/" class="">I Am Sorry</a></li>
-                            <li id="accordion-menu-item-2036" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/casual-shoes/" class="">Good Luck</a></li>
+                            <li id="accordion-menu-item-2006" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Get Well Soon</a></li>
+                            <li id="accordion-menu-item-2035" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Congratulations</a></li>
+                            <li id="accordion-menu-item-2007" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">I Am Sorry</a></li>
+                            <li id="accordion-menu-item-2036" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Good Luck</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2030" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/" class="">Favourite Flowers</a>
+                    <li id="accordion-menu-item-2030" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Favourite Flowers</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2031" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/blazers/" class="">Roses Bouquet</a></li>
-                            <li id="accordion-menu-item-2032" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/coats/" class="">Lilies</a></li>
-                            <li id="accordion-menu-item-2033" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/formal-jackets/" class="">Orchids</a></li>
-                            <li id="accordion-menu-item-2034" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/leather-jackets/" class="">Tulips</a></li>
+                            <li id="accordion-menu-item-2031" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Roses Bouquet</a></li>
+                            <li id="accordion-menu-item-2032" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Lilies</a></li>
+                            <li id="accordion-menu-item-2033" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Orchids</a></li>
+                            <li id="accordion-menu-item-2034" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Tulips</a></li>
                         </ul>
                     </li>
                     <li id="accordion-menu-item-2055" class="men-img menu-item menu-item-type-custom menu-item-object-custom "></li>
-                    <li id="accordion-menu-item-2069" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/music/" class="">Mixed Flowers</a>
+                    <li id="accordion-menu-item-2069" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Mixed Flowers</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2070" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/music/albums/" class="">Precious Flowers</a></li>
-                            <li id="accordion-menu-item-2129" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/" class="">Flowers &#038; Combos</a></li>
-                            <li id="accordion-menu-item-2071" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/music/singles/" class="">Flower Bouquet</a></li>
-                            <li id="accordion-menu-item-2068" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/designer/" class="">Flower &#038; Card</a></li>
+                            <li id="accordion-menu-item-2070" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Precious Flowers</a></li>
+                            <li id="accordion-menu-item-2129" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flowers &#038; Combos</a></li>
+                            <li id="accordion-menu-item-2071" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower Bouquet</a></li>
+                            <li id="accordion-menu-item-2068" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower &#038; Card</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2049" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/" class="">Everyday Occasions</a>
+                    <li id="accordion-menu-item-2049" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Everyday Occasions</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2050" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/backpack/" class="">Wedding Flowers</a></li>
-                            <li id="accordion-menu-item-2051" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/fabric-handbags/" class="">Anniversary Flowers</a></li>
-                            <li id="accordion-menu-item-2052" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/sling-bag/" class="">Flower Bouquets</a></li>
-                            <li id="accordion-menu-item-2053" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/beaded-handbags/" class="">Birthday Flowers</a></li>
+                            <li id="accordion-menu-item-2050" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Wedding Flowers</a></li>
+                            <li id="accordion-menu-item-2051" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Anniversary Flowers</a></li>
+                            <li id="accordion-menu-item-2052" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Flower Bouquets</a></li>
+                            <li id="accordion-menu-item-2053" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Birthday Flowers</a></li>
                         </ul>
                     </li>
-                    <li id="accordion-menu-item-2072" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/" class="">Special Occasion</a>
+                    <li id="accordion-menu-item-2072" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub"><a href="#" class="">Special Occasion</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2073" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/" class="">Valentine Day Flowers</a></li>
-                            <li id="accordion-menu-item-2074" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/" class="">Friendship Day Flowers</a></li>
-                            <li id="accordion-menu-item-2075" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/camisoles/" class="">Rose Day Flowers</a></li>
-                            <li id="accordion-menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/tshirts/" class="">New Year Flowers</a></li>
+                            <li id="accordion-menu-item-2073" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Valentine Day Flowers</a></li>
+                            <li id="accordion-menu-item-2074" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Friendship Day Flowers</a></li>
+                            <li id="accordion-menu-item-2075" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Rose Day Flowers</a></li>
+                            <li id="accordion-menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">New Year Flowers</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li id="accordion-menu-item-2037" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="http://wpdemo.magikthemes.com/creta/product-category/furniture/" class="">Birthday</a></li>
-            <li id="accordion-menu-item-2117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/blog/" class="">Blog</a>
+            <li id="accordion-menu-item-2037" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat "><a href="#" class="">Birthday</a></li>
+            <li id="accordion-menu-item-2117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  has-sub"><a href="#" class="">Blog</a>
                 <span class="arrow"></span><ul class="sub-menu">
-                    <li id="accordion-menu-item-2330" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="http://wpdemo.magikthemes.com/creta/blog/?layout=left" class="">Blog Left Sidebar</a></li>
-                    <li id="accordion-menu-item-2331" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="http://wpdemo.magikthemes.com/creta/blog/?layout=right" class="">Blog Right Sidebar</a></li>
-                    <li id="accordion-menu-item-2332" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="http://wpdemo.magikthemes.com/creta/blog/?layout=full" class="">Blog Full Width</a></li>
+                    <li id="accordion-menu-item-2330" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class="">Blog Left Sidebar</a></li>
+                    <li id="accordion-menu-item-2331" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class="">Blog Right Sidebar</a></li>
+                    <li id="accordion-menu-item-2332" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class="">Blog Full Width</a></li>
                 </ul>
             </li>
             <li id="accordion-menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has-sub"><a href="#" class="">Pages</a>
                 <span class="arrow"></span><ul class="sub-menu">
-                    <li id="accordion-menu-item-2326" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/contact-us/" class="">Contact Us</a></li>
-                    <li id="accordion-menu-item-2122" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/page-markup-and-formatting/" class="">Typography</a></li>
-                    <li id="accordion-menu-item-2120" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/full-width-page/" class="">Full Width Page</a></li>
-                    <li id="accordion-menu-item-2123" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/page-left-sidbar/" class="">Page – Left Sidebar</a></li>
-                    <li id="accordion-menu-item-2121" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/page-right-sidebar/" class="">Page – Right Sidebar</a></li>
-                    <li id="accordion-menu-item-2124" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/page-3-column/" class="">Page – 3 Column</a></li>
-                    <li id="accordion-menu-item-2278" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/faqs-page/" class="">FAQs Page</a></li>
-                    <li id="accordion-menu-item-2282" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/about-us/" class="">About Us</a></li>
-                    <li id="accordion-menu-item-2281" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/pricing-table/" class="">Pricing Table</a></li>
-                    <li id="accordion-menu-item-2279" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/track-order/" class="">Track Order</a></li>
+                    <li id="accordion-menu-item-2326" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Contact Us</a></li>
+                    <li id="accordion-menu-item-2122" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Typography</a></li>
+                    <li id="accordion-menu-item-2120" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Full Width Page</a></li>
+                    <li id="accordion-menu-item-2123" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Page – Left Sidebar</a></li>
+                    <li id="accordion-menu-item-2121" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Page – Right Sidebar</a></li>
+                    <li id="accordion-menu-item-2124" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Page – 3 Column</a></li>
+                    <li id="accordion-menu-item-2278" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">FAQs Page</a></li>
+                    <li id="accordion-menu-item-2282" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">About Us</a></li>
+                    <li id="accordion-menu-item-2281" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Pricing Table</a></li>
+                    <li id="accordion-menu-item-2279" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Track Order</a></li>
                 </ul>
             </li>
-            <li id="accordion-menu-item-2327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  has-sub"><a href="http://wpdemo.magikthemes.com/creta/shop/" class="">Shop</a>
+            <li id="accordion-menu-item-2327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  has-sub"><a href="#" class="">Shop</a>
                 <span class="arrow"></span><ul class="sub-menu">
                     <li id="accordion-menu-item-2283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has-sub"><a href="#" class="">Product Layouts</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2166" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-mix-flowers-for-mother/" class="">Single Product</a></li>
-                            <li id="accordion-menu-item-2167" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="http://wpdemo.magikthemes.com/creta/product/one-sided-basket-of-beautiful-assorted-flowers/" class="">Variable Product</a></li>
-                            <li id="accordion-menu-item-2169" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-yellow-roses/" class="">Grouped Product</a></li>
-                            <li id="accordion-menu-item-2168" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="http://wpdemo.magikthemes.com/creta/product/mixed-flowers-in-round-handle-basket/" class="">External Product</a></li>
-                            <li id="accordion-menu-item-2288" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-mix-flowers-for-mother/" class="">Hot Deal Product</a></li>
+                            <li id="accordion-menu-item-2166" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="#" class="">Single Product</a></li>
+                            <li id="accordion-menu-item-2167" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="#" class="">Variable Product</a></li>
+                            <li id="accordion-menu-item-2169" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="#" class="">Grouped Product</a></li>
+                            <li id="accordion-menu-item-2168" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="#" class="">External Product</a></li>
+                            <li id="accordion-menu-item-2288" class="menu-item menu-item-type-post_type menu-item-object-product "><a href="#" class="">Hot Deal Product</a></li>
                         </ul>
                     </li>
                     <li id="accordion-menu-item-2284" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has-sub"><a href="#" class="">Shop Layout</a>
                         <span class="arrow"></span><ul class="sub-menu">
-                            <li id="accordion-menu-item-2285" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="http://wpdemo.magikthemes.com/creta/shop/?layout=left" class="">Shop Left Sidebar</a></li>
-                            <li id="accordion-menu-item-2286" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="http://wpdemo.magikthemes.com/creta/shop/?layout=right" class="">Shop Right Sidebar</a></li>
-                            <li id="accordion-menu-item-2287" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="http://wpdemo.magikthemes.com/creta/shop/?layout=full" class="">Shop Full Width</a></li>
-                            <li id="accordion-menu-item-2280" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/product-category/" class="">Product Category</a></li>
-                            <li id="accordion-menu-item-2277" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/sale/" class="">Hot Deals</a></li>
+                            <li id="accordion-menu-item-2285" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class="">Shop Left Sidebar</a></li>
+                            <li id="accordion-menu-item-2286" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class="">Shop Right Sidebar</a></li>
+                            <li id="accordion-menu-item-2287" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class="">Shop Full Width</a></li>
+                            <li id="accordion-menu-item-2280" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Product Category</a></li>
+                            <li id="accordion-menu-item-2277" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Hot Deals</a></li>
                         </ul>
                     </li>
                     <li id="accordion-menu-item-2289" class="women-img menu-item menu-item-type-custom menu-item-object-custom "></li>
                 </ul>
             </li>
-        </ul></div><div class="menu-wrap"><ul id="menu-toplinks-1" class="top-links1 accordion-menu"><li id="accordion-menu-item-2118" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/my-account/" class="">My Account</a></li>
-            <li id="accordion-menu-item-2077" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/shop/" class="">Shop</a></li>
-            <li id="accordion-menu-item-2125" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/wishlist-2/" class="">Wishlist</a></li>
-            <li id="accordion-menu-item-2119" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/checkout/" class="">Checkout</a></li>
-            <li id="accordion-menu-item-2290" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="http://wpdemo.magikthemes.com/creta/track-order/" class="">Track Order</a></li>
-            <li class="menu-item"><a href="http://wpdemo.magikthemes.com/creta/my-account/">Login</a></li><li class="menu-item"><a href="http://wpdemo.magikthemes.com/creta/my-account/">Register</a></li></ul></div></div>
+        </ul></div><div class="menu-wrap"><ul id="menu-toplinks-1" class="top-links1 accordion-menu"><li id="accordion-menu-item-2118" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">My Account</a></li>
+            <li id="accordion-menu-item-2077" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Shop</a></li>
+            <li id="accordion-menu-item-2125" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Wishlist</a></li>
+            <li id="accordion-menu-item-2119" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Checkout</a></li>
+            <li id="accordion-menu-item-2290" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Track Order</a></li>
+            <li class="menu-item"><a href="#">Login</a></li><li class="menu-item"><a href="#">Register</a></li></ul></div></div>
 
 <div id="yith-quick-view-modal">
 
@@ -358,8 +358,8 @@
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce-currency-switcher/js/price-slider_33.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce-currency-switcher/js/jquery.ddslick.min.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce-currency-switcher/js/front.js')}}'></script>--}}
-{{--<script type='text/javascript' src='http://wpdemo.magikthemes.com/creta/wp-includes/js/wp-util.min.js'></script>--}}
-{{--<script type='text/javascript' src='http://wpdemo.magikthemes.com/creta/wp-includes/js/wp-embed.min.js'></script>--}}
+{{--<script type='text/javascript' src='#'></script>--}}
+{{--<script type='text/javascript' src='#'></script>--}}
 <script type='text/javascript' src='{{asset('js/axios.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/main.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/plugins/contact-form-7/includes/js/scripts.js')}}'></script>

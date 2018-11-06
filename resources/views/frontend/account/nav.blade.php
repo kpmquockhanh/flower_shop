@@ -1,12 +1,12 @@
 <ul>
     {{--<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">--}}
-    {{--<a href="http://wpdemo.magikthemes.com/creta/my-account/">Dashboard</a>--}}
+    {{--<a href="#">Dashboard</a>--}}
     {{--</li>--}}
     {{--<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">--}}
-    {{--<a href="http://wpdemo.magikthemes.com/creta/my-account/orders/">Orders</a>--}}
+    {{--<a href="#">Orders</a>--}}
     {{--</li>--}}
     {{--<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">--}}
-    {{--<a href="http://wpdemo.magikthemes.com/creta/my-account/downloads/">Downloads</a>--}}
+    {{--<a href="#">Downloads</a>--}}
     {{--</li>--}}
     <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
         <a href="{{route('user.addresses')}}">Addresses</a>

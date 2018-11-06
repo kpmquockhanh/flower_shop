@@ -47,7 +47,7 @@
                             <div class="item-img">
 
                                 <div class="item-img-info">
-                                    <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                    <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                         <figure class="img-responsive">
                                             <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4.jpg')}}">
                                         </figure>
@@ -68,7 +68,7 @@
                                             </li>
                                             <li>
 
-                                                <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=30" class="compare link-compare add_to_compare" data-product_id="30"
+                                                <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
                                                 >Add to Compare</a>
 
                                             </li>
@@ -85,7 +85,7 @@
 
                             <div class="item-info">
                                 <div class="info-inner">
-                                    <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"
+                                    <div class="item-title"><a href="#"
                                                                title="Bunch of Assorted Gerberas in a Glass Vase"> Bunch of Assorted Gerberas in a Glass Vase </a>
                                     </div>
                                     <div class="item-content">

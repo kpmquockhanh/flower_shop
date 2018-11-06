@@ -13,7 +13,7 @@
                         </div>
                         <div class="pretext">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Curabitur eu odio non justo euismod congue ut nec orci.                </div>
-                        <a class="view_more_bnt" href="http://wpdemo.magikthemes.com/creta/shop/">VIEW ALL</a>
+                        <a class="view_more_bnt" href="#">VIEW ALL</a>
                     </div>
 
                     <div class="slider-items slider-width-col4 products-grid block-content">
@@ -24,7 +24,7 @@
                                 <div class="item-inner">
                                     <div class="item-img">
                                         <div class="item-img-info">
-                                            <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                            <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                                 <figure class="img-responsive" style="height: 200px;">
                                                     <img alt="" src="{{asset('images/'.$flower->image)}}" style="width: 100%;">
                                                 </figure>
@@ -43,7 +43,7 @@
                                                     </li>
                                                     <li>
 
-                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=30" class="compare link-compare add_to_compare" data-product_id="30"
+                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
                                                         >Add to Compare</a>
 
                                                     </li>
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="item-info">
                                         <div class="info-inner">
-                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"
+                                            <div class="item-title"><a href="#"
                                                                        title="Bunch of Assorted Gerberas in a Glass Vase"> {{$flower->name}} </a>
                                             </div>
                                             <div class="item-content">

@@ -21,7 +21,7 @@
                                             (not <strong>{{\Illuminate\Support\Facades\Auth::guard('user')->user()->name}}</strong>?
                                             <a href="{{route('logout')}}">Log out</a>)</p>
 
-                                        <p>From your account dashboard you can view your <a href="http://wpdemo.magikthemes.com/creta/my-account/orders/">recent orders</a>, manage your <a href="http://wpdemo.magikthemes.com/creta/my-account/edit-address/">shipping and billing addresses</a>, and <a href="http://wpdemo.magikthemes.com/creta/my-account/edit-account/">edit your password and account details</a>.</p>
+                                        <p>From your account dashboard you can view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a>, and <a href="#">edit your password and account details</a>.</p>
 
                                     </div>
 

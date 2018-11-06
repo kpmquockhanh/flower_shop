@@ -23,7 +23,7 @@
 
                                             <header class="woocommerce-Address-title title">
 
-                                                <h3>Address <small><a href="http://wpdemo.magikthemes.com/creta/my-account/edit-address/shipping/" class="edit">Edit</a></small></h3>
+                                                <h3>Address <small><a href="#" class="edit">Edit</a></small></h3>
                                             </header>
                                             <div class="woocommerce-MyAccount-content">
 

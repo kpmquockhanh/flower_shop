@@ -20,8 +20,8 @@
                                             <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;">
 
                                                 <figure class="woocommerce-product-gallery__wrapper product-full">
-                                                    <div data-thumb="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product12-104x104.jpg" class="woocommerce-product-gallery__image ">
-                                                        <a class="woocommerce-main-image zoom cloud-zoom"><img id="product-zoom" class="attachment-shop_single size-shop_single wp-post-image " src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product12.jpg" data-zoom-image="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product12.jpg" data-large_image="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product12.jpg" data-large_image_width="800" data-large_image_height="800"></a>
+                                                    <div data-thumb="#" class="woocommerce-product-gallery__image ">
+                                                        <a class="woocommerce-main-image zoom cloud-zoom"><img id="product-zoom" class="attachment-shop_single size-shop_single wp-post-image " src="#" data-zoom-image="#" data-large_image="#" data-large_image_width="800" data-large_image_height="800"></a>
                                                     </div>
 
                                                 </figure>
@@ -33,8 +33,8 @@
 
                                     <div class="product-shop col-lg-8 col-sm-7 col-xs-12">
                                         <div id="prev-next" class="product-next-prev">
-                                            <a href="http://wpdemo.magikthemes.com/creta/product/bouquet-of-white-gerberas/" class="product-next"><span></span></a>
-                                            <a href="http://wpdemo.magikthemes.com/creta/product/vase-arrangement-of-orchids/" class="product-prev"><span></span></a>
+                                            <a href="#" class="product-next"><span></span></a>
+                                            <a href="#" class="product-prev"><span></span></a>
                                         </div>
                                         <!--#prev-next -->
 
@@ -53,7 +53,7 @@
                                             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
                                         </div>
 
-                                        <form class="cart" action="http://wpdemo.magikthemes.com/creta/product/basket-of-roses-with-dairymilk-silk/" method="post" enctype="multipart/form-data">
+                                        <form class="cart" action="#" method="post" enctype="multipart/form-data">
 
                                             <div class="quantity">
                                                 <div class="pull-left">
@@ -73,18 +73,18 @@
 
                                                 <a href="/creta/product/basket-of-roses-with-dairymilk-silk/?add_to_wishlist=113" rel="nofollow" data-product-id="113" data-product-type="simple" class="add_to_wishlist">
                                                     Add to Wishlist</a>
-                                                <img src="http://wpdemo.magikthemes.com/creta/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden">
+                                                <img src="#" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden">
                                             </div>
 
                                             <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
                                                 <span class="feedback">Product added!</span>
-                                                <a href="http://wpdemo.magikthemes.com/creta/wishlist/" rel="nofollow">
+                                                <a href="#" rel="nofollow">
                                                     Browse Wishlist	        </a>
                                             </div>
 
                                             <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
                                                 <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="http://wpdemo.magikthemes.com/creta/wishlist/" rel="nofollow">
+                                                <a href="#" rel="nofollow">
                                                     Browse Wishlist	        </a>
                                             </div>
 
@@ -93,11 +93,11 @@
 
                                         </div>
 
-                                        <div class="clear"></div><a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&amp;id=113" class="compare button" data-product_id="113" rel="nofollow">Compare</a>
+                                        <div class="clear"></div><a href="#" class="compare button" data-product_id="113" rel="nofollow">Compare</a>
                                         <div class="product_meta">
 
-                                            <span class="posted_in">Categories: <a href="http://wpdemo.magikthemes.com/creta/product-category/men/" rel="tag">Anniversary</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/furniture/" rel="tag">Birthday</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/beaded-handbags/" rel="tag">Birthday Flowers</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/" rel="tag">Everyday Occasions</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/" rel="tag">Favourite Flowers</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/" rel="tag">Flower with</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/" rel="tag">Flowers &amp; Combos</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/women/" rel="tag">Occasion</a>, <a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/" rel="tag">Occasional Day</a></span>
-                                            <span class="tagged_as">Tags: <a href="http://wpdemo.magikthemes.com/creta/product-tag/beaded-handbags/" rel="tag">beaded handbags</a>, <a href="http://wpdemo.magikthemes.com/creta/product-tag/handbags/" rel="tag">handbags</a></span>
+                                            <span class="posted_in">Categories: <a href="#" rel="tag">Anniversary</a>, <a href="#" rel="tag">Birthday</a>, <a href="#" rel="tag">Birthday Flowers</a>, <a href="#" rel="tag">Everyday Occasions</a>, <a href="#" rel="tag">Favourite Flowers</a>, <a href="#" rel="tag">Flower with</a>, <a href="#" rel="tag">Flowers &amp; Combos</a>, <a href="#" rel="tag">Occasion</a>, <a href="#" rel="tag">Occasional Day</a></span>
+                                            <span class="tagged_as">Tags: <a href="#" rel="tag">beaded handbags</a>, <a href="#" rel="tag">handbags</a></span>
 
                                         </div>
 
@@ -128,7 +128,7 @@
                                                 </li>
 
                                                 <li class="pintrest pull-left">
-                                                    <a onclick="popUp=window.open('http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwpdemo.magikthemes.com%2Fcreta%2Fproduct%2Fbasket-of-roses-with-dairymilk-silk%2F&amp;description=Basket+of+Roses+with+Dairymilk+Silk&amp;media=http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product12.jpg','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
+                                                    <a onclick="popUp=window.open('http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwpdemo.magikthemes.com%2Fcreta%2Fproduct%2Fbasket-of-roses-with-dairymilk-silk%2F&amp;description=Basket+of+Roses+with+Dairymilk+Silk&amp;media=#','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
 
                                                     </a>
                                                 </li>
@@ -180,7 +180,7 @@
                                                 <div id="review_form">
                                                     <div id="respond" class="comment-respond">
                                                         <span id="reply-title" class="comment-reply-title">Be the first to review “Basket of Roses with Dairymilk Silk” <small><a rel="nofollow" id="cancel-comment-reply-link" href="/creta/product/basket-of-roses-with-dairymilk-silk/#respond" style="display:none;">Cancel reply</a></small></span>
-                                                        <p class="must-log-in">You must be <a href="http://wpdemo.magikthemes.com/creta/my-account/">logged in</a> to post a review.</p>
+                                                        <p class="must-log-in">You must be <a href="#">logged in</a> to post a review.</p>
                                                     </div>
                                                     <!-- #respond -->
                                                 </div>

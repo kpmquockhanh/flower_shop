@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{--<link rel="profile" href="http://gmpg.org/xfn/11">--}}
-    {{--<link rel="pingback" href="http://wpdemo.magikthemes.com/creta/xmlrpc.php">--}}
+    {{--<link rel="pingback" href="#">--}}
     {{--<script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>--}}
     <title>Flower shop</title>
     <style>

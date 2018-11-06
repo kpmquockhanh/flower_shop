@@ -56,7 +56,7 @@
                                                     <div class="item-inner">
                                                         <div class="item-img">
                                                             <div class="item-img-info">
-                                                                <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                                                <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                                                     <figure class="img-responsive" style="height: 250px;">
                                                                         <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('images/'.$flower->image)}}" style="width: 100%">
                                                                     </figure>
@@ -88,7 +88,7 @@
                                                         </div>
                                                         <div class="item-info">
                                                             <div class="info-inner">
-                                                                <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"
+                                                                <div class="item-title"><a href="#"
                                                                                            title="Bunch of Assorted Gerberas in a Glass Vase"> {{$flower->name}}</a>
                                                                 </div>
                                                                 <div class="item-content">
@@ -139,7 +139,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/bouquet-of-white-gerberas/" title="Bouquet of White Gerberas" class="product-image">
+                                                            <a href="#" title="Bouquet of White Gerberas" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Bouquet of White Gerberas" src="{{asset('assets/uploads/sites/26/2017/07/product1-277x366.jpg')}}"">
                                                                 </figure>
@@ -160,7 +160,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=1733" class="compare link-compare add_to_compare" data-product_id="1733"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="1733"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -172,7 +172,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bouquet-of-white-gerberas/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Bouquet of White Gerberas"> Bouquet of White Gerberas </a>
                                                             </div>
                                                             <div class="item-content">
@@ -205,7 +205,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-pink-roses/" title="Glass Vase of Pink Roses" class="product-image">
+                                                            <a href="#" title="Glass Vase of Pink Roses" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}"">
                                                                 </figure>
@@ -226,7 +226,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=93" class="compare link-compare add_to_compare" data-product_id="93"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="93"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -238,7 +238,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-pink-roses/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Glass Vase of Pink Roses"> Glass Vase of Pink Roses </a>
                                                             </div>
                                                             <div class="item-content">
@@ -271,7 +271,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                                            <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}"">
                                                                 </figure>
@@ -292,7 +292,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=30" class="compare link-compare add_to_compare" data-product_id="30"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -304,7 +304,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Bunch of Assorted Gerberas in a Glass Vase"> Bunch of Assorted Gerberas in a Glass Vase </a>
                                                             </div>
                                                             <div class="item-content">
@@ -337,7 +337,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/round-handle-basket-of-mixed-roses/" title="Round Handle Basket of Mixed Roses" class="product-image">
+                                                            <a href="#" title="Round Handle Basket of Mixed Roses" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}"">
                                                                 </figure>
@@ -358,7 +358,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=24" class="compare link-compare add_to_compare" data-product_id="24"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="24"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -370,7 +370,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/round-handle-basket-of-mixed-roses/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Round Handle Basket of Mixed Roses"> Round Handle Basket of Mixed Roses </a>
                                                             </div>
                                                             <div class="item-content">
@@ -410,7 +410,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/bouquet-of-white-gerberas/" title="Bouquet of White Gerberas" class="product-image">
+                                                            <a href="#" title="Bouquet of White Gerberas" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Bouquet of White Gerberas" src="{{asset('assets/uploads/sites/26/2017/07/product1-277x366.jpg')}}"">
                                                                 </figure>
@@ -431,7 +431,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=1733" class="compare link-compare add_to_compare" data-product_id="1733"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="1733"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -443,7 +443,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bouquet-of-white-gerberas/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Bouquet of White Gerberas"> Bouquet of White Gerberas </a>
                                                             </div>
                                                             <div class="item-content">
@@ -476,7 +476,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-pink-roses/" title="Glass Vase of Pink Roses" class="product-image">
+                                                            <a href="#" title="Glass Vase of Pink Roses" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}"">
                                                                 </figure>
@@ -497,7 +497,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=93" class="compare link-compare add_to_compare" data-product_id="93"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="93"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -509,7 +509,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-pink-roses/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Glass Vase of Pink Roses"> Glass Vase of Pink Roses </a>
                                                             </div>
                                                             <div class="item-content">
@@ -542,7 +542,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                                            <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}"">
                                                                 </figure>
@@ -563,7 +563,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=30" class="compare link-compare add_to_compare" data-product_id="30"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -575,7 +575,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Bunch of Assorted Gerberas in a Glass Vase"> Bunch of Assorted Gerberas in a Glass Vase </a>
                                                             </div>
                                                             <div class="item-content">
@@ -608,7 +608,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/round-handle-basket-of-mixed-roses/" title="Round Handle Basket of Mixed Roses" class="product-image">
+                                                            <a href="#" title="Round Handle Basket of Mixed Roses" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}"">
                                                                 </figure>
@@ -629,7 +629,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=24" class="compare link-compare add_to_compare" data-product_id="24"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="24"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -641,7 +641,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/round-handle-basket-of-mixed-roses/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Round Handle Basket of Mixed Roses"> Round Handle Basket of Mixed Roses </a>
                                                             </div>
                                                             <div class="item-content">
@@ -681,7 +681,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-pink-roses/" title="Glass Vase of Pink Roses" class="product-image">
+                                                            <a href="#" title="Glass Vase of Pink Roses" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}"">
                                                                 </figure>
@@ -702,7 +702,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=93" class="compare link-compare add_to_compare" data-product_id="93"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="93"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -714,7 +714,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-pink-roses/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Glass Vase of Pink Roses"> Glass Vase of Pink Roses </a>
                                                             </div>
                                                             <div class="item-content">
@@ -747,7 +747,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                                            <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}"">
                                                                 </figure>
@@ -768,7 +768,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=30" class="compare link-compare add_to_compare" data-product_id="30"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -780,7 +780,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/bunch-of-assorted-gerberas-in-a-glass-vase/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Bunch of Assorted Gerberas in a Glass Vase"> Bunch of Assorted Gerberas in a Glass Vase </a>
                                                             </div>
                                                             <div class="item-content">
@@ -813,7 +813,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/round-handle-basket-of-mixed-roses/" title="Round Handle Basket of Mixed Roses" class="product-image">
+                                                            <a href="#" title="Round Handle Basket of Mixed Roses" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}"">
                                                                 </figure>
@@ -834,7 +834,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=24" class="compare link-compare add_to_compare" data-product_id="24"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="24"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -846,7 +846,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/round-handle-basket-of-mixed-roses/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Round Handle Basket of Mixed Roses"> Round Handle Basket of Mixed Roses </a>
                                                             </div>
                                                             <div class="item-content">
@@ -879,7 +879,7 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-with-red-and-white-roses/" title="Glass Vase with Red and White Roses" class="product-image">
+                                                            <a href="#" title="Glass Vase with Red and White Roses" class="product-image">
                                                                 <figure class="img-responsive">
                                                                     <img alt="Glass Vase with Red and White Roses" src="{{asset('assets/uploads/sites/26/2017/07/product7-277x366.jpg')}}"">
                                                                 </figure>
@@ -898,7 +898,7 @@
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-add-product&#038;id=1574" class="compare link-compare add_to_compare" data-product_id="1574"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="1574"
                                                                         >Add to Compare</a>
 
                                                                     </li>
@@ -910,7 +910,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-with-red-and-white-roses/"
+                                                            <div class="item-title"><a href="#"
                                                                                        title="Glass Vase with Red and White Roses"> Glass Vase with Red and White Roses </a>
                                                             </div>
                                                             <div class="item-content">

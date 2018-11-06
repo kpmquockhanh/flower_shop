@@ -49,7 +49,7 @@
                                                     <button type="submit" class="woocommerce-Button button" value="Log in">Log in</button>
                                                 </p>
                                                 <p class="woocommerce-LostPassword lost_password">
-                                                        <a href="http://wpdemo.magikthemes.com/creta/my-account/lost-password/">Lost your password?</a>
+                                                        <a href="#">Lost your password?</a>
                                                 </p>
 
 
