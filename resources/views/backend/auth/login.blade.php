@@ -29,7 +29,7 @@
                                         @endif
                                         <div class="form-group has-label">
                                             <label>Email *</label>
-                                            <input class="form-control" name="email" type="text" email="true" required="true" />
+                                            <input class="form-control" name="email" type="text" email="true" required="true" value="{{old('email')}}"/>
                                         </div>
                                         @if ($errors->has('password'))
                                             <div class="text-danger">
@@ -43,7 +43,7 @@
                                     <div class="form-group">
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="" name="remeber">
+                                                <input class="form-check-input" type="checkbox" value="" name="remeber" {{old('remember')?'checked':''}}>
                                                 <span class="form-check-sign"></span>
                                                 Remember
                                             </label>

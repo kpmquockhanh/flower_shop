@@ -1,5 +1,10 @@
 @extends('backend.layouts.master')
 
+@section('style')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+@stop
+
 @section('content')
     <div class="content">
         <form method="post" action="{{route('admin.flowers.update')}}" class="form-horizontal" enctype="multipart/form-data">

@@ -1,58 +1,115 @@
-@extends('layouts.master')
-@section('breadcumb')
-    @include('layouts.breadcumb')
-@stop
-@section('content')
-    <div class="login-register-area pt-70 pb-75">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-12 ml-auto mr-auto">
-                    <div class="login-register-wrapper">
-                        <div class="login-register-tab-list nav">
-                            <a class="active" data-toggle="tab" href="#lg1">
-                                <h4> login </h4>
-                            </a>
-                            {{--<a data-toggle="tab" href="#lg2">--}}
-                                {{--<h4> register </h4>--}}
-                            {{--</a>--}}
-                        </div>
-                        <div class="tab-content">
-                            <div id="lg1" class="tab-pane active">
-                                <div class="login-form-container" style="background: #f8f9f9 !important;">
-                                    <div class="login-register-form">
-                                        <form action="{{route('login')}}" method="post">
-                                            @csrf()
-                                            @if ($errors->has('email'))
-                                                <div class="text-danger">
-                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                </div>
-                                            @endif
-                                            <input type="text" name="email" placeholder="Email" value="{{old('email')}}">
-                                            @if ($errors->has('password'))
-                                                <div class="text-danger">
-                                                    <strong>{{ $errors->first('password') }}</strong>
-                                                </div>
-                                            @endif
-                                            <input type="password" name="password" placeholder="Password" value="{{old('password')}}">
+@extends('frontend.layouts.master')
 
-                                            <div class="button-box">
-                                                <div class="login-toggle-btn">
-                                                    <input type="checkbox" name="remember" id="remember">
-                                                    <label for="remember">Remember me</label>
-                                                    <a href="#">Forgot Password?</a>
-                                                </div>
-                                                <button type="submit"><span>Login</span></button>
-                                                <span class="login-toggle-btn">
-                                                    <a href="{{route('register')}}" class="btn-switch float-right"><span>Register</span></a>
-                                                </span>
-                                            </div>
-                                        </form>
+@section('content')
+    <div class="main-container col1-layout wow bounceInUp animated" style="visibility: visible;">
+        <div class="main container">
+            <div class="row">
+                <div class="col-sm-12" id="content">
+                    <div class="col-main">
+
+                        <div class="static-contain">
+                            <div class="page-title">
+                                <h2 class="entry-title">
+                                    My Account      </h2>
+                            </div>
+
+                            <div class="page-content">
+                                <div class="woocommerce">
+
+
+
+                                    <div class="u-columns col2-set" id="customer_login">
+
+                                        <div class="u-column1 col-1">
+
+
+                                            <h2>Login</h2>
+
+                                            <form class="woocommerce-form woocommerce-form-login login" method="post" action="{{route('login')}}">
+                                                @csrf
+                                                @if ($errors->first() && !old('name'))
+                                                    <div class="text-danger">
+                                                        <strong>{{ $errors->first() }}</strong>
+                                                    </div>
+                                                @endif
+
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="username">Email&nbsp;<span class="required">*</span></label>
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" autocomplete="email" value="{{old('email')}}">			</p>
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="password">Password&nbsp;<span class="required">*</span></label>
+                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password">
+                                                </p>
+
+
+                                                <p class="form-row">
+                                                    <label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever"> <span>Remember me</span>
+                                                    </label>
+                                                    <button type="submit" class="woocommerce-Button button" value="Log in">Log in</button>
+                                                </p>
+                                                <p class="woocommerce-LostPassword lost_password">
+                                                        <a href="http://wpdemo.magikthemes.com/creta/my-account/lost-password/">Lost your password?</a>
+                                                </p>
+
+
+                                            </form>
+
+
+                                        </div>
+
+                                        <div class="u-column2 col-2">
+
+                                            <h2>Register</h2>
+
+                                            <form method="post" class="woocommerce-form woocommerce-form-register register" action="{{route('register')}}">
+                                                @csrf
+                                                @if ($errors->first() && old('name'))
+                                                    <div class="text-danger">
+                                                        <strong>{{ $errors->first() }}</strong>
+                                                    </div>
+                                                @endif
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_email">Name&nbsp;<span class="required">*</span></label>
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="name" autocomplete="name" value="">
+                                                </p>
+
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_email">Email address&nbsp;<span class="required">*</span></label>
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" autocomplete="email" value="">
+                                                </p>
+
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_password">Password&nbsp;<span class="required">*</span></label>
+                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" autocomplete="new-password" aria-autocomplete="list">
+                                                </p>
+
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_password">Retype password&nbsp;<span class="required">*</span></label>
+                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_confirmation"  autocomplete="new-password" aria-autocomplete="list">
+                                                </p>
+
+
+                                                <div class="woocommerce-privacy-policy-text"></div>
+                                                <p class="woocommerce-FormRow form-row">
+                                                    <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="ad799710bb"><input type="hidden" name="_wp_http_referer" value="/creta/my-account/">				<button type="submit" class="woocommerce-Button button" name="register" value="Register">Register</button>
+                                                </p>
+
+
+                                            </form>
+
+                                        </div>
+
                                     </div>
+
                                 </div>
                             </div>
+                            <!-- .entry-content -->
                         </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>

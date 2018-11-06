@@ -49,7 +49,7 @@
                             class="fa fa-plus-circle"></i></a>
             </div>
             @if (!count($flowers))
-                <div class="alert alert-info m-auto w-100">Không có hoa nào trong cơ sở dữ liệu. <a href="{{route('admin.flowers.list')}}" class="text-light font-weight-bold">Quay lại trang danh sách</a></div>
+                <div class="alert alert-info m-auto w-100">Không có hoa nào trong cơ sở dữ liệu. <a href="{{route('admin.flowers.list')}}" class="text-light font-weight-bold">Quay lại trang chủ</a></div>
             @endif
             <div class="col-md-12 row">
                 @foreach($flowers as $flower)
@@ -98,16 +98,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="mt-2">{{$flower->message?str_limit($flower->message, $limit = 50, $end = '...'):"Không có thông điệp."}}</p>
+                                        <p class="mt-2">{!! $flower->message?str_limit($flower->message, $limit = 50, $end = '...'):"Không có thông điệp." !!}</p>
                                     </div>
 
                                     <div class="tab-pane" id="profile{{$flower->id}}" role="tabpanel"
                                          aria-expanded="false">
-                                        <p>{{$flower->message?:"Không có thông điệp."}}</p>
+                                        <p>{!! $flower->message?:"Không có thông điệp." !!}</p>
                                     </div>
                                     <div class="tab-pane" id="messages{{$flower->id}}" role="tabpanel"
                                          aria-expanded="false">
                                         {{--<p>Thông tin chi tiết đang được cập nhật</p>--}}
+                                        <p>Tên hoa: <strong>{{$flower->name}}</strong></p>
+                                        <p>Giá: <strong>{{$flower->price}}</strong></p>
+                                        <p>Giảm giá: <strong>{{$flower->saleoff*100}} %</strong></p>
                                         <p>Người đăng: <strong>{{$flower->admin->name}}</strong></p>
                                         <p>Ngày tạo: <strong>{{$flower->created_at}}</strong></p>
                                         <p>Ngày sửa: <strong>{{$flower->updated_at}}</strong></p>

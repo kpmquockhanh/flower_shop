@@ -2,70 +2,67 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Flower;
-use Darryldecode\Cart\CartCondition;
-use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
     public function index()
     {
-        dd(123);
+        $viewData = [];
+        $carts = $this->getCart();
+        if (Auth::check())
+            $viewData = array_merge($viewData, [
+                'carts'=> $carts,
+                'subtotal' => $carts->sum(function ($item){
+                    return $item->flower->price*$item->quantity;
+                })]);
+        return view('frontend.cart.cart-page')->with($viewData);
     }
     public function test()
     {
         $userId = Auth::guard('user')->id();
 
-//        Cart::session($userId)->add(123, 'Sample Item111', 100.99, 2, array());
-//        Cart::session($userId)->add(22, 'Sample Item111', 100.99, 2, array());
-//        $condition = new CartCondition(array(
-//            'name' => 'VAT 12.5%',
-//            'type' => 'tax',
-//            'target' => 'cost', // this condition will be applied to cart's subtotal when getSubTotal() is called.
-//            'value' => '10%',
-//        ));
-//        Cart::session($userId)->condition($condition);
-        Cart::session($userId)->clearCartConditions();
-        dd(Cart::session($userId)->getConditions());
     }
 
-    public function getCart()
+    public static function getCart()
     {
-        $userId = Auth::guard('user')->id();
-        return Cart::session($userId)->getContent();
+        return Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get();
     }
+
 
     public function addToCart(Request $request)
     {
         if ($id = $request->id)
         {
-            $userId = Auth::guard('user')->id();
-            $flower = Flower::select([
-                'id', 'name', 'price', 'image', 'quantity', 'saleoff'
-            ])->findOrFail($id);
+            if (!Flower::find($id))
+                return response()->json([
+                    'status' => false,
+                ]);
 
-            if ($flower){
-                $flower = $flower->toArray();
-                $flower['quantity'] = 1;
+
+            $cart = Cart::query()
+                ->where('user_id', Auth::guard('user')->id())
+                ->where('flower_id', $id)
+                ->get();
+
+            if ($cart->count())
+                $cart->first()->increment('quantity');
+            else
+            {
+                Cart::create([
+                    'user_id' => Auth::guard('user')->id(),
+                    'flower_id' => $id,
+                    'quantity' => $request->quantity?:1,
+                ]);
             }
-
-            $condition = new CartCondition(array(
-                'name' => 'SALE 5%',
-                'type' => 'tax',
-                'value' => '-50%',
-            ));
-            Cart::session($userId)->add(array_merge($flower, [
-                'attributes' => [
-                    'image' => $flower['image'],
-                    'saleoff' => $flower['saleoff']
-                ],
-                'conditions' => $condition,
-            ]));
 
             return response()->json([
                 'status' => true,
+                'data' => view('frontend.cart.cart')->with(['carts' => $this->getCart()])->render(),
             ]);
         }else
             return response()->json([
@@ -78,15 +75,53 @@ class CartController extends Controller
     {
         if ($id = $request->id)
         {
-            $userId = Auth::guard('user')->id();
-            Cart::session($userId)->remove($id);
-            return response()->json([
-                'status' => true,
-            ]);
+            if (Cart::destroy($id))
+                return response()->json([
+                    'status' => true,
+                    'data' => view('frontend.cart.cart')->with(['carts' => $this->getCart()])->render(),
+                ]);
+            else
+                return response()->json([
+                    'status' => true,
+                ]);
 
         }else
             return response()->json([
                 'status' => false,
             ]);
+    }
+
+    public static function cleartAll()
+    {
+        return Cart::query()->where('user_id', Auth::guard('user')->id())->delete();
+    }
+
+    public function clearAllCart()
+    {
+        if (Cart::query()->where('user_id', Auth::guard('user')->id())->delete())
+        {
+            return response()->json([
+                'status' => true,
+                'data' => view('frontend.cart.cart')->with(['carts' => $this->getCart()])->render(),
+                'data_page' => view('frontend.cart.cart-page-ajax')->with(['carts' => $this->getCart()])->render(),
+            ]);
+        }
+        else
+            return response()->json([
+                'status' => false,
+            ]);
+    }
+
+    public function checkoutCart()
+    {
+        $viewData = [];
+        $carts = $this->getCart();
+        if (Auth::check())
+            $viewData = array_merge($viewData, [
+                'carts'=> $carts,
+                'subtotal' => $carts->sum(function ($item){
+                    return $item->flower->price*$item->quantity;
+                })]);
+        return view('frontend.checkout.checkout')->with($viewData);
     }
 }

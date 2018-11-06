@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use App\Flower;
 use App\saler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -116,9 +117,12 @@ class SalerController extends Controller
         if ($id = $request->id)
         {
             if (Admin::destroy($id))
+            {
+                Flower::where('admin_id', $id)->delete();
                 return response()->json([
                     'status' => true,
                 ]);
+            }
             return response()->json([
                 'status' => false,
             ]);

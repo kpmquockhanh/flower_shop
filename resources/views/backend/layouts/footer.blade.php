@@ -13,7 +13,7 @@
                         <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
                     </li>
                 </ul>
-            </nav>
+</nav>
             <div class="credits ml-auto">
               <span class="copyright">
                 ©
@@ -35,7 +35,7 @@
 <!--  Plugin for Sweet Alert -->
 <script src="{{asset('backend/js/plugins/sweetalert2.min.js')}}"></script>
 <!-- Forms Validations Plugin -->
-<script src="{{asset('assets/admin/assets/js/plugins/jquery.validate.min.js')}}"></script>
+<script src="{{asset('backend/js/plugins/jquery.validate.min.js')}}"></script>
 <!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
 <script src="{{asset('backend/js/plugins/jquery.bootstrap-wizard.js')}}"></script>
 <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
@@ -58,7 +58,7 @@
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="{{asset('backend/plugins/buttons.js')}}"></script>
 <!-- Chart JS -->
-<script src="{{asset('assets/admin/assets/js/plugins/chartjs.min.js')}}"></script>
+<script src="{{asset('backend/js/plugins/chartjs.min.js')}}"></script>
 <!--  Notifications Plugin    -->
 <script src="{{asset('backend/js/plugins/bootstrap-notify.js')}}"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->

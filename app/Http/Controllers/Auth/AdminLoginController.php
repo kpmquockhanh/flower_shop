@@ -28,14 +28,14 @@ class AdminLoginController extends Controller
         $this->validateLogin($request);
 
         if ($this->attemptLogin($request)) {
-            return redirect(route('admin.dashboard'));
+            return redirect()->intended(route('admin.dashboard'));
         }
         else
         {
-            return redirect(route('admin.login'))->withErrors(['fail' => 'Your credential is incorrect!']);
+            return redirect(route('admin.login'))->withErrors(['fail' => 'Your credential is incorrect!'])->withInput($request->only($this->username(), 'remember'));
         }
 
-        return redirect()->back()->withInput($request->only($this->username(), 'remember'));
+//        return redirect()->back()->withInput($request->only($this->username(), 'remember'));
 
     }
     protected function validateLogin(Request $request)

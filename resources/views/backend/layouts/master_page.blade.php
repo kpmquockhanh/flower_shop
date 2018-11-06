@@ -3,10 +3,9 @@
 <head>
     @include('backend.layouts.header')
 </head>
-<body class="@yield('class-body')">
+<body class="@yield('class-body')" style="height: 100vh;">
     @include('backend.layouts.navbar_page')
     @yield('content')
-    @include('backend.layouts.footer')
     @yield('script')
 </body>
 </html>

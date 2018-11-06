@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Flower;
-use Darryldecode\Cart\Facades\CartFacade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -28,14 +28,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        dd(CartFacade::session(Auth::guard('user')->id())->getContent());
+
         $viewData = [
-          'flowers' => Flower::all(),
+          'flowers' => Flower::query()->orderByDesc('id')->take(4)->get(),
         ];
         if (Auth::check())
-            $viewData = array_merge($viewData, ['carts'=> CartFacade::session(Auth::guard('user')->id())]);
+            $viewData = array_merge($viewData, ['carts'=> Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get()]);
 
-        return view('home')->with($viewData);
+        return view('frontend.home')->with($viewData);
     }
 
     public function changeLanguage($language)
@@ -43,5 +43,16 @@ class HomeController extends Controller
         Session::put('website_language', $language);
 
         return redirect()->back();
+    }
+
+    public function detailFlower(Request $request)
+    {
+        $viewData = [
+            'flowers' => Flower::query()->orderByDesc('id')->take(4)->get(),
+        ];
+        if (Auth::check())
+            $viewData = array_merge($viewData, ['carts'=> Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get()]);
+
+        return view('frontend.detail')->with($viewData);
     }
 }

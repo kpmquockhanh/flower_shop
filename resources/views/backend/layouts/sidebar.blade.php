@@ -82,12 +82,12 @@
                                 <span class="sidebar-normal"> Danh sách hoa </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                <span class="sidebar-mini-icon">X</span>
-                                <span class="sidebar-normal"> Danh sách hoa đã xóa </span>
-                            </a>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="">--}}
+                                {{--<span class="sidebar-mini-icon">X</span>--}}
+                                {{--<span class="sidebar-normal"> Danh sách hoa đã xóa </span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
                     </ul>
                 </div>
             </li>
@@ -114,27 +114,6 @@
                 </div>
             </li>
             <li>
-                <a data-toggle="collapse" href="#delivery">
-                    <i class="nc-icon nc-delivery-fast"></i>
-                    <p>
-                        Vận chuyển
-                        <b class="caret"></b>
-                    </p>
-                </a>
-                <div class="collapse " id="delivery">
-                    <ul class="nav">
-                        <li>
-                            <a href="{{route('admin.salers.list')}}">
-                                <span class="sidebar-mini-icon">V</span>
-                                <span class="sidebar-normal"> Danh sách vận chuyển </span>
-
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </li>
-            <li>
                 <a data-toggle="collapse" href="#bill">
                     <i class="nc-icon nc-paper"></i>
                     <p>
@@ -145,9 +124,30 @@
                 <div class="collapse " id="bill">
                     <ul class="nav">
                         <li>
-                            <a href="{{route('admin.salers.list')}}">
+                            <a href="{{route('admin.orders.list')}}">
                                 <span class="sidebar-mini-icon">H</span>
                                 <span class="sidebar-normal"> Danh sách hóa đơn </span>
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a data-toggle="collapse" href="#delivery">
+                    <i class="nc-icon nc-delivery-fast"></i>
+                    <p>
+                        Vận chuyển
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse " id="delivery">
+                    <ul class="nav">
+                        <li>
+                            <a href="{{route('admin.shippers.list')}}">
+                                <span class="sidebar-mini-icon">V</span>
+                                <span class="sidebar-normal"> Danh sách vận chuyển </span>
 
                             </a>
                         </li>

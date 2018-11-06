@@ -98,7 +98,6 @@ class FlowerController extends Controller
     public function update(FlowerRequest $request)
     {
 
-
         if ($id = $request->id)
         {
             $flower = Flower::find($id);
@@ -164,6 +163,7 @@ class FlowerController extends Controller
 
     public function changeShowStatus(Request $request)
     {
+
         if ($id = $request->id)
         {
             $flower = Flower::find($id);

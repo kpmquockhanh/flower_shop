@@ -24,6 +24,7 @@ class CreateFlowersTable extends Migration
             $table->string('price');
             $table->string('image')->nullable();
             $table->string('quantity');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

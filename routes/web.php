@@ -17,21 +17,33 @@ Route::middleware('locale')->group( function() {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
-    Route::get('test', function (){
-        return view('test');
-    });
 
     Route::get('test-cart', 'CartController@test');
 
     Auth::routes();
+    Route::prefix('product')->group(function (){
+        Route::get('/', 'HomeController@detailFlower')->name('product.index');
 
+    });
     Route::prefix('cart')->middleware('auth:user')->group(function (){
-        Route::get('/', 'CartController@index');
+        Route::get('/', 'CartController@index')->name('cart.index');
+        Route::get('/checkout', 'CartController@checkoutCart')->name('cart.checkout');
+        Route::post('/add-order', 'OrderController@store')->name('cart.checkout.add');
         Route::post('/add-cart', 'CartController@addToCart');
         Route::post('/remove-cart', 'CartController@removeFromCart');
+        Route::get('/remove-all-cart', 'CartController@clearAllCart');
     });
+
+
+
+
+
     Route::middleware('auth:user')->prefix('account')->group(function (){
         Route::get('/', 'UserController@index')->name('user.account');
+        Route::get('/addresses', 'UserController@showAddr')->name('user.addresses');
+        Route::post('/addresses', 'UserController@changeAddr');
+        Route::get('/detail', 'UserController@showDetail')->name('user.detail');
+        Route::post('/detail', 'UserController@changeDetail');
         Route::post('/change-info', 'UserController@changeInfo')->name('change-info');
         Route::post('/change-pass', 'UserController@changePassword')->name('change-pass');
 
@@ -56,7 +68,22 @@ Route::middleware('locale')->group( function() {
             Route::get('/edit/{id}','SalerController@edit')->name('admin.salers.edit');
             Route::post('/edit','SalerController@update')->name('admin.salers.update');
             Route::post('/remove','SalerController@delete')->name('admin.salers.remove');
-            Route::post('/change-status','SalerController@changeStatus')->name('admin.flowers.change_status');
+            Route::post('/change-status','SalerController@changeStatus')->name('admin.salers.change_status');
+        });
+
+        Route::prefix('orders')->middleware('auth:admin')->group(function (){
+            Route::get('/','OrderController@index')->name('admin.orders.list');
+            Route::get('/edit/{id}','OrderController@edit')->name('admin.orders.edit');
+            Route::post('/edit','OrderController@update')->name('admin.orders.update');
+            Route::post('/remove','OrderController@delete')->name('admin.orders.remove');
+        });
+        Route::prefix('shippers')->middleware('auth:admin')->group(function (){
+            Route::get('/','ShipperController@index')->name('admin.shippers.list');
+            Route::get('/add','ShipperController@create')->name('admin.shippers.add');
+            Route::post('/add','ShipperController@store')->name('admin.shippers.store');
+            Route::get('/edit/{id}','ShipperController@edit')->name('admin.shippers.edit');
+            Route::post('/edit','ShipperController@update')->name('admin.shippers.update');
+            Route::post('/remove','ShipperController@delete')->name('admin.shippers.remove');
         });
 
         Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
