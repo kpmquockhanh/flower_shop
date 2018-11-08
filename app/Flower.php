@@ -32,4 +32,8 @@ class Flower extends Model
     {
         return $this->belongsTo(Admin::class);
     }
+    public function getSalePriceAttribute()
+    {
+        return $this->price*(1-$this->saleoff);
+    }
 }

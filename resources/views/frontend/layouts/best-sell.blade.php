@@ -8,7 +8,8 @@
                     <div class="home-block-inner">
                         <div class="block-title">
                             <h2>Best<br>
-                                <em> Seller</em></h2>
+                                <em> Seller</em>
+                            </h2>
 
                         </div>
                         <div class="pretext">
@@ -24,7 +25,7 @@
                                 <div class="item-inner">
                                     <div class="item-img">
                                         <div class="item-img-info">
-                                            <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                            <a href="{{route('product.index', ['id'=>$flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                 <figure class="img-responsive" style="height: 200px;">
                                                     <img alt="" src="{{asset('images/'.$flower->image)}}" style="width: 100%;">
                                                 </figure>
@@ -35,18 +36,18 @@
                                                 <ul class="add-to-links">
                                                     <li>
                                                         <a class="yith-wcqv-button link-quickview" href="#"
-                                                           data-product_id="30">Quick View</a>
+                                                           data-product_id="{{$flower->id}}">Quick View</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="/creta/?add_to_wishlist=30"  data-product-id="30"
-                                                           data-product-type="simple" class="add_to_wishlist link-wishlist"                                >Add to Wishlist</a>
-                                                    </li>
-                                                    <li>
+                                                    {{--<li>--}}
+                                                        {{--<a href="/creta/?add_to_wishlist=30"  data-product-id="30"--}}
+                                                           {{--data-product-type="simple" class="add_to_wishlist link-wishlist"                                >Add to Wishlist</a>--}}
+                                                    {{--</li>--}}
+                                                    {{--<li>--}}
 
-                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
-                                                        >Add to Compare</a>
+                                                        {{--<a href="#" class="compare link-compare add_to_compare" data-product_id="30"--}}
+                                                        {{-->Add to Compare</a>--}}
 
-                                                    </li>
+                                                    {{--</li>--}}
                                                 </ul>
                                             </div>
                                         </div>

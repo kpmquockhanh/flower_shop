@@ -1,9 +1,15 @@
 @extends('backend.layouts.master')
-
 @section('style')
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <!-- Include Editor style. -->
+    <link href="{{asset('floara/css/froala_editor.pkgd.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('floara/css/froala_style.min.css')}}" rel="stylesheet" type="text/css" />
+    <style>
+        a[href="https://froala.com/wysiwyg-editor"], a[href="https://www.froala.com/wysiwyg-editor?k=u"] {
+            display: none !important;
+        }
+    </style>
 @stop
+
 
 @section('content')
     <div class="content">
@@ -126,7 +132,7 @@
                                     @endif
                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                         <div class="fileinput-new thumbnail">
-                                            <img src="{{$flower->image?asset('images/'.$flower->image):asset('assets/admin/assets/img/image_placeholder.jpg')}}" alt="...">
+                                            <img src="{{$flower->image?asset('images/'.$flower->image):asset('backend/img/placeholder.jpg')}}" alt="...">
                                         </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                         <div>
@@ -147,4 +153,20 @@
             </div>
         </form>
     </div>
+@stop
+
+@section('script')
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="{{asset('floara/js/froala_editor.pkgd.min.js')}}"></script>
+
+    <!-- Initialize the editor. -->
+    <script>
+        $(function() {
+            $('textarea').froalaEditor({
+                heightMin: 200,
+                spellcheck: false,
+            })
+        });
+    </script>
+
 @stop

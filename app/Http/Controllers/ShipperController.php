@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Shipper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ShipperController extends Controller
 {
@@ -71,5 +72,48 @@ class ShipperController extends Controller
         Shipper::create($data);
 
         return redirect(route('admin.shippers.list'));
+    }
+
+    public function edit($id)
+    {
+        if ($id)
+        {
+            $shipper = Shipper::findOrFail($id);
+            if ($shipper)
+                return view('backend.shippers.edit', compact('shipper'));
+            return redirect()->back();
+        }
+        return redirect()->back();
+    }
+
+    public function update(Request $request)
+    {
+        if ($id = $request->id)
+        {
+            $shipper = Shipper::find($id);
+            if ($shipper)
+            {
+                $data = $request->only([
+                    'shipper_name',
+                    'shipper_status_code',
+                    'shipper_phone',
+                    'shipper_image',
+                ]);
+
+                if ($image = $request->image)
+                {
+                    $name = time().'.'.$image->getClientOriginalExtension();;
+                    $image->move(public_path('images/avatars'), $name);
+                    $data['image'] = $name;
+                }
+
+                $shipper->update(array_merge($data, [
+                    'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
+                ]));
+                return redirect(route('admin.shippers.list'));
+            }
+            return redirect()->back();
+        }
+        return redirect()->back();
     }
 }

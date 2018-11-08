@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Flower;
+use App\Shipper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -119,8 +120,9 @@ class CartController extends Controller
         if (Auth::check())
             $viewData = array_merge($viewData, [
                 'carts'=> $carts,
+                'shippers'=> Shipper::query()->get(),
                 'subtotal' => $carts->sum(function ($item){
-                    return $item->flower->price*$item->quantity;
+                    return $item->flower->sale_price*$item->quantity;
                 })]);
         return view('frontend.checkout.checkout')->with($viewData);
     }

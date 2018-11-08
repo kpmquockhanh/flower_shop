@@ -4,9 +4,18 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class Admin extends Authenticatable
 {
+
+    public function canChange()
+    {
+        if (Auth::guard('admin')->check())
+            return $this->id == Auth::guard('admin')->id() || Auth::guard('admin')->user()->type == 3;
+        else
+            return false;
+    }
 
     use Notifiable;
 

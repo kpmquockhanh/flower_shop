@@ -123,20 +123,22 @@
                                             {{$saler->updated_at->diffForHumans()}}
                                         </td>
                                         <td>
-                                            <a href="#" rel="tooltip"
-                                               class="btn btn-{{$saler->status?'primary':'success'}} btn-icon btn-sm change-saler-status" data-id="{{$saler->id}}">
-                                                <i class="fa {{$saler->status?'fa-minus':'fa-check'}}"></i>
-                                            </a>
-                                            <a href="{{route('admin.salers.edit', $saler->id)}}" rel="tooltip"
-                                               class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""
-                                               title="">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                            <button type="button" rel="tooltip"
-                                                    class="btn btn-danger btn-icon btn-sm btn-remove-saler"
-                                                    data-id="{{$saler->id}}" title="">
-                                                <i class="fa fa-times"></i>
-                                            </button>
+                                           @if ($saler->canChange())
+                                                <a href="#" rel="tooltip"
+                                                   class="btn btn-{{$saler->status?'primary':'success'}} btn-icon btn-sm change-saler-status" data-id="{{$saler->id}}">
+                                                    <i class="fa {{$saler->status?'fa-minus':'fa-check'}}"></i>
+                                                </a>
+                                                <a href="{{route('admin.salers.edit', $saler->id)}}" rel="tooltip"
+                                                   class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""
+                                                   title="">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                <button type="button" rel="tooltip"
+                                                        class="btn btn-danger btn-icon btn-sm btn-remove-saler"
+                                                        data-id="{{$saler->id}}" title="">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                           @endif
                                         </td>
                                     </tr>
                                 @endforeach

@@ -86,6 +86,7 @@
                                         <strong>{{ $errors->first('type') }}</strong>
                                     </div>
                                 @endif
+                                @if ($saler->type == 3)
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
                                     <div class="form-group">
@@ -95,11 +96,14 @@
                                             <option class="bs-title-option" value="">Trạng thái</option>
                                             <option value="1" {{$saler->type == 1 ?'selected':''}} class="text-success">Saler</option>
                                             <option value="2" {{$saler->type == 2 ?'selected':''}} class="text-primary" >Developer</option>
-                                            <option value="3" {{$saler->type == 3 ?'selected':''}} class="text-danger">Admin</option>
+
+                                               <option value="3" {{$saler->type == 3 ?'selected':''}} class="text-danger">Admin</option>
+
                                         </select>
                                         </span>
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <div class="row">

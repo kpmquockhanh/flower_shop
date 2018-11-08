@@ -8,8 +8,8 @@
                 <img src="{{asset('backend/img/logo-small.png')}}">
             </div>
         </a>
-        <a href="/" class="simple-text logo-normal">
-            Creative Tim
+        <a href="{{route('admin.dashboard')}}" class="simple-text logo-normal">
+            Admin Area
             <!-- <div class="logo-image-big">
               <img src="../assets/img/logo-big.png">
             </div> -->
@@ -31,24 +31,24 @@
                 <div class="clearfix"></div>
                 <div class="collapse" id="collapseExample">
                     <ul class="nav">
-                        <li>
-                            <a href="#">
-                                <span class="sidebar-mini-icon">MP</span>
-                                <span class="sidebar-normal">My Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="sidebar-mini-icon">EP</span>
-                                <span class="sidebar-normal">Edit Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="sidebar-mini-icon">S</span>
-                                <span class="sidebar-normal">Settings</span>
-                            </a>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<span class="sidebar-mini-icon">MP</span>--}}
+                                {{--<span class="sidebar-normal">My Profile</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<span class="sidebar-mini-icon">EP</span>--}}
+                                {{--<span class="sidebar-normal">Edit Profile</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<span class="sidebar-mini-icon">S</span>--}}
+                                {{--<span class="sidebar-normal">Settings</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
                         <li>
                             <a href="{{route('admin.logout')}}">
                                 <span class="sidebar-mini-icon">L</span>
@@ -127,6 +127,27 @@
                             <a href="{{route('admin.orders.list')}}">
                                 <span class="sidebar-mini-icon">H</span>
                                 <span class="sidebar-normal"> Danh sách hóa đơn </span>
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a data-toggle="collapse" href="#delivery">
+                    <i class="nc-icon nc-money-coins"></i>
+                    <p>
+                        Thanh toán
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse " id="delivery">
+                    <ul class="nav">
+                        <li>
+                            <a href="{{route('admin.payments.list')}}">
+                                <span class="sidebar-mini-icon">T</span>
+                                <span class="sidebar-normal"> Danh sách thanh toán</span>
 
                             </a>
                         </li>

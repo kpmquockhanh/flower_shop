@@ -3,7 +3,6 @@
     @include('frontend.layouts.slider')
     <div class="content-page">
         <div class="container">
-            <!-- featured category fashion -->
             <div class="category-product">
                 <div class="navbar nav-menu">
                     <div class="navbar-collapse">
@@ -11,7 +10,7 @@
 
                             <li>
                                 <div class="new_title">
-                                    <h2><strong> New </strong>Products</h2>
+                                    <h2>Sản phẩm <strong>mới </strong></h2>
 
                                 </div>
                             </li>
@@ -56,7 +55,7 @@
                                                     <div class="item-inner">
                                                         <div class="item-img">
                                                             <div class="item-img-info">
-                                                                <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                                                <a href="{{route('product.index', ['id'=> $flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                                     <figure class="img-responsive" style="height: 250px;">
                                                                         <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('images/'.$flower->image)}}" style="width: 100%">
                                                                     </figure>
@@ -68,18 +67,18 @@
                                                                 <div class="box-hover">
                                                                     <ul class="add-to-links">
                                                                         <li>
-                                                                            <a class="yith-wcqv-button link-quickview" href="#"
-                                                                               data-product_id="30">Quick View</a>
+                                                                            <a class="link-quickview" href="#"
+                                                                               data-product_id="{{$flower->id}}">Quick View</a>
                                                                         </li>
-                                                                        <li>
-                                                                            <a href="#"  data-product-id="30"
-                                                                               data-product-type="simple" class="add_to_wishlist link-wishlist" >Add to Wishlist</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
-                                                                            >Add to Compare</a>
+                                                                        {{--<li>--}}
+                                                                            {{--<a href="#"  data-product-id="30"--}}
+                                                                               {{--data-product-type="simple" class="add_to_wishlist link-wishlist" >Add to Wishlist</a>--}}
+                                                                        {{--</li>--}}
+                                                                        {{--<li>--}}
+                                                                            {{--<a href="#" class="compare link-compare add_to_compare" data-product_id="30"--}}
+                                                                            {{-->Add to Compare</a>--}}
 
-                                                                        </li>
+                                                                        {{--</li>--}}
                                                                     </ul>
                                                                 </div>
 
@@ -141,7 +140,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Bouquet of White Gerberas" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Bouquet of White Gerberas" src="{{asset('assets/uploads/sites/26/2017/07/product1-277x366.jpg')}}"">
+                                                                    <img alt="Bouquet of White Gerberas" src="{{asset('assets/uploads/sites/26/2017/07/product1-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -155,8 +154,8 @@
                                                                            data-product_id="1733">Quick View</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="/creta/?add_to_wishlist=1733"  data-product-id="1733"
-                                                                           data-product-type="simple" class="add_to_wishlist link-wishlist"                                >Add to Wishlist</a>
+                                                                        <a href=""  data-product-id="1733"
+                                                                           data-product-type="simple" class="add_to_wishlist link-wishlist">Add to Wishlist</a>
                                                                     </li>
                                                                     <li>
 
@@ -207,7 +206,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Glass Vase of Pink Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}"">
+                                                                    <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -271,9 +270,9 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
+                                                            <a href="{{route('product.index', ['id'=> $flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}"">
+                                                                    <img alt="{{$flower->name}}" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -304,8 +303,8 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="#"
-                                                                                       title="Bunch of Assorted Gerberas in a Glass Vase"> Bunch of Assorted Gerberas in a Glass Vase </a>
+                                                            <div class="item-title">
+                                                                <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase"> Bunch of Assorted Gerberas in a Glass Vase </a>
                                                             </div>
                                                             <div class="item-content">
                                                                 <div class="rating">
@@ -339,7 +338,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Round Handle Basket of Mixed Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}"">
+                                                                    <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -412,7 +411,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Bouquet of White Gerberas" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Bouquet of White Gerberas" src="{{asset('assets/uploads/sites/26/2017/07/product1-277x366.jpg')}}"">
+                                                                    <img alt="Bouquet of White Gerberas" src="{{asset('assets/uploads/sites/26/2017/07/product1-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -478,7 +477,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Glass Vase of Pink Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}"">
+                                                                    <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -544,7 +543,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}"">
+                                                                    <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -610,7 +609,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Round Handle Basket of Mixed Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}"">
+                                                                    <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -683,7 +682,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Glass Vase of Pink Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}"">
+                                                                    <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -749,7 +748,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}"">
+                                                                    <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -815,7 +814,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Round Handle Basket of Mixed Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}"">
+                                                                    <img alt="Round Handle Basket of Mixed Roses" src="{{asset('assets/uploads/sites/26/2017/07/product5-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -881,7 +880,7 @@
                                                         <div class="item-img-info">
                                                             <a href="#" title="Glass Vase with Red and White Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="Glass Vase with Red and White Roses" src="{{asset('assets/uploads/sites/26/2017/07/product7-277x366.jpg')}}"">
+                                                                    <img alt="Glass Vase with Red and White Roses" src="{{asset('assets/uploads/sites/26/2017/07/product7-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -950,7 +949,7 @@
             </div>
         </div>
     </div>
-    
+
     @include('frontend.layouts.best-sell')
 
 

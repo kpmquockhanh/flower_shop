@@ -168,6 +168,7 @@
                 heightMin: 200,
                 spellcheck: false,
             })
-        }); </script>
+        });
+    </script>
 
 @stop

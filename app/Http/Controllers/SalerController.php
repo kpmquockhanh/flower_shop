@@ -73,7 +73,6 @@ class SalerController extends Controller
         if ($id)
         {
             $saler = Admin::findOrFail($id);
-
             if ($saler)
                 return view('backend.salers.edit', compact('saler'));
             return redirect()->back();
@@ -83,7 +82,6 @@ class SalerController extends Controller
 
     public function update(Request $request)
     {
-//        dd($request->all());
         if ($id = $request->id)
         {
             $saler = Admin::find($id);
@@ -95,6 +93,12 @@ class SalerController extends Controller
                     'status',
                     'type',
                 ]);
+
+                if (isset($data['type']))
+                    if ($data['type'] == 3)
+                        if (Auth::guard('admin')->user()->type !=3)
+                            $data['type'] = $saler->type;
+
                 if ($image = $request->image)
                 {
                     $name = time().'.'.$image->getClientOriginalExtension();;
@@ -116,6 +120,8 @@ class SalerController extends Controller
     {
         if ($id = $request->id)
         {
+            $admin = Admin::findOrFail($id);
+
             if (Admin::destroy($id))
             {
                 Flower::where('admin_id', $id)->delete();
@@ -123,9 +129,6 @@ class SalerController extends Controller
                     'status' => true,
                 ]);
             }
-            return response()->json([
-                'status' => false,
-            ]);
         }
         return response()->json([
             'status' => false,

@@ -124,7 +124,7 @@
                                                         </td>
                                                         <td class="product-total">
                                                             <span class="woocs_special_price_code">
-                                                                <span class="woocommerce-Price-amount amount">{{number_format($item->flower->price*$item->quantity)}}
+                                                                <span class="woocommerce-Price-amount amount">{{number_format($item->flower->sale_price*$item->quantity)}}
                                                                     VNĐ</span></span>
                                                         </td>
                                                     </tr>
@@ -141,29 +141,23 @@
                                                 <tr class="shipping">
                                                     <th>Shipping <i>(non avaiable yet.)</i></th>
                                                     <td data-title="Shipping">
-                                                        <ul id="shipping_method">
-                                                            <li>
-                                                                <input type="radio" name="shipping_method[0]"
-                                                                       data-index="0"
-                                                                       id="shipping_method_0_legacy_flat_rate"
-                                                                       value="legacy_flat_rate" class="shipping_method"
-                                                                       checked="checked">
-                                                                <label for="shipping_method_0_legacy_flat_rate">Flat
-                                                                    Rate: <span class="woocommerce-Price-amount amount"><span
-                                                                                class="woocommerce-Price-currencySymbol">$</span>1.00</span></label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" name="shipping_method[0]"
-                                                                       data-index="0"
-                                                                       id="shipping_method_0_legacy_free_shipping"
-                                                                       value="legacy_free_shipping"
-                                                                       class="shipping_method">
-                                                                <label for="shipping_method_0_legacy_free_shipping">Free
-                                                                    Shipping: <span
-                                                                            class="woocommerce-Price-amount amount"><span
-                                                                                class="woocommerce-Price-currencySymbol">$</span>0.00</span></label>
-                                                            </li>
-                                                        </ul>
+                                                        @if ($shippers->count())
+                                                            <ul id="shipping_method">
+                                                                @foreach($shippers as $shipper)
+                                                                    <li>
+                                                                        <input type="radio" name="shipping_method" id="shipping_method_0_legacy_flat_rate" class="shipping_method"
+                                                                               checked="checked">
+                                                                        <label for="shipping_method_0_legacy_flat_rate">{{$shipper->shipper_name}}:
+                                                                            <span class="woocommerce-Price-amount amount">1000</span>
+                                                                        </label>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                            @else
+                                                            <label for="shipping_method_0_legacy_flat_rate">
+                                                                No shippers avaiable.
+                                                            </label>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                                 <tr class="order-total">

@@ -21,7 +21,8 @@
 
                                                 <figure class="woocommerce-product-gallery__wrapper product-full">
                                                     <div data-thumb="#" class="woocommerce-product-gallery__image ">
-                                                        <a class="woocommerce-main-image zoom cloud-zoom"><img id="product-zoom" class="attachment-shop_single size-shop_single wp-post-image " src="#" data-zoom-image="#" data-large_image="#" data-large_image_width="800" data-large_image_height="800"></a>
+                                                        <a class="woocommerce-main-image zoom cloud-zoom">
+                                                            <img id="product-zoom" class="attachment-shop_single size-shop_single wp-post-image " src="{{asset('images/'.$flower->image)}}" data-zoom-image="#" data-large_image="#" data-large_image_width="800" data-large_image_height="800"></a>
                                                     </div>
 
                                                 </figure>
@@ -39,9 +40,10 @@
                                         <!--#prev-next -->
 
                                         <div class="product-name">
-                                            <h1 itemprop="name" class="product_title entry-title">Basket of Roses with Dairymilk Silk</h1></div>
+                                            <h1 itemprop="name" class="product_title entry-title">{{$flower->name}}</h1></div>
                                         <div class="price-block">
-                                            <div class="price-box price"><span class="woocs_price_code" data-product-id="113"><span class="woocs_price_code" data-product-id="113"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>77.99</span>
+                                            <div class="price-box price"><span class="woocs_price_code" data-product-id="113"><span class="woocs_price_code" data-product-id="113">
+                                                        <span class="woocommerce-Price-amount amount">{{number_format($flower->price)}} <span class="woocommerce-Price-currencySymbol">VNĐ</span></span>
                                             </span>
                                             </span>
                                             </div>
@@ -50,23 +52,15 @@
 
                                         <div class="woocommerce-product-details__short-description short-description">
                                             <h2>Quick Overview</h2>
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+                                            <p>{!! $flower->message !!}</p>
                                         </div>
 
-                                        <form class="cart" action="#" method="post" enctype="multipart/form-data">
-
-                                            <div class="quantity">
-                                                <div class="pull-left">
-                                                    <div class="custom pull-left">
-
-                                                        <input type="number" id="quantity_5bd75c312d853" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <button type="submit" name="add-to-cart" value="113" class="single_add_to_cart_button button alt">Add to cart</button>
-
-                                        </form>
+                                        <div class="action pull-right">
+                                            <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="{{$flower->id}}"
+                                               href='#'>
+                                                <span>Add to cart </span>
+                                            </a>
+                                        </div>
 
                                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-113">
                                             <div class="yith-wcwl-add-button show" style="display:block">
@@ -165,7 +159,7 @@
 
                                         <h2>Product Description</h2>
 
-                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p>
+                                        <p>{!! $flower->message !!}</p>
                                     </div>
                                     <div class="panel entry-content" id="tab-reviews" style="display: none;">
                                         <div id="reviews" class="woocommerce-Reviews">

@@ -65,6 +65,9 @@
                                         Tên
                                     </th>
                                     <th>
+                                        Trạng thái
+                                    </th>
+                                    <th>
                                         Số điện thoại
                                     </th>
                                     <th>
@@ -94,6 +97,9 @@
                                         <td>
                                             {{$shipper->shipper_name}}
                                         </td>
+                                        <td class="{{$shipper->shipper_status_code?'text-success':'text-danger'}}" id="shipper-status">
+                                            {{$shipper->name_status}}
+                                        </td>
                                         <td>
                                             {{$shipper->shipper_phone}}
                                         </td>
@@ -104,21 +110,21 @@
                                             {{$shipper->updated_at->diffForHumans()}}
                                         </td>
                                         <td>
-                                            <a href="#" rel="tooltip"
-                                               class="btn btn-{{$shipper->status?'primary':'success'}} btn-icon btn-sm change-saler-status" data-id="{{$shipper->id}}">
-                                                <i class="fa {{$shipper->status?'fa-minus':'fa-check'}}"></i>
-                                            </a>
+                                            {{--<a href="#" rel="tooltip"--}}
+                                               {{--class="btn btn-{{$shipper->status?'primary':'success'}} btn-icon btn-sm change-saler-status" data-id="{{$shipper->id}}">--}}
+                                                {{--<i class="fa {{$shipper->status?'fa-minus':'fa-check'}}"></i>--}}
+                                            {{--</a>--}}
                                             <a href="{{route('admin.shippers.edit', $shipper->id)}}" rel="tooltip"
                                                class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""
                                                title="">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            <button type="button" rel="tooltip"
-                                                    class="btn btn-danger btn-icon btn-sm btn-remove-shipper
-"
-                                                    data-id="{{$shipper->id}}" title="">
-                                                <i class="fa fa-times"></i>
-                                            </button>
+                                            {{--<button type="button" rel="tooltip"--}}
+                                                    {{--class="btn btn-danger btn-icon btn-sm btn-remove-shipper--}}
+{{--"--}}
+                                                    {{--data-id="{{$shipper->id}}" title="">--}}
+                                                {{--<i class="fa fa-times"></i>--}}
+                                            {{--</button>--}}
                                         </td>
                                     </tr>
                                 @endforeach

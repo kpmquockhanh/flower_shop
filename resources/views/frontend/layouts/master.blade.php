@@ -291,61 +291,6 @@
             <li id="accordion-menu-item-2290" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="#" class="">Track Order</a></li>
             <li class="menu-item"><a href="#">Login</a></li><li class="menu-item"><a href="#">Register</a></li></ul></div></div>
 
-<div id="yith-quick-view-modal">
-
-    <div class="yith-quick-view-overlay"></div>
-
-    <div class="yith-wcqv-wrapper">
-
-        <div class="yith-wcqv-main">
-
-            <div class="yith-wcqv-head">
-                <a href="#" id="yith-quick-view-close" class="yith-wcqv-close">X</a>
-            </div>
-
-            <div id="yith-quick-view-content" class="woocommerce single-product"></div>
-
-        </div>
-
-    </div>
-
-</div>
-{{--<script>(function() {function addEventListener(element,event,handler) {--}}
-        {{--if(element.addEventListener) {--}}
-            {{--element.addEventListener(event,handler, false);--}}
-        {{--} else if(element.attachEvent){--}}
-            {{--element.attachEvent('on'+event,handler);--}}
-        {{--}--}}
-    {{--}function maybePrefixUrlField() {--}}
-        {{--if(this.value.trim() !== '' && this.value.indexOf('http') !== 0) {--}}
-            {{--this.value = "http://" + this.value;--}}
-        {{--}--}}
-    {{--}--}}
-
-        {{--var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');--}}
-        {{--if( urlFields && urlFields.length > 0 ) {--}}
-            {{--for( var j=0; j < urlFields.length; j++ ) {--}}
-                {{--addEventListener(urlFields[j],'blur',maybePrefixUrlField);--}}
-            {{--}--}}
-        {{--}/* test if browser supports date fields */--}}
-        {{--var testInput = document.createElement('input');--}}
-        {{--testInput.setAttribute('type', 'date');--}}
-        {{--if( testInput.type !== 'date') {--}}
-
-            {{--/* add placeholder & pattern to all date fields */--}}
-            {{--var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');--}}
-            {{--for(var i=0; i<dateFields.length; i++) {--}}
-                {{--if(!dateFields[i].placeholder) {--}}
-                    {{--dateFields[i].placeholder = 'YYYY-MM-DD';--}}
-                {{--}--}}
-                {{--if(!dateFields[i].pattern) {--}}
-                    {{--dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';--}}
-                {{--}--}}
-            {{--}--}}
-        {{--}--}}
-
-    {{--})();--}}
-{{--</script>--}}
 
 {{--<link rel='stylesheet' id='woocommerce-currency-switcher-css'  href='{{asset('assets/plugins/woocommerce-currency-switcher/css/front.css')}}' type='text/css' media='all' />--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/magik-catalog-mode/assets/js/mgkcmo_common.js')}}'></script>--}}
@@ -362,20 +307,20 @@
 {{--<script type='text/javascript' src='#'></script>--}}
 <script type='text/javascript' src='{{asset('js/axios.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/main.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/contact-form-7/includes/js/scripts.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/woocommerce.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woo-variation-swatches/assets/js/frontend.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-compare/assets/js/woocompare.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-compare/assets/js/jquery.colorbox-min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-quick-view/assets/js/frontend.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/includes/js/comment-reply.min.js')}}'></script>
+{{--<script type='text/javascript' src='{{asset('assets/plugins/contact-form-7/includes/js/scripts.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/woocommerce.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woo-variation-swatches/assets/js/frontend.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-compare/assets/js/woocompare.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-compare/assets/js/jquery.colorbox-min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-quick-view/assets/js/frontend.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/includes/js/comment-reply.min.js')}}'></script>--}}
 <script type='text/javascript' src='{{asset('assets/themes/creta/js/bootstrap.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.cookie.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/themes/creta/js/countdown.js')}}'></script>
@@ -393,10 +338,9 @@
 <script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/mouse.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/slider.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/includes/js/underscore.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/single-product.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/mailchimp-for-wp/assets/js/forms-api.min.js')}}'></script>
-
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/single-product.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/mailchimp-for-wp/assets/js/forms-api.min.js')}}'></script>--}}
 @yield('script')
 </body>
 </html>

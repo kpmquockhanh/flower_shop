@@ -23,6 +23,7 @@ Route::middleware('locale')->group( function() {
     Auth::routes();
     Route::prefix('product')->group(function (){
         Route::get('/', 'HomeController@detailFlower')->name('product.index');
+        Route::post('/quick-view', 'HomeController@viewQuick')->name('product.quick-view');
 
     });
     Route::prefix('cart')->middleware('auth:user')->group(function (){
@@ -65,10 +66,12 @@ Route::middleware('locale')->group( function() {
             Route::get('/','SalerController@index')->name('admin.salers.list');
 //            Route::get('/add','SalerController@create')->name('admin.salers.add');
 //            Route::post('/add','SalerController@store')->name('admin.salers.store');
-            Route::get('/edit/{id}','SalerController@edit')->name('admin.salers.edit');
-            Route::post('/edit','SalerController@update')->name('admin.salers.update');
-            Route::post('/remove','SalerController@delete')->name('admin.salers.remove');
-            Route::post('/change-status','SalerController@changeStatus')->name('admin.salers.change_status');
+            Route::middleware('change.saler')->group(function (){
+                Route::get('/edit/{id}','SalerController@edit')->name('admin.salers.edit');
+                Route::post('/edit','SalerController@update')->name('admin.salers.update');
+                Route::post('/remove','SalerController@delete')->name('admin.salers.remove');
+                Route::post('/change-status','SalerController@changeStatus')->name('admin.salers.change_status');
+            });
         });
 
         Route::prefix('orders')->middleware('auth:admin')->group(function (){
@@ -84,6 +87,14 @@ Route::middleware('locale')->group( function() {
             Route::get('/edit/{id}','ShipperController@edit')->name('admin.shippers.edit');
             Route::post('/edit','ShipperController@update')->name('admin.shippers.update');
             Route::post('/remove','ShipperController@delete')->name('admin.shippers.remove');
+        });
+        Route::prefix('payments')->middleware('auth:admin')->group(function (){
+            Route::get('/','PaymentController@index')->name('admin.payments.list');
+            Route::get('/add','PaymentController@create')->name('admin.payments.add');
+            Route::post('/add','PaymentController@store')->name('admin.payments.store');
+            Route::get('/edit/{id}','PaymentController@edit')->name('admin.payments.edit');
+            Route::post('/edit','PaymentController@update')->name('admin.payments.update');
+            Route::post('/remove','PaymentController@delete')->name('admin.payments.remove');
         });
 
         Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');

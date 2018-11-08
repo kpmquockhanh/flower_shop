@@ -15,8 +15,8 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('payment_type');
-            $table->boolean('payment_allowed');
+            $table->string('payment_type')->unique();
+            $table->boolean('payment_allowed')->default(0);
             $table->timestamps();
         });
     }

@@ -1,5 +1,5 @@
 
-jQuery('.ajax_add_to_cart').on('click', function (e) {
+jQuery('body').on('click', '.ajax_add_to_cart', function (e) {
     e.preventDefault();
     jQuery('#preloader').fadeIn();
     let quantity = jQuery(this).attr('data-quantity');
@@ -17,6 +17,9 @@ jQuery('.ajax_add_to_cart').on('click', function (e) {
                 // console.log(jQuery('#cart-refresh .ajax-cart'));
                 jQuery('#cart-refresh .ajax-cart').addClass('sticky-topcart');
             }
+            jQuery('#yith-quick-view-modal').fadeOut(300, function () {
+                jQuery(this).remove();
+            });
             slideEffectAjax();
             jQuery('#preloader').fadeOut();
         }
@@ -126,6 +129,35 @@ jQuery('.button.remove-item').on('click', function (e) {
             }
             slideEffectAjax();
             jQuery('#preloader').fadeOut();
+        }else
+        {
+            alert(13);
+        }
+    }).catch(function (e) {
+        console.log(e);
+    });
+});
+
+jQuery('.link-quickview').on('click', function (e) {
+    e.preventDefault();
+    jQuery('#preloader').fadeIn();
+    let id = jQuery(this).attr('data-product_id');
+
+    axios.post('/product/quick-view',{
+        id: id,
+    }).then(function (res) {
+        if (res.data.status)
+        {
+            jQuery('#preloader').fadeOut();
+
+            jQuery('body').append(res.data.data);
+            jQuery('#yith-quick-view-close').click(function (e) {
+                e.preventDefault();
+                jQuery('#yith-quick-view-modal').fadeOut(300, function () {
+                    jQuery(this).remove();
+                });
+            });
+            
         }else
         {
             alert(13);

@@ -10,27 +10,25 @@
                         <div class="dropdown block-language-wrapper">
                             <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#">
                                 <img src="{{asset('assets/themes/creta/images/english.png')}}" alt="English">
-                                English<span class="caret"></span>
+                                English
+                                <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/english.png')}}" alt="Việt Nam">    Việt Nam</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/english.png')}}" alt="English">    English</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/francais.png')}}" alt="French"> French </a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/german.png')}}" alt="German">   German</a></li>
+                                {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/francais.png')}}" alt="French"> French </a></li>--}}
+                                {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/german.png')}}" alt="German">   German</a></li>--}}
                             </ul>
                         </div>
 
 
                         <div class="dropdown block-currency-wrapper">
-                            <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#">USD <span class="caret"></span></a>
+                            <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#">VNĐ <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation">
                                     <a role="menuitem" tabindex="-1" href="#">
-                                        $ - Dollar        </a>
-                                </li>
-
-                                <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="?currency=GBP">
-                                        &#163; - Pound        </a>
+                                        VNĐ - Viet Nam Dong
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -45,20 +43,23 @@
                             <div class="links">
                                 <!-- Header Top Links -->
                                 <ul id="menu-toplinks" class="top-links1 mega-menu1">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page narrow ">
+                                        <a href="{{route('admin.dashboard')}}" class=""><span>Admin</span></a>
+                                    </li>
                                     {{--<li id="nav-menu-item-2118" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">--}}
                                         {{--<a href="#" class=""><span>My Account</span></a>--}}
                                     {{--</li>--}}
-                                    <li id="nav-menu-item-2077" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                        <a href="#" class=""><span>Shop</span></a>
-                                    </li>
-                                    <li id="nav-menu-item-2125" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                        <a href="#" class=""><span>Wishlist</span></a>
-                                    </li>
-                                    <li id="nav-menu-item-2119" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
+                                    {{--<li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">--}}
+                                        {{--<a href="#" class=""><span>Shop</span></a>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">--}}
+                                        {{--<a href="#" class=""><span>Wishlist</span></a>--}}
+                                    {{--</li>--}}
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
                                         <a href="{{route('cart.checkout')}}" class=""><span>Checkout</span></a>
                                     </li>
                                     @if (!\Illuminate\Support\Facades\Auth::guard('user')->check())
-                                        <li id="nav-menu-item-2290" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
                                             <a href="#" class=""><span>Track Order</span></a>
                                         </li>
                                         <li class="menu-item">
@@ -72,6 +73,7 @@
                                         <li class="menu-item"><a href="{{route('logout')}}">Logout</a>
                                         </li>
                                     @endif
+
                                 </ul>
                                 <!-- End Header Top Links -->
                             </div>
@@ -104,8 +106,8 @@
                 <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 logo-block">
                     <!-- Header Logo -->
                     <div class="logo">
-                        <a class="logo" title="Creta Demo" href="{{route('home')}}"> <img
-                                    alt="Creta Demo" src="{{asset('img/logo small.png')}}"
+                        <a class="logo" title="klpflower.com" href="{{route('home')}}"> <img
+                                    alt="klpflower.com" src="{{asset('img/logo small.png')}}"
                                     height="35"
                                     width="116"> </a>
                     </div>

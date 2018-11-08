@@ -162,6 +162,7 @@ $('.btn-remove-saler').click(function () {
 
                 axios.post('/admin/salers/remove', {id: id})
                     .then(function (res) {
+                        console.log(res);
                         if (res.data.status)
                         {
                             iziToast.success({
@@ -175,7 +176,7 @@ $('.btn-remove-saler').click(function () {
                         {
                             iziToast.error({
                                 title: 'Lỗi',
-                                message: 'Đã xảy ra lỗi!',
+                                message: 'Xóa không thành công!',
                                 position: 'topCenter'
                             });
                         }
@@ -203,7 +204,7 @@ $('.btn-remove-saler').click(function () {
 
 $('.change-saler-status').on('click', function () {
     let button = $(this);
-    let status = $('#saler-status');
+    let status = button.parents('tr').find('#saler-status');
     let tagI = button.find('i');
     let id = $(this).attr('data-id');
     iziToast.question({
@@ -256,9 +257,10 @@ $('.change-saler-status').on('click', function () {
                         }
                         else
                         {
+                            // console.log(res);
                             iziToast.error({
                                 title: 'Lỗi',
-                                message: 'Đã xảy ra lỗi! Vui lòng thông báo với Admin',
+                                message: 'Thay đổi không thành công',
                                 position: 'topCenter'
                             });
                         }

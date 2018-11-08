@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
 
         $viewData = [
-          'flowers' => Flower::query()->orderByDesc('id')->take(4)->get(),
+          'flowers' => Flower::query()->where('show',true)->orderByDesc('id')->take(4)->get(),
         ];
         if (Auth::check())
             $viewData = array_merge($viewData, ['carts'=> Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get()]);
@@ -47,12 +47,36 @@ class HomeController extends Controller
 
     public function detailFlower(Request $request)
     {
-        $viewData = [
-            'flowers' => Flower::query()->orderByDesc('id')->take(4)->get(),
-        ];
-        if (Auth::check())
-            $viewData = array_merge($viewData, ['carts'=> Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get()]);
+        if ($request->id)
+        {
+            $viewData = [
+                'flower' => Flower::findOrFail($request->id),
+            ];
+            if (Auth::check())
+                $viewData = array_merge($viewData, ['carts'=> Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get()]);
 
-        return view('frontend.detail')->with($viewData);
+
+            return view('frontend.detail')->with($viewData);
+        }
+        return redirect()->back();
+    }
+
+    public function viewQuick(Request $request)
+    {
+        if (!$request->id)
+            return redirect()->back();
+
+        $flower = Flower::find($request->id);
+
+        if ($flower)
+            return response()->json([
+               'status' => true,
+               'data' => view('frontend.layouts.quick-view')->with(['flower' => $flower])->render(),
+            ]);
+        else
+            return response()->json([
+                'status' => false,
+            ]);
+
     }
 }

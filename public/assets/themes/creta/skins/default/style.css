@@ -112,7 +112,7 @@ Text Domain: creta
 /*----------- 1. Body --------------*/
 
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 12px;
 	color: #333;
 	background: #f8f8f8; line-height:1.42857;
@@ -167,7 +167,7 @@ button {
 	margin-bottom: 15px;
 }
 /* list/grid toolbar*/
-.toolbar span.button-active.button-grid, {
+.toolbar span.button-active.button-grid {
 background-color:#e62263!important;
 }
 .toolbar span.button-active.button-list {
@@ -2346,7 +2346,6 @@ nav {
 }
 ul.products-grid {
 	padding: 0;
-margin:
 }
 .category-products ul.products-grid li.item {
 	text-align: center;
@@ -7746,7 +7745,7 @@ footer p {
 }
 footer .footer-column a {
 	display: inline-block;
-	color: ##717171
+	color: #717171;
 }
 footer a {
 	line-height: normal;
@@ -10326,7 +10325,6 @@ input#mc4wp_email ,.mc4wp-form-fields input[type=email] {
 	background-color: #e62263;
 	color: #fff !important;
 	transition: all 200ms ease-in-out 0s;
-display:
 }
 /*sidbar product category */
 
@@ -15458,7 +15456,6 @@ ul.slideshow {
 }
 .slideshow-wrapper .forward {
 	top: 37% !important;
-	background: url(../../images/slideshow-arrows.png) -79px 0 no-repeat !important;
 	width: 22px !important;
 }
 .caption.top-center {

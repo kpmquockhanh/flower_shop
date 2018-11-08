@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Flower;
 use App\Http\Requests\FlowerRequest;
+use Faker\Provider\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class FlowerController extends Controller
 {
@@ -125,7 +127,8 @@ class FlowerController extends Controller
 
                 if ($image = $request->image)
                 {
-                    $name = time().'.'.$image->getClientOriginalExtension();;
+                   \Illuminate\Support\Facades\File::delete(public_path('images').'\\'.$flower->image);
+                    $name = time().'.'.$image->getClientOriginalExtension();
                     $image->move(public_path('images'), $name);
                     $data['image'] = $name;
                 }
@@ -144,10 +147,7 @@ class FlowerController extends Controller
     {
         if ($id = $request->id)
         {
-            if (!Flower::findOrFail($id)->canChange())
-                return response()->json([
-                    'status' => false,
-                ]);
+            \Illuminate\Support\Facades\File::delete(public_path('images').'\\'.Flower::findOrFail($id)->image);
             if (Flower::destroy($id))
                 return response()->json([
                 'status' => true,
