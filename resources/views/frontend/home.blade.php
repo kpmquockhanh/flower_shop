@@ -62,7 +62,7 @@
 
                                                                 </a>
                                                                 <div class="new-label new-top-left">
-                                                                    Sale11            </div>
+                                                                    Sale            </div>
 
                                                                 <div class="box-hover">
                                                                     <ul class="add-to-links">
