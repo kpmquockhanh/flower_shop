@@ -964,7 +964,7 @@
 
 
 
-    @include('frontend.layouts.blog')
+    {{--@include('frontend.layouts.blog')--}}
 @stop
 @section('script')
     <script type="text/javascript">

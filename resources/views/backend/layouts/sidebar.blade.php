@@ -135,14 +135,14 @@
                 </div>
             </li>
             <li>
-                <a data-toggle="collapse" href="#delivery">
+                <a data-toggle="collapse" href="#payment">
                     <i class="nc-icon nc-money-coins"></i>
                     <p>
                         Thanh toán
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse " id="delivery">
+                <div class="collapse " id="payment">
                     <ul class="nav">
                         <li>
                             <a href="{{route('admin.payments.list')}}">
