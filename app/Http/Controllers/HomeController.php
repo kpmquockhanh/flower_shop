@@ -28,12 +28,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $viewData = [
           'flowers' => Flower::query()->where('show',true)->orderByDesc('id')->take(4)->get(),
         ];
         if (Auth::check())
             $viewData = array_merge($viewData, ['carts'=> Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get()]);
+
 
         return view('frontend.home')->with($viewData);
     }

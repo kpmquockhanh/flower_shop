@@ -57,12 +57,12 @@
                                                             <div class="item-img-info">
                                                                 <a href="{{route('product.index', ['id'=> $flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                                     <figure class="img-responsive" style="height: 250px;">
-                                                                        <img alt="Bunch of Assorted Gerberas in a Glass Vase" src="{{asset('images/'.$flower->image)}}" style="width: 100%">
+                                                                        <img alt="{{$flower->name}}" src="{{asset('images/'.$flower->image)}}" style="width: 100%">
                                                                     </figure>
 
                                                                 </a>
                                                                 <div class="new-label new-top-left">
-                                                                    Sale            </div>
+                                                                    Sale11            </div>
 
                                                                 <div class="box-hover">
                                                                     <ul class="add-to-links">
@@ -270,9 +270,9 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="{{route('product.index', ['id'=> $flower->id])}}" title="{{$flower->name}}" class="product-image">
+                                                            <a href="#" title="Glass Vase of Pink Roses" class="product-image">
                                                                 <figure class="img-responsive">
-                                                                    <img alt="{{$flower->name}}" src="{{asset('assets/uploads/sites/26/2017/07/product4-277x366.jpg')}}">
+                                                                    <img alt="Glass Vase of Pink Roses" src="{{asset('assets/uploads/sites/26/2017/07/product2-277x366.jpg')}}">
                                                                 </figure>
 
                                                             </a>
@@ -283,28 +283,26 @@
                                                                 <ul class="add-to-links">
                                                                     <li>
                                                                         <a class="yith-wcqv-button link-quickview" href="#"
-                                                                           data-product_id="30">Quick View</a>
+                                                                           data-product_id="93">Quick View</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="/creta/?add_to_wishlist=30"  data-product-id="30"
+                                                                        <a href="/creta/?add_to_wishlist=93"  data-product-id="93"
                                                                            data-product-type="simple" class="add_to_wishlist link-wishlist"                                >Add to Wishlist</a>
                                                                     </li>
                                                                     <li>
 
-                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="30"
+                                                                        <a href="#" class="compare link-compare add_to_compare" data-product_id="93"
                                                                         >Add to Compare</a>
 
                                                                     </li>
                                                                 </ul>
                                                             </div>
-
-
                                                         </div>
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title">
-                                                                <a href="#" title="Bunch of Assorted Gerberas in a Glass Vase"> Bunch of Assorted Gerberas in a Glass Vase </a>
+                                                            <div class="item-title"><a href="#"
+                                                                                       title="Glass Vase of Pink Roses"> Glass Vase of Pink Roses </a>
                                                             </div>
                                                             <div class="item-content">
                                                                 <div class="rating">
@@ -316,13 +314,25 @@
                                                                 </div>
                                                                 <div class="item-price">
                                                                     <div class="price-box">
-                    <span class="regular-price">
-                          <span class="woocs_price_code" data-product-id="30"><span class="woocs_price_code" data-product-id="30"><del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>85.99</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>49.99</span></ins></span></span>                     </span>
+                                                                        <span class="regular-price">
+                                                                              <span class="woocs_price_code" data-product-id="93">
+                                                                                  <span class="woocs_price_code" data-product-id="93">
+                                                                                      <del>
+                                                                                          <span class="woocommerce-Price-amount amount">
+                                                                                              <span class="woocommerce-Price-currencySymbol">&#36;</span>13.99</span>
+                                                                                      </del>
+                                                                                      <ins>
+                                                                                          <span class="woocommerce-Price-amount amount">
+                                                                                              <span class="woocommerce-Price-currencySymbol">&#36;</span>12.00</span>
+                                                                                      </ins>
+                                                                                  </span>
+                                                                              </span>
+                                                                        </span>
 
                                                                     </div>
                                                                 </div>
                                                                 <div class="action">
-                                                                    <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="30"
+                                                                    <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="93"
                                                                        href='#'>
                                                                         <span>Add to cart </span>
                                                                     </a>
@@ -763,7 +773,7 @@
                                                                     </li>
                                                                     <li>
                                                                         <a href="/creta/?add_to_wishlist=30"  data-product-id="30"
-                                                                           data-product-type="simple" class="add_to_wishlist link-wishlist"                                >Add to Wishlist</a>
+                                                                           data-product-type="simple" class="add_to_wishlist link-wishlist">Add to Wishlist</a>
                                                                     </li>
                                                                     <li>
 
