@@ -76,7 +76,7 @@ class PaymentController extends Controller
     {
         if ($id = $request->id)
         {
-            $payment = Payment::find($id);
+            $payment = Payment::findOrFail($id);
             if ($payment)
             {
                 $data = $request->only([

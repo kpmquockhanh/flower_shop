@@ -126,4 +126,15 @@ class CartController extends Controller
                 })]);
         return view('frontend.checkout.checkout')->with($viewData);
     }
+
+    public function checkOrder()
+    {
+        $viewData = [];
+        $carts = $this->getCart();
+        if (Auth::check())
+            $viewData = array_merge($viewData, [
+                'carts'=> $carts,
+                ]);
+        return view('frontend.checkout.track-order')->with($viewData);
+    }
 }

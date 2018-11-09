@@ -29,12 +29,12 @@ Route::middleware('locale')->group( function() {
     Route::prefix('cart')->middleware('auth:user')->group(function (){
         Route::get('/', 'CartController@index')->name('cart.index');
         Route::get('/checkout', 'CartController@checkoutCart')->name('cart.checkout');
+        Route::get('/check-order', 'CartController@checkOrder')->name('cart.check-order');
         Route::post('/add-order', 'OrderController@store')->name('cart.checkout.add');
         Route::post('/add-cart', 'CartController@addToCart');
         Route::post('/remove-cart', 'CartController@removeFromCart');
         Route::get('/remove-all-cart', 'CartController@clearAllCart');
     });
-
 
 
 

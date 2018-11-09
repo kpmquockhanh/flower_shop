@@ -45,15 +45,16 @@
                 </form>
             </div>
             <div class="col-md-2 m-auto pr-5">
-                <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-50 pull-right"><i
-                            class="fa fa-plus-circle"></i></a>
+                <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-50 pull-right" style="display: flex;justify-content: center;">
+                    <i class="fa fa-plus-circle"></i>
+                </a>
             </div>
             @if (!count($flowers))
                 <div class="alert alert-info m-auto w-100">Không có hoa nào trong cơ sở dữ liệu. <a href="{{route('admin.flowers.list')}}" class="text-light font-weight-bold">Quay lại trang chủ</a></div>
             @endif
             <div class="col-md-12 row">
                 @foreach($flowers as $flower)
-                    <div class="col-md-3 position-relative item-flower">
+                    <div class="col-xl-3 col-lg-4 position-relative item-flower">
                         <div class="card">
                             <div class="card-header">
                                 <h5>{{str_limit($flower->name, $limit = 10, $end = '...')}}</h5>
@@ -109,7 +110,7 @@
                                          aria-expanded="false">
                                         {{--<p>Thông tin chi tiết đang được cập nhật</p>--}}
                                         <p>Tên hoa: <strong>{{$flower->name}}</strong></p>
-                                        <p>Giá: <strong>{{$flower->price}}</strong></p>
+                                        <p>Giá: <strong>{{number_format($flower->price)}}</strong></p>
                                         <p>Giảm giá: <strong>{{$flower->saleoff*100}} %</strong></p>
                                         <p>Người đăng: <strong>{{$flower->admin->name}}</strong></p>
                                         <p>Ngày tạo: <strong>{{$flower->created_at}}</strong></p>
