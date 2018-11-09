@@ -73,10 +73,10 @@
                                 <li class="fb pull-left"><a target="_blank" href='#'></a></li><li class="tw pull-left"><a target="_blank" href='#'></a></li><li class="googleplus pull-left"><a target="_blank" href='#'></a></li><li class="rss pull-left"><a target="_blank" href='#'></a></li><li class="pintrest pull-left"><a target="_blank" href='#'></a></li><li class="linkedin pull-left"><a target="_blank" href='#'></a></li><li class="youtube pull-left"><a target="_blank" href='#'></a></li> </ul>
                         </div>
 
-                        <aside id="text-3" class="widget widget_text">			<div class="textwidget"><div class="payment-accept"><img src="{{asset('assets/uploads/sites/26/2016/02/payment-1.png')}}" alt="payment1"> <img src="{{asset('assets/uploads/sites/26/2016/02/payment-2.png')}}" alt="payment2"> <img src="{{asset('assets/uploads/sites/26/2016/02/payment-3.png')}}" alt="payment3">
-                                    <img src="{{asset('assets/uploads/sites/26/2016/02/payment-4.png')}}" alt="payment4"> </div>
-                            </div>
-                        </aside>
+                        {{--<aside id="text-3" class="widget widget_text">			<div class="textwidget"><div class="payment-accept"><img src="{{asset('assets/uploads/sites/26/2016/02/payment-1.png')}}" alt="payment1"> <img src="{{asset('assets/uploads/sites/26/2016/02/payment-2.png')}}" alt="payment2"> <img src="{{asset('assets/uploads/sites/26/2016/02/payment-3.png')}}" alt="payment3">--}}
+                                    {{--<img src="{{asset('assets/uploads/sites/26/2016/02/payment-4.png')}}" alt="payment4"> </div>--}}
+                            {{--</div>--}}
+                        {{--</aside>--}}
 
 
 
@@ -105,28 +105,17 @@
         <div class="container">
             <div class="row">
 
-                <div style="text-align: center;"><a href="#"><img src="{{asset('assets/uploads/sites/75/2016/02/footer-logo.png')}}" alt="logo" /> </a></div>
-                <address><i class="fa fa-map-marker"></i> 123 Main Street, Anytown, CA 12345 USA <i class="fa fa-mobile"></i> +(408) 394-7557 <i class="fa fa-envelope"></i> abc@magikcommerce.com</address>
+                <div style="text-align: center;"><a href="#"><img src="{{asset('img/logo-footer.png')}}" alt="logo" /> </a></div>
+                <address>
+                    <i class="fa fa-map-marker"></i> Nhổn, Minh Khai
+                    <i class="fa fa-mobile"></i> +84989594241
+                    <i class="fa fa-envelope">
+                    </i> kpmquockhanh@gmail.com
+                </address>
             </div>
         </div>
     </div>
 
 
-    <!--footer-bottom-->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 col-xs-12 coppyright">© 2016 Magikcommerce. All Rights Reserved.</div>
-                <div class="col-sm-7 col-xs-12 company-links">
-                    <ul class="links">
-                        <li><a title="Magento Themes" href="#">Magento Themes</a></li>
-                        <li><a title="Premium Themes" href="#">Premium Themes</a></li>
-                        <li><a title="Responsive Themes" href="#">Responsive Themes</a></li>
-                        <li class="last"><a title="Magento Extensions" href="#">Magento Extensions</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </footer>
