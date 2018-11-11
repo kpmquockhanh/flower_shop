@@ -62,7 +62,8 @@
 
                                                                 </a>
                                                                 <div class="new-label new-top-left">
-                                                                    Sale            </div>
+                                                                    Sale {{$flower->saleoff*100}}%
+                                                                </div>
 
                                                                 <div class="box-hover">
                                                                     <ul class="add-to-links">

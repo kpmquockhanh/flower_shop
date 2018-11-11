@@ -10,7 +10,7 @@
                     <div id="product-30" class="product post-30 type-product status-publish has-post-thumbnail product_cat-men product_cat-fabric-handbags product_cat-furniture product_cat-beaded-handbags product_cat-clothing-swimwear product_cat-canvas-shoes product_cat-beach-clothing product_cat-handbags product_cat-jackets product_cat-singles product_cat-sling-bag product_cat-shoes product_cat-dresses product_cat-leather-shoes product_cat-music product_cat-swimsuits product_cat-tshirts product_cat-women product_cat-jewellery product_cat-formal-jackets product_cat-albums product_cat-bikinis product_cat-swimwear product_cat-dresses-apparel product_cat-backpack product_tag-womens-tshirts notblog first instock sale shipping-taxable purchasable product-type-simple">
                         <div class="images product-image">
                             <div class="sale-label sale-top-left">
-                                Sale
+                                Sale {{$flower->saleoff*100}}%
                             </div>
                             <div class="images" data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;">
                                 <figure class="woocommerce-product-gallery__wrapper product-full">
@@ -43,7 +43,7 @@
                                     </p>
                                 </div>
                                 <div class="woocommerce-product-details__short-description short-description">
-                                    <h2>Quick Overview</h2>
+                                    <h2>Overview</h2>
                                     <p>{!! $flower->message !!}</p>
                                 </div>
                                 <form class="cart" action="" method="post" enctype="multipart/form-data">
@@ -60,35 +60,35 @@
                       <span class="sku_wrapper">SKU:
                         <span class="sku">tsh3432</span>
                       </span>
-                                    <span class="posted_in">Categories:
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/men/" rel="tag">Anniversary</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/fabric-handbags/" rel="tag">Anniversary Flowers</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/furniture/" rel="tag">Birthday</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/beaded-handbags/" rel="tag">Birthday Flowers</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/clothing-swimwear/" rel="tag">Christmas</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/canvas-shoes/" rel="tag">Congratulations</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/beach-clothing/" rel="tag">Diwali</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/" rel="tag">Everyday Occasions</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/" rel="tag">Favourite Flowers</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/music/singles/" rel="tag">Flower Bouquet</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/sling-bag/" rel="tag">Flower Bouquets</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/" rel="tag">Flower with</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/" rel="tag">Flowers &amp; Combos</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/leather-shoes/" rel="tag">Get Well Soon</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/music/" rel="tag">Mixed Flowers</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/swimsuits/" rel="tag">New Year</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/tshirts/" rel="tag">New Year Flowers</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/" rel="tag">Occasion</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/" rel="tag">Occasional Day</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/formal-jackets/" rel="tag">Orchids</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/music/albums/" rel="tag">Precious Flowers</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/bikinis/" rel="tag">Rakhi</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/" rel="tag">Upcoming Occasions</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/dresses-apparel/" rel="tag">Valentine Day Flowers</a>,
-                        <a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/backpack/" rel="tag">Wedding Flowers</a>
+                                    <span class="posted_in">Categories: empty
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/" rel="tag">Anniversary</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/fabric-handbags/" rel="tag">Anniversary Flowers</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/furniture/" rel="tag">Birthday</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/beaded-handbags/" rel="tag">Birthday Flowers</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/clothing-swimwear/" rel="tag">Christmas</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/canvas-shoes/" rel="tag">Congratulations</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/beach-clothing/" rel="tag">Diwali</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/" rel="tag">Everyday Occasions</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/" rel="tag">Favourite Flowers</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/music/singles/" rel="tag">Flower Bouquet</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/sling-bag/" rel="tag">Flower Bouquets</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/" rel="tag">Flower with</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/" rel="tag">Flowers &amp; Combos</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/leather-shoes/" rel="tag">Get Well Soon</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/music/" rel="tag">Mixed Flowers</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/swimsuits/" rel="tag">New Year</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/tops-tees/tshirts/" rel="tag">New Year Flowers</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/" rel="tag">Occasion</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/jewellery/" rel="tag">Occasional Day</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/formal-jackets/" rel="tag">Orchids</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/music/albums/" rel="tag">Precious Flowers</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/bikinis/" rel="tag">Rakhi</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/" rel="tag">Upcoming Occasions</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/dresses-apparel/" rel="tag">Valentine Day Flowers</a>,--}}
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/backpack/" rel="tag">Wedding Flowers</a>--}}
                       </span>
-                                    <span class="tagged_as">Tag:
-                        <a href="http://wpdemo.magikthemes.com/creta/product-tag/womens-tshirts/" rel="tag">womens tshirts</a>
+                                    <span class="tagged_as">Tag: empty
+                        {{--<a href="http://wpdemo.magikthemes.com/creta/product-tag/womens-tshirts/" rel="tag">womens tshirts</a>--}}
                       </span>
                                 </div>
                             </div>

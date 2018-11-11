@@ -31,7 +31,7 @@
                                                         <img alt="" src="{{asset('images/'.$flower->image)}}" style="width: 100%;">
                                                     </figure>
                                                 </a>
-                                                <div class="new-label new-top-right">Sale</div>
+                                                <div class="new-label new-top-right">Sale {{$flower->saleoff*100}}%</div>
                                                 <div class="box-hover">
                                                     <ul class="add-to-links">
                                                         <li>
