@@ -99,7 +99,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="mt-2">{!! $flower->message?str_limit($flower->message, $limit = 50, $end = '...'):"Không có thông điệp." !!}</p>
+                                        <p class="mt-2">{!! $flower->message?str_limit(strip_tags($flower->message), $limit = 50, $end = '...'):"Không có thông điệp." !!}</p>
                                     </div>
 
                                     <div class="tab-pane" id="profile{{$flower->id}}" role="tabpanel"
@@ -111,6 +111,14 @@
                                         {{--<p>Thông tin chi tiết đang được cập nhật</p>--}}
                                         <p>Tên hoa: <strong>{{$flower->name}}</strong></p>
                                         <p>Giá: <strong>{{number_format($flower->price)}}</strong></p>
+                                        <p>Thể loại:
+                                        @foreach ($flower->categories->load('category') as $key => $category)
+                                                @if ($key)
+                                                    ,
+                                                @endif
+                                                    <strong>{{($category->category->cate_name)}}</strong>
+                                        @endforeach
+                                        </p>
                                         <p>Giảm giá: <strong>{{$flower->saleoff*100}} %</strong></p>
                                         <p>Người đăng: <strong>{{$flower->admin->name}}</strong></p>
                                         <p>Ngày tạo: <strong>{{$flower->created_at}}</strong></p>

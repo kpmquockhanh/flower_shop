@@ -7,7 +7,7 @@
                 <div class="col-md-8">
                     <div class="card ">
                         <div class="card-header">
-                            <h4 class="card-title">Sửa phương thức thanh toán123</h4>
+                            <h4 class="card-title">Sửa phương thức thanh toán</h4>
                         </div>
                         <div class="card-body ">
                             @csrf()

@@ -62,6 +62,16 @@ Route::middleware('locale')->group( function() {
             Route::post('/change-status','FlowerController@changeShowStatus')->name('admin.flowers.change_status');
         });
 
+        Route::prefix('categories')->middleware('auth:admin')->group(function (){
+            Route::get('/','CategoryController@index')->name('admin.categories.list');
+            Route::get('/add','CategoryController@create')->name('admin.categories.add');
+            Route::post('/add','CategoryController@store')->name('admin.categories.store');
+            Route::get('/edit/{id}','CategoryController@edit')->name('admin.categories.edit');
+            Route::post('/edit','CategoryController@update')->name('admin.categories.update');
+            Route::post('/remove','CategoryController@delete')->name('admin.categories.remove');
+            Route::post('/change-status','CategoryController@changeShowStatus')->name('admin.categories.change_status');
+        });
+
         Route::prefix('salers')->middleware('auth:admin')->group(function (){
             Route::get('/','SalerController@index')->name('admin.salers.list');
 //            Route::get('/add','SalerController@create')->name('admin.salers.add');

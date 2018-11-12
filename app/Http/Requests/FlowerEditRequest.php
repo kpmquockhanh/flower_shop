@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FlowerRequest extends FormRequest
+class FlowerEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class FlowerRequest extends FormRequest
             'saleoff' => 'min:0|max:1|numeric',
             'price' => 'required|numeric',
             'quantity' => 'required',
-            'image' => 'required',
+//            'image' => 'required',
         ];
     }
 

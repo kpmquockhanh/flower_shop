@@ -3,8 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Category extends Model
 {
-    //
+    public function canChange()
+    {
+        if (Auth::guard('admin')->check())
+            return Auth::guard('admin')->user()->type == 3;
+        else
+            return false;
+    }
 }

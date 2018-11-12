@@ -17,6 +17,7 @@ class Flower extends Model
         'price',
         'quantity',
         'image',
+        'admin_id'
     ];
 
 
@@ -36,4 +37,10 @@ class Flower extends Model
     {
         return $this->price*(1-$this->saleoff);
     }
+
+    public function categories()
+    {
+        return $this->hasMany(CategoryFlower::class);
+    }
+
 }

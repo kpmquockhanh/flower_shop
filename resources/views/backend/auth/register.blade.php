@@ -12,36 +12,35 @@
                                 <i class="nc-icon nc-tv-2"></i>
                             </div>
                             <div class="description">
-                                <h5 class="info-title">Marketing</h5>
+                                <h5 class="info-title">Xin chào</h5>
                                 <p class="description">
-                                    We've created the marketing campaign of the website. It was a very interesting
-                                    collaboration.
+                                    Hãy nhanh chóng đăng kí làm cộng tác viên của chúng tuôi ngay lào.
                                 </p>
                             </div>
                         </div>
-                        <div class="info-area info-horizontal">
-                            <div class="icon icon-primary">
-                                <i class="nc-icon nc-html5"></i>
-                            </div>
-                            <div class="description">
-                                <h5 class="info-title">Fully Coded in HTML5</h5>
-                                <p class="description">
-                                    We've developed the website with HTML5 and CSS3. The client has access to the code
-                                    using GitHub.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="info-area info-horizontal">
-                            <div class="icon icon-info">
-                                <i class="nc-icon nc-atom"></i>
-                            </div>
-                            <div class="description">
-                                <h5 class="info-title">Built Audience</h5>
-                                <p class="description">
-                                    There is also a Fully Customizable CMS Admin Dashboard for this product.
-                                </p>
-                            </div>
-                        </div>
+                        {{--<div class="info-area info-horizontal">--}}
+                            {{--<div class="icon icon-primary">--}}
+                                {{--<i class="nc-icon nc-html5"></i>--}}
+                            {{--</div>--}}
+                            {{--<div class="description">--}}
+                                {{--<h5 class="info-title">Fully Coded in HTML5</h5>--}}
+                                {{--<p class="description">--}}
+                                    {{--We've developed the website with HTML5 and CSS3. The client has access to the code--}}
+                                    {{--using GitHub.--}}
+                                {{--</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="info-area info-horizontal">--}}
+                            {{--<div class="icon icon-info">--}}
+                                {{--<i class="nc-icon nc-atom"></i>--}}
+                            {{--</div>--}}
+                            {{--<div class="description">--}}
+                                {{--<h5 class="info-title">Built Audience</h5>--}}
+                                {{--<p class="description">--}}
+                                    {{--There is also a Fully Customizable CMS Admin Dashboard for this product.--}}
+                                {{--</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="col-lg-4 col-md-6 mr-auto">
                         <div class="card card-signup">

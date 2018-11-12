@@ -1,26 +1,26 @@
 @extends('backend.layouts.master')
-@section('title', "Payments")
+@section('title', "Thể loại")
 @section('content')
     <div class="content">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title"> Danh sách phương thức thanh toán </h4>
+                        <h4 class="card-title"> Danh sách thể loại</h4>
                         <div class="row">
                             <div class="col-md-10 row no-gutters">
                                 <form action="" class="m-0 d-flex justify-content-around align-items-center w-100">
-                                    <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3">
-                                       <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round"
-                                               title="Sắp xếp theo" tabindex="-98" id="paginate" name="paginate">
-                                          <option class="bs-title-option" value="">Phân trang</option>
-                                          <option value="1" {{isset($queries['paginate'])?$queries['paginate'] == '1'?'selected':'':''}}>1 item / page</option>
-                                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '5'?'selected':'':''}}>5 items / page</option>
-                                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '20'?'selected':'':''}}>20 items / page</option>
-                                          <option value="50" {{isset($queries['paginate'])?$queries['paginate'] == '50'?'selected':'':''}}>50 items / page</option>
-                                          <option value="100" {{isset($queries['paginate'])?$queries['paginate'] == '100'?'selected':'':''}}>100 items / page</option>
-                                       </select>
-                                    </span>
+                    <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3">
+                       <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round"
+                               title="Sắp xếp theo" tabindex="-98" id="paginate" name="paginate">
+                          <option class="bs-title-option" value="">Phân trang</option>
+                          <option value="1" {{isset($queries['paginate'])?$queries['paginate'] == '1'?'selected':'':''}}>1 item / page</option>
+                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '5'?'selected':'':''}}>5 items / page</option>
+                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '20'?'selected':'':''}}>20 items / page</option>
+                          <option value="50" {{isset($queries['paginate'])?$queries['paginate'] == '50'?'selected':'':''}}>50 items / page</option>
+                          <option value="100" {{isset($queries['paginate'])?$queries['paginate'] == '100'?'selected':'':''}}>100 items / page</option>
+                       </select>
+                    </span>
                     <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3">
                        <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round"
                                title="Sắp xếp theo" tabindex="-98" id="sort" name="sort">
@@ -46,11 +46,11 @@
                     </span>
                         </form>
                     </div>
-                        <div class="col-md-2 m-auto pr-5">
-                            <a href="{{route('admin.payments.add')}}" class="btn btn-success w-50 pull-right">
-                                <i class="fa fa-plus-circle"></i>
-                            </a>
-                        </div>
+                            <div class="col-md-2 m-auto pr-5">
+                                <a href="{{route('admin.categories.add')}}" class="btn btn-success w-50 pull-right" style="display: flex;justify-content: center;">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -62,10 +62,10 @@
                                         #
                                     </th>
                                     <th>
-                                        Kiểu
+                                        Tên
                                     </th>
                                     <th>
-                                        Cho phép thanh toán
+                                        Mã
                                     </th>
                                     <th>
                                         Thời gian tạo
@@ -79,46 +79,43 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if (!count($payments))
+                                @if (!count($categories))
                                     <tr>
-                                        <td class="text-center" colspan="10">Không có phương thức thanh toán nào trong cơ sở dữ
+                                        <td class="text-center" colspan="6">Không có thể loại nào trong cơ sở dữ
                                             liệu
                                         </td>
                                     </tr>
                                 @endif
-                                @foreach($payments as $payment)
+                                @foreach($categories as $category)
                                     <tr>
                                         <td class="text-center">
-                                            {{$payment->id}}
+                                            {{$category->id}}
                                         </td>
                                         <td>
-                                            {{$payment->payment_type}}
-                                        </td>
-                                        <td class="{{$payment->payment_allowed?'text-success':'text-danger'}}" id="shipper-status">
-                                            {{$payment->name_status}}
+                                            {{$category->cate_name}}
                                         </td>
                                         <td>
-                                            {{$payment->created_at->diffForHumans()}}
+                                            {{$category->cate_code}}
                                         </td>
                                         <td>
-                                            {{$payment->updated_at->diffForHumans()}}
+                                            {{$category->created_at->diffForHumans()}}
                                         </td>
                                         <td>
-                                            {{--<a href="#" rel="tooltip"--}}
-                                               {{--class="btn btn-{{$payment->status?'primary':'success'}} btn-icon btn-sm change-saler-status" data-id="{{$payment->id}}">--}}
-                                                {{--<i class="fa {{$payment->status?'fa-minus':'fa-check'}}"></i>--}}
-                                            {{--</a>--}}
-                                            <a href="{{route('admin.payments.edit', $payment->id)}}" rel="tooltip"
-                                               class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""
-                                               title="">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                            {{--<button type="button" rel="tooltip"--}}
-                                                    {{--class="btn btn-danger btn-icon btn-sm btn-remove-shipper--}}
-{{--"--}}
-                                                    {{--data-id="{{$payment->id}}" title="">--}}
-                                                {{--<i class="fa fa-times"></i>--}}
-                                            {{--</button>--}}
+                                            {{$category->updated_at->diffForHumans()}}
+                                        </td>
+                                        <td>
+                                           @if (!$category->canChange())
+                                                <a href="{{route('admin.categories.edit', $category->id)}}" rel="tooltip"
+                                                   class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""
+                                                   title="">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                <button type="button" rel="tooltip"
+                                                        class="btn btn-danger btn-icon btn-sm btn-remove-category"
+                                                        data-id="{{$category->id}}" title="">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                           @endif
                                         </td>
                                     </tr>
                                 @endforeach
@@ -127,7 +124,7 @@
                         </div>
                     </div>
                     <div class="card-footer m-auto">
-                        {{$payments->appends($queries)->links()}}
+                        {{$categories->appends($queries)->links()}}
                     </div>
                 </div>
             </div>

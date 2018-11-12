@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\CategoryFlower;
 use App\Flower;
+use App\Http\Requests\FlowerEditRequest;
 use App\Http\Requests\FlowerRequest;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
@@ -16,7 +19,6 @@ class FlowerController extends Controller
     public function index(Request $request)
     {
         $flowers = Flower::with('admin');
-
         if (Auth::guard('admin')->user()->type != 3 )
             $flowers->where('admin_id', Auth::guard('admin')->id());
 
@@ -39,12 +41,18 @@ class FlowerController extends Controller
             'flowers' => $flowers->paginate($page),
             'queries' => $request->query(),
         ];
+
         return view('backend.flowers.list')->with($viewData);
     }
 
     public function create()
     {
-        return view('backend.flowers.add');
+
+        $viewData = [
+            'categories' => Category::all(),
+        ];
+
+        return view('backend.flowers.add')->with($viewData);
     }
 
     public function store(FlowerRequest $request)
@@ -71,10 +79,15 @@ class FlowerController extends Controller
         }
 
 
-        Flower::insert(array_merge($data, [
-            'created_at' => DB::raw('CURRENT_TIMESTAMP'),
-            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
-        ]));
+        $flower_inserted = Flower::create(array_merge($data));
+
+        foreach ($request->categories as $category)
+        {
+            CategoryFlower::create([
+                'flower_id' => $flower_inserted->id,
+                'category_id' => $category,
+            ]);
+        }
 
         return redirect(route('admin.flowers.list'));
     }
@@ -97,7 +110,7 @@ class FlowerController extends Controller
         return redirect()->back();
     }
 
-    public function update(FlowerRequest $request)
+    public function update(FlowerEditRequest $request)
     {
 
         if ($id = $request->id)

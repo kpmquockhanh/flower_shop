@@ -82,6 +82,12 @@
                                 <span class="sidebar-normal"> Danh sách hoa </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.categories.list')}}">
+                                <span class="sidebar-mini-icon">T</span>
+                                <span class="sidebar-normal"> Thể loại </span>
+                            </a>
+                        </li>
                         {{--<li>--}}
                             {{--<a href="">--}}
                                 {{--<span class="sidebar-mini-icon">X</span>--}}

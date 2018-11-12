@@ -16,7 +16,6 @@ class CreateFlowersTable extends Migration
         Schema::create('flowers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('admin_id');
-            $table->integer('category_id')->nullable();
             $table->string('slug')->nullable();
             $table->enum('integer', [1,2,3,4,5])->nullable();
             $table->boolean('show')->default(false);

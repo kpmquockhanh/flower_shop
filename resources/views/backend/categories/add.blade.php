@@ -1,18 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('style')
-    <!-- Include Editor style. -->
-    <link href="{{asset('floara/css/froala_editor.pkgd.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('floara/css/froala_style.min.css')}}" rel="stylesheet" type="text/css" />
-    <style>
-        a[href="https://froala.com/wysiwyg-editor"], a[href="https://www.froala.com/wysiwyg-editor?k=u"] {
-            display: none !important;
-        }
-    </style>
-@stop
-
 @section('content')
-
     <div class="content">
         <form method="post" action="" class="form-horizontal" enctype="multipart/form-data">
             <div class="row">
@@ -54,59 +42,50 @@
                                     </div>
                                 </div>
                             </div>
-                            @if ($errors->has('saleoff'))
-                                <div class="text-danger col-md-12 offset-md-2 p-0">
-                                    <strong>{{ $errors->first('saleoff') }}</strong>
-                                </div>
-                            @endif
-                            @if ($errors->has('price'))
-                                <div class="text-danger col-md-12 offset-md-2 p-0">
-                                    <strong>{{ $errors->first('price') }}</strong>
-                                </div>
-                            @endif
-                            @if ($errors->has('quantity'))
-                                <div class="text-danger col-md-12 offset-md-2 p-0">
-                                    <strong>{{ $errors->first('quantity') }}</strong>
-                                </div>
-                            @endif
                             <div class="row">
+                                @if ($errors->has('saleoff'))
+                                    <div class="text-danger col-md-12 offset-md-2">
+                                        <strong>{{ $errors->first('saleoff') }}</strong>
+                                    </div>
+                                @endif
                                 <label class="col-sm-2 col-form-label">Giảm giá</label>
-                                <div class="col-sm-2">
+                                <div class="col-sm-10">
                                     <div class="form-group">
                                         <input type="number" name="saleoff" class="form-control"
                                                value="{{old('saleoff')}}" placeholder="VD: 0.1, 0.15,..." step="0.01">
                                         
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                @if ($errors->has('price'))
+                                    <div class="text-danger col-md-12 offset-md-2">
+                                        <strong>{{ $errors->first('price') }}</strong>
+                                    </div>
+                                @endif
                                 <label class="col-sm-2 col-form-label">Giá</label>
-                                <div class="col-sm-2">
+                                <div class="col-sm-10">
                                     <div class="form-group">
                                         <input type="number" name="price" class="form-control" value="{{old('price')}}">
-
-                                    </div>
-                                </div>
-                                <label class="col-sm-2 col-form-label">Số lượng</label>
-                                <div class="col-sm-2">
-                                    <div class="form-group">
-                                        <input type="number" name="quantity" class="form-control"
-                                               value="{{old('quantity')}}">
-
+                                        
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">Thể loại</label>
-                                <div class="col-lg-5 col-md-6 col-sm-3">
-                                    <select class="selectpicker" data-style="btn btn-info btn-round" multiple title="Thể loại" data-size="7" name="categories[]">
-                                        @if ($categories->count())
-                                            @foreach ($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->cate_name}}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
+                                @if ($errors->has('quantity'))
+                                    <div class="text-danger col-md-12 offset-md-2">
+                                        <strong>{{ $errors->first('quantity') }}</strong>
+                                    </div>
+                                @endif
+                                <label class="col-sm-2 col-form-label">Số lượng</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="number" name="quantity" class="form-control"
+                                               value="{{old('quantity')}}">
+                                        
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10 checkbox-radios">
@@ -147,7 +126,7 @@
                                     @endif
                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                         <div class="fileinput-new thumbnail">
-                                            <img src="{{asset('backend/img/image_placeholder.jpg')}}" alt="...">
+                                            <img src="{{asset('assets/admin/assets/img/image_placeholder.jpg')}}" alt="...">
                                         </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                         <div>
@@ -168,20 +147,4 @@
             </div>
         </form>
     </div>
-@stop
-
-@section('script')
-    <!-- Include Editor JS files. -->
-    <script type="text/javascript" src="{{asset('floara/js/froala_editor.pkgd.min.js')}}"></script>
-
-    <!-- Initialize the editor. -->
-    <script>
-        $(function() {
-            $('textarea').froalaEditor({
-                heightMin: 200,
-                spellcheck: false,
-            })
-        });
-    </script>
-
 @stop
