@@ -60,16 +60,16 @@
                                         <div class="box-hover">
                                             <ul class="add-to-links">
                                                 <li>
-                                                    <a class="yith-wcqv-button link-quickview" href="#" data-product_id="30">Quick View</a>
+                                                    <a class="yith-wcqv-button link-quickview" href="#" data-product_id="{{$flowers->first()->id}}">Quick View</a>
                                                 </li>
-                                                <li>
-                                                    <a href="/creta/?add_to_wishlist=30"  data-product-id="30"
-                                                       data-product-type="simple" class="add_to_wishlist link-wishlist">Add to Wishlist</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="compare link-compare add_to_compare" data-product_id="">Add to Compare</a>
+                                                {{--<li>--}}
+                                                    {{--<a href="/creta/?add_to_wishlist=30"  data-product-id="30"--}}
+                                                       {{--data-product-type="simple" class="add_to_wishlist link-wishlist">Add to Wishlist</a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a href="#" class="compare link-compare add_to_compare" data-product_id="">Add to Compare</a>--}}
 
-                                                </li>
+                                                {{--</li>--}}
                                             </ul>
                                         </div>
 

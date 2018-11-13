@@ -61,7 +61,7 @@
         </div>
         <ul class="nav">
             <li class="active">
-                <a href="/">
+                <a href="{{route('admin.dashboard')}}">
                     <i class="nc-icon nc-bank"></i>
                     <p>Tổng quan</p>
                 </a>
