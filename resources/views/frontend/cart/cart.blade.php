@@ -17,7 +17,7 @@
                         @foreach ($carts as $item)
                             <li class="itemlast">
                                 <div class="item-inner">
-                                    <a class="product-image" href="#" title="Bunch of Assorted Gerberas in a Glass Vase">
+                                    <a class="product-image" href="{{route('product.index', ['id' => $item->flower->id])}}" title="{{$item->flower->name}}">
                                         <img width="300" height="300" src="{{asset('images/'.$item->flower->image)}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="">
                                     </a>
                                     <div class="product-details">

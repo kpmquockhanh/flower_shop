@@ -37,6 +37,26 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                @if ($errors->has('shipper_status_code'))
+                                    <div class="text-danger col-md-12 offset-md-2">
+                                        <strong>{{ $errors->first('shipper_status_code') }}</strong>
+                                    </div>
+                                @endif
+                                <label class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <span class="btn-group bootstrap-select p-0 col-md-5">
+                                           <select class="selectpicker w-100" data-size="7" data-style="btn btn-primary" name="payment_allowed">
+                                                <option class="bs-title-option" value="">Trạng thái</option>
+                                                <option value="0" {{!$payment->payment_allowed?'selected':''}} class="text-danger">Không cho phép</option>
+                                                <option value="1" {{!$payment->payment_allowed?'':'selected'}} class="text-success">Cho phép</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">

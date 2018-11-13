@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     protected $fillable = [
-        'payment_type'
+        'payment_type',
+        'payment_allowed'
     ];
 
     protected $status_name = [

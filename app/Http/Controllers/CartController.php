@@ -137,4 +137,13 @@ class CartController extends Controller
                 ]);
         return view('frontend.checkout.track-order')->with($viewData);
     }
+
+    public function updateCart(Request $request)
+    {
+        foreach($request->ids as $key => $id)
+        {
+            Cart::query()->where('id', $id)->update(['quantity' => $request->quantities[$key]]);
+        }
+        return redirect()->back();
+    }
 }

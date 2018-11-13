@@ -14,7 +14,8 @@
                             </div>
                             <div class="page-content">
                                 <div class="woocommerce">
-                                    <form class="woocommerce-cart-form" action="#" method="post">
+                                    <form class="woocommerce-cart-form" action="{{route('cart.update')}}" method="post">
+                                        @csrf
                                         <div class="col-main">
                                             <div class="cart wow bounceInUp animated" style="visibility: visible;">
                                                 @if (!$carts->count())
@@ -63,7 +64,8 @@
                                                                         <div class="quantity">
                                                                             <div class="pull-left">
                                                                                 <div class="custom pull-left">
-                                                                                    <input type="number" class="input-text quantity_change" step="1" min="1" old-value="{{$item->quantity}}" value="{{$item->quantity}}">
+                                                                                    <input type="number" class="input-text quantity_change" name="quantities[]" step="1" min="1" old-value="{{$item->quantity}}" value="{{$item->quantity}}">
+                                                                                    <input type="text" hidden name="ids[]" value="{{$item->id}}">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -84,9 +86,8 @@
                                                                 <button onclick="location.href = '{{route('home')}}'" class="button btn-continue" title="Continue Shopping" type="button">
                                                                     <span>Continue Shopping</span>
                                                                 </button>
-                                                                <input type="submit" class="button btn-update" name="update_cart" value="Update cart" disabled>
+                                                                <input type="submit" class="button btn-update" value="Update cart" disabled>
                                                                 <button id="empty_cart_button" class="button" title="Clear Cart" name="clear-cart" type="submit"><span>Clear Cart</span></button>
-                                                                <input type="hidden" id="_wpnonce" name="_wpnonce" value="ec78d0edc0"><input type="hidden" name="_wp_http_referer" value="/creta/cart/">
                                                             </td>
                                                         </tr>
                                                         </tfoot>

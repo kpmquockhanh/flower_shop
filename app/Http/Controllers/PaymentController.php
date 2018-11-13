@@ -81,6 +81,7 @@ class PaymentController extends Controller
             {
                 $data = $request->only([
                     'payment_type',
+                    'payment_allowed',
                 ]);
 
 

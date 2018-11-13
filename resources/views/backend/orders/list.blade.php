@@ -94,7 +94,7 @@
                                 <tbody>
                                 @if (!count($orders))
                                     <tr>
-                                        <td class="text-center" colspan="10">Không có hóa đơn nào trong cơ sở dữ
+                                        <td class="text-center" colspan="12">Không có hóa đơn nào trong cơ sở dữ
                                             liệu
                                         </td>
                                     </tr>
