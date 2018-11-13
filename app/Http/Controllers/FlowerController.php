@@ -221,7 +221,7 @@ class FlowerController extends Controller
                 $constraint->aspectRatio();
             })
             ->insert('img/watermark.png','top-right', 20,20)
-            ->save(public_path('images').'\\'.$name);
+            ->save(public_path('images').'/'.$name);
 //            $image->move(public_path('images'), $name);
         return $name;
     }
