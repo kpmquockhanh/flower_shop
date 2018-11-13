@@ -5,7 +5,7 @@
                 <a href="{{route('cart.index')}}">
                     <span class="cart_count">{{$carts->count()}} </span>
                     <span class="price">My Cart /
-            <span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{number_format($carts->sum(function ($cart){return $cart->flower?$cart->flower->sale_price*$cart->quantity:0;}), 0,',','.')}} VNĐ</span></span></span> </a>
+            <span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{number_format($carts->sum(function ($cart){return $cart->flower?$cart->flower->sale_price*$cart->quantity:0;}), 0,',','.')}} đ</span></span></span> </a>
             </div>
             <div class="top-cart-content" style="display: none;">
                 @if (!$carts->count())
@@ -25,7 +25,7 @@
                                             {{--<a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a>--}}
                                             <a href="#" title="Remove This Item" data-id="{{$item->id}}" class="btn-remove1">Remove</a>
                                         </div>
-                                        <strong>{{$item->quantity}}</strong> x <span class="price"><span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{number_format($item->flower->sale_price,0,',','.')}} VNĐ</span></span></span>
+                                        <strong>{{$item->quantity}}</strong> x <span class="price"><span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{number_format($item->flower->sale_price,0,',','.')}} đ</span></span></span>
                                         <p class="product-name"><a href="#" title="Bunch of Assorted Gerberas in a Glass Vase">{{$item->flower->name}}</a> </p>
                                     </div>
                                 </div>

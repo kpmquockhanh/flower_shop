@@ -57,7 +57,7 @@
                                                             <div class="item-img-info">
                                                                 <a href="{{route('product.index', ['id'=> $flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                                     <figure class="img-responsive" style="height: 250px;">
-                                                                        <img alt="{{$flower->name}}" src="{{asset('images/'.$flower->image)}}" style="width: 100%">
+                                                                        <img alt="{{$flower->name}}" src="{{asset('images/'.$flower->image)}}" style="height: 100%; width: unset;">
                                                                     </figure>
 
                                                                 </a>
@@ -106,10 +106,10 @@
                                                                                       <span class="woocs_price_code" data-product-id="30">
                                                                                           <del>
                                                                                               <span class="woocommerce-Price-amount amount">
-                                                                                                  <span class="woocommerce-Price-currencySymbol"></span>{{number_format($flower->price)}} VNĐ</span>
+                                                                                                  <span class="woocommerce-Price-currencySymbol"></span>{{number_format($flower->price)}} đ</span>
                                                                                           </del>
                                                                                           <ins>
-                                                                                              <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{number_format($flower->price*(1-$flower->saleoff))}} VNĐ</span>
+                                                                                              <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{number_format($flower->price*(1-$flower->saleoff))}} đ</span>
                                                                                           </ins>
                                                                                       </span>
                                                                                   </span>

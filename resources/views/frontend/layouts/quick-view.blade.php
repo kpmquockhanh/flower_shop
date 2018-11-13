@@ -31,10 +31,10 @@
                                     <div class="price-box price">
                       <span class="woocs_price_code" data-product-id="30">
                         <del>
-                          <span class="amount">{{number_format($flower->price)}} VNĐ</span>
+                          <span class="amount">{{number_format($flower->price)}} đ</span>
                         </del>
                         <ins>
-                          <span class=" amount">{{number_format($flower->sale_price)}} VNĐ</span>
+                          <span class=" amount">{{number_format($flower->sale_price)}} đ</span>
                         </ins>
                       </span>
                                     </div>

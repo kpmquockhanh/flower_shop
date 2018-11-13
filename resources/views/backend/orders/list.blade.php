@@ -111,7 +111,7 @@
                                             {{$order->payment->payment_type}}
                                         </td>
                                         <td>
-                                            {{number_format($order->total_price)}} VNĐ
+                                            {{number_format($order->total_price)}} đ
                                         </td>
                                         <td>
                                             {{$order->shipper->shipper_name}}

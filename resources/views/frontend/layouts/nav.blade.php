@@ -53,7 +53,7 @@
                     </li>
                     <li id="nav-menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub wide  col-4">
                         <a href="#" class="">
-                            <span>Fresh</span>
+                            <span>Category</span>
                         </a>
                         <div class="mgk-popup">
                             <div class="inner" style="">

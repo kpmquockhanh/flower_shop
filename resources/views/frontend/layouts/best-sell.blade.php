@@ -7,8 +7,9 @@
 
                     <div class="home-block-inner">
                         <div class="block-title">
-                            <h2>Best<br>
-                                <em> Seller</em>
+                            <h2>
+                                <em> Sản phẩm</em>
+                                bán chạy<br>
                             </h2>
 
                         </div>
@@ -28,10 +29,10 @@
                                             <div class="item-img-info">
                                                 <a href="{{route('product.index', ['id'=>$flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                     <figure class="img-responsive" style="height: 200px;">
-                                                        <img alt="" src="{{asset('images/'.$flower->image)}}" style="width: 100%;">
+                                                        <img alt="" src="{{asset('images/'.$flower->image)}}" style="height: 100%; width: unset;">
                                                     </figure>
                                                 </a>
-                                                <div class="new-label new-top-right">Sale {{$flower->saleoff*100}}%</div>
+                                                <div class="new-label new-top-left">Sale {{$flower->saleoff*100}}%</div>
                                                 <div class="box-hover">
                                                     <ul class="add-to-links">
                                                         <li>
@@ -67,7 +68,7 @@
                                                     </div>
                                                     <div class="item-price">
                                                         <div class="price-box">
-                                                            <span class="woocs_price_code"><span class="woocs_price_code" data-product-id="30"><del><span class="woocommerce-Price-amount amount">{{number_format($flower->price)}} <span class="woocommerce-Price-currencySymbol">VNĐ</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{number_format($flower->price*(1-$flower->saleoff))}} <span class="woocommerce-Price-currencySymbol">VNĐ</span></span></ins></span></span>                  </div>
+                                                            <span class="woocs_price_code"><span class="woocs_price_code" data-product-id="30"><del><span class="woocommerce-Price-amount amount">{{number_format($flower->price)}} <span class="woocommerce-Price-currencySymbol">đ</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{number_format($flower->price*(1-$flower->saleoff))}} <span class="woocommerce-Price-currencySymbol">đ</span></span></ins></span></span>                  </div>
                                                     </div>
                                                     <div class="action">
                                                         <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="{{$flower->id}}"

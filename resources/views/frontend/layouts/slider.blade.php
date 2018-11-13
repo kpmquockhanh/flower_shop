@@ -84,7 +84,7 @@
                                 <div class="item-info">
                                     <div class="info-inner">
                                         <div class="item-title"><a href="#"
-                                                                   title="Bunch of Assorted Gerberas in a Glass Vase"> {{$flowers->first()->name}} </a>
+                                                                   title="{{$flowers->first()->name}}"> {{$flowers->first()->name}} </a>
                                         </div>
                                         <div class="item-content">
                                             <div class="rating">
@@ -101,14 +101,14 @@
                                                         <del>
                                                             <span class="woocommerce-Price-amount amount">
                                                                 {{number_format($flowers->first()->price)}}
-                                                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                                                                <span class="woocommerce-Price-currencySymbol">đ</span>
 
                                                             </span>
                                                         </del>
                                                         <ins>
                                                             <span class="woocommerce-Price-amount amount">
                                                                 {{number_format($flowers->first()->sale_price)}}
-                                                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                                                                <span class="woocommerce-Price-currencySymbol">đ</span>
 
                                                             </span>
                                                         </ins>

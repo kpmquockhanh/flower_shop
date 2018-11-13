@@ -53,7 +53,7 @@
                                                                     <span class="price">
                                                                         <span class="woocs_special_price_code">
                                                                             <span class="woocommerce-Price-amount amount">
-                                                                                {{number_format($item->flower->sale_price)}} VNĐ
+                                                                                {{number_format($item->flower->sale_price)}} đ
                                                                             </span>
                                                                         </span>
                                                                     </span>
@@ -69,7 +69,7 @@
                                                                         </div>
                                                                     </td>
                                                                     <td class="product-subtotal" data-title="Total">
-                                                                        <span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount">{{number_format($item->flower->sale_price*$item->quantity)}} <span class="woocommerce-Price-currencySymbol">VNĐ</span></span></span>
+                                                                        <span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount">{{number_format($item->flower->sale_price*$item->quantity)}} <span class="woocommerce-Price-currencySymbol">đ</span></span></span>
                                                                     </td>
                                                                     <td class="product-remove">
                                                                         <a href="#" class="button remove-item" aria-label="Remove this item" data-product_id="{{$item->id}}" ></a>
@@ -113,7 +113,7 @@
                                                                     <td data-title="Subtotal">
                                                                         <span class="woocs_special_price_code">
                                                                             <span class="woocommerce-Price-amount amount">
-                                                                                {{number_format($subtotal)}} <span class="woocommerce-Price-currencySymbol">VNĐ</span></span>
+                                                                                {{number_format($subtotal)}} <span class="woocommerce-Price-currencySymbol">đ</span></span>
                                                                         </span>
                                                                     </td>
                                                                 </tr>
@@ -138,7 +138,7 @@
                                                                         <strong>
                                                                             <span class="woocs_special_price_code">
                                                                                 <span class="woocommerce-Price-amount amount">
-                                                                                     {{number_format($subtotal)}} <span class="woocommerce-Price-currencySymbol">VNĐ</span></span>
+                                                                                     {{number_format($subtotal)}} <span class="woocommerce-Price-currencySymbol">đ</span></span>
                                                                             </span>
                                                                         </strong>
                                                                     </td>

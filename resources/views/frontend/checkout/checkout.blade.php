@@ -125,7 +125,7 @@
                                                         <td class="product-total">
                                                             <span class="woocs_special_price_code">
                                                                 <span class="woocommerce-Price-amount amount">{{number_format($item->flower->sale_price*$item->quantity)}}
-                                                                    VNĐ</span></span>
+                                                                    đ</span></span>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -135,7 +135,7 @@
                                                     <th>Subtotal</th>
                                                     <td><span class="woocs_special_price_code"><span
                                                                     class="woocommerce-Price-amount amount">{{number_format($subtotal)}}
-                                                                <span class="woocommerce-Price-currencySymbol">VNĐ</span></span></span>
+                                                                <span class="woocommerce-Price-currencySymbol">đ</span></span></span>
                                                     </td>
                                                 </tr>
                                                 <tr class="shipping">
@@ -167,7 +167,7 @@
                                                             <span class="woocs_special_price_code"><span
                                                                         class="woocommerce-Price-amount amount">
                                                                     {{number_format($subtotal)}} <span
-                                                                            class="woocommerce-Price-currencySymbol">VNĐ</span></span></span>
+                                                                            class="woocommerce-Price-currencySymbol">đ</span></span></span>
                                                         </strong>
                                                     </td>
                                                 </tr>

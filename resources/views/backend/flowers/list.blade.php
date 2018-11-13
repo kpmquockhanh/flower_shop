@@ -85,21 +85,21 @@
                                         <div class=" position-relative">
                                             <img src="{{$flower->image?asset('images/'.$flower->image):asset('assets/admin/assets/img/image_placeholder.jpg')}}"
                                                  alt="" style="height: 250px;">
-                                            <div class="position-absolute w-100" style="bottom: 0px;left: 0px;">
-                                                <div class="btn btn-danger w-100 m-0 rounded-bottom p-1"
-                                                     style="background-color: rgba(15,15,15,.5)">
-                                                    <div class="row">
-                                                        <div class="col-md-6 h5 m-0">{{number_format($flower->price)}}
-                                                            VNĐ
-                                                        </div>
-                                                        <div class="col-md-6 h5 m-0">SL:
-                                                            <strong>{{$flower->quantity}}</strong>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            {{--<div class="position-absolute w-100" style="bottom: 0px;left: 0px;">--}}
+                                                {{--<div class="btn btn-danger w-100 m-0 rounded-bottom p-1"--}}
+                                                     {{--style="background-color: rgba(15,15,15,.5)">--}}
+                                                    {{--<div class="row">--}}
+                                                        {{--<div class="col-md-6 h5 m-0">{{number_format($flower->price)}}--}}
+                                                            {{--đ--}}
+                                                        {{--</div>--}}
+                                                        {{--<div class="col-md-6 h5 m-0">SL:--}}
+                                                            {{--<strong>{{$flower->quantity}}</strong>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                         </div>
-                                        <p class="mt-2">{!! $flower->message?str_limit(strip_tags($flower->message), $limit = 50, $end = '...'):"Không có thông điệp." !!}</p>
+                                        {{--<p class="mt-2">{!! $flower->message?str_limit(strip_tags($flower->message), $limit = 50, $end = '...'):"Không có thông điệp." !!}</p>--}}
                                     </div>
 
                                     <div class="tab-pane" id="profile{{$flower->id}}" role="tabpanel"
@@ -110,7 +110,8 @@
                                          aria-expanded="false">
                                         {{--<p>Thông tin chi tiết đang được cập nhật</p>--}}
                                         <p>Tên hoa: <strong>{{$flower->name}}</strong></p>
-                                        <p>Giá: <strong>{{number_format($flower->price)}}</strong></p>
+                                        <p>Giá: <strong>{{number_format($flower->price)}}đ</strong></p>
+                                        <p>Số lượng: <strong>{{$flower->quantity}}</strong></p>
                                         <p>Thể loại:
                                         @foreach ($flower->categories->load('category') as $key => $category)
                                                 @if ($key)

@@ -13,12 +13,21 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class FlowerController extends Controller
 {
     public function index(Request $request)
     {
+
         $flowers = Flower::with('admin');
+//
+//        // open file a image resource
+//        $img = Image::make('images/'.$flowers->first()->image);
+//        // crop image
+//        $img->crop(100, 100, 25, 25);
+//        dd($img->save());
+//        dd($flowers->first());
         if (Auth::guard('admin')->user()->type != 3 )
             $flowers->where('admin_id', Auth::guard('admin')->id());
 
@@ -73,9 +82,7 @@ class FlowerController extends Controller
 
         if ($image = $request->image)
         {
-            $name = time().'.'.$image->getClientOriginalExtension();;
-            $image->move(public_path('images'), $name);
-            $data['image'] = $name;
+            $data['image'] = $this->processImage($image);
         }
 
 
@@ -141,9 +148,7 @@ class FlowerController extends Controller
                 if ($image = $request->image)
                 {
                    \Illuminate\Support\Facades\File::delete(public_path('images').'\\'.$flower->image);
-                    $name = time().'.'.$image->getClientOriginalExtension();
-                    $image->move(public_path('images'), $name);
-                    $data['image'] = $name;
+                    $data['image'] = $this->processImage($image);
                 }
 
                 $flower->update(array_merge($data, [
@@ -205,5 +210,18 @@ class FlowerController extends Controller
         return response()->json([
             'status' => false,
         ]);
+    }
+
+    private function processImage($image)
+    {
+        $name = time().'.'.$image->getClientOriginalExtension();;
+        Image::make($image)
+            ->resize(null, 500, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->insert('img/watermark.png','top-right', 20,20)
+            ->save(public_path('images').'\\'.$name);
+//            $image->move(public_path('images'), $name);
+        return $name;
     }
 }
