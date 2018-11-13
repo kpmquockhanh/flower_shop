@@ -214,6 +214,7 @@ class FlowerController extends Controller
 
     private function processImage($image)
     {
+        ini_set('memory_limit','256M');
         $name = time().'.'.$image->getClientOriginalExtension();;
         Image::make($image)
             ->resize(null, 500, function ($constraint) {
