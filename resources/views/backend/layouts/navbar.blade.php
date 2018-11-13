@@ -14,7 +14,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <a class="navbar-brand" href="#pablo">123Flower</a>
+            <a class="navbar-brand" href="#pablo">klpflower</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -33,14 +33,6 @@
                 </div>
             </form>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link btn-magnify" href="#pablo">
-                        <i class="nc-icon nc-layout-11"></i>
-                        <p>
-                            <span class="d-lg-none d-md-block">Stats</span>
-                        </p>
-                    </a>
-                </li>
                 <li class="nav-item btn-rotate dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="nc-icon nc-bell-55"></i>
@@ -49,8 +41,7 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="{{route('admin.salers.edit', \Illuminate\Support\Facades\Auth::guard('admin')->id(0))}}">Setting</a>
                         <a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a>
                     </div>
                 </li>

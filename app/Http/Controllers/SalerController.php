@@ -82,6 +82,15 @@ class SalerController extends Controller
 
     public function update(Request $request)
     {
+        $rules = [
+            'name' => 'required',
+            'location' => 'required',
+            'status' => 'required',
+            'password' => 'nullable|confirmed|min:6'
+        ];
+
+        $this->validate($request, $rules);
+
         if ($id = $request->id)
         {
             $saler = Admin::find($id);
@@ -98,6 +107,12 @@ class SalerController extends Controller
                     if ($data['type'] == 3)
                         if (Auth::guard('admin')->user()->type !=3)
                             $data['type'] = $saler->type;
+
+                if($password = $request->password)
+                {
+                    if (Auth::guard('admin')->id() == $saler->id)
+                        $saler->password = Hash::make($password);
+                }
 
                 if ($image = $request->image)
                 {

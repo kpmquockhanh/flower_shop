@@ -22,7 +22,7 @@
                                 <label class="col-sm-2 col-form-label">Secret code</label>
                                 <div class="col-sm-10">
                                     <div class="form-group">
-                                        <input type="text" name="pw" class="form-control" value="{{old('pw')}}">
+                                        <input type="password" name="pw" class="form-control" value="{{old('pw')}}">
                                         
                                     </div>
                                 </div>

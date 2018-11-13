@@ -7,7 +7,7 @@
                 <div class="col-md-8">
                     <div class="card ">
                         <div class="card-header ">
-                            <h4 class="card-title">Chỉnh sửa người bán hàng</h4>
+                            <h4 class="card-title">Chỉnh sửa tài khoản</h4>
                         </div>
                         <div class="card-body ">
                             @csrf()
@@ -106,6 +106,34 @@
                                 @endif
                             </div>
 
+                            @if (\Illuminate\Support\Facades\Auth::guard('admin')->id() == $saler->id)
+                                <div class="row">
+                                    @if ($errors->has('password'))
+                                        <div class="text-danger col-md-12 offset-md-2">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </div>
+                                    @endif
+                                    <label class="col-sm-2 col-form-label">Mật khẩu</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control" value="" placeholder="Bỏ trống nếu không thay đổi">
+                                            {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label">Nhập lại mật khẩu</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group">
+                                            <input type="password" name="password_confirmation" class="form-control" value="" placeholder="Nhập lại mật khẩu">
+                                            {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
+
                             <div class="row">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
@@ -132,7 +160,7 @@
                                     @endif
                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                         <div class="fileinput-new thumbnail">
-                                            <img src="{{$saler->avatar?asset('images/'.$saler->image):asset('assets/admin/assets/img/image_placeholder.jpg')}}" alt="...">
+                                            <img src="{{$saler->avatar?asset('images/'.$saler->image):asset('backend/img/image_placeholder.jpg')}}" alt="...">
                                         </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                         <div>

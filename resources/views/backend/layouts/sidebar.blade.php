@@ -43,12 +43,12 @@
                                 {{--<span class="sidebar-normal">Edit Profile</span>--}}
                             {{--</a>--}}
                         {{--</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="#">--}}
-                                {{--<span class="sidebar-mini-icon">S</span>--}}
-                                {{--<span class="sidebar-normal">Settings</span>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="{{route('admin.salers.edit', \Illuminate\Support\Facades\Auth::guard('admin')->id())}}">
+                                <span class="sidebar-mini-icon">S</span>
+                                <span class="sidebar-normal">Settings</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="{{route('admin.logout')}}">
                                 <span class="sidebar-mini-icon">L</span>
