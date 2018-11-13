@@ -70,3 +70,6 @@
 <script src="{{asset('backend/js/plugins/axios.min.js')}}"></script>
 <script src="{{asset('backend/js/plugins/iziToast.min.js')}}"></script>
 <script src="{{asset('backend/js/admin.js')}}"></script>
+
+
+

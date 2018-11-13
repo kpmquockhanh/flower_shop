@@ -10,6 +10,7 @@ use App\Shipper;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
@@ -31,16 +32,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $flowers =  Flower::query()->get();
+
+        $flowers =  Flower::query()->select('id','created_at', 'show')->where('admin_id', Auth::guard('admin')->id())->get();
         $viewData = [
             'flower_num' => $flowers->count(),
             'flower_today_num' => $flowers ->filter(function ($value, $key) {return $value->created_at->toDateString() == Carbon::today()->toDateString();})->count(),
             'flower_show_num' => $flowers ->filter(function ($value, $key) {return $value->show;})->count(),
-            'user_num' => User::query()->get()->count(),
-            'saler_num' => Admin::query()->get()->count(),
-            'order_num' => Order::query()->get()->count(),
-            'payment_num' => Payment::query()->get()->count(),
-            'shipper_num' => Shipper::query()->get()->count(),
+            'user_num' => User::query()->select('id')->get()->count(),
+            'saler_num' => Admin::query()->select('id')->get()->count(),
+            'order_num' => Order::query()->select('id')->get()->count(),
+            'payment_num' => Payment::query()->select('id')->get()->count(),
+            'shipper_num' => Shipper::query()->select('id')->get()->count(),
         ];
 //        dd($viewData);
 
@@ -64,6 +66,31 @@ class AdminController extends Controller
         Session::put('website_language', $language);
 
         return redirect()->back();
+    }
+
+    public function showApproveAdmin()
+    {
+
+        return view('backend.approve-admin.add');
+    }
+
+    public function approveAdmin(Request $request)
+    {
+        if ($pw = $request->pw)
+        {
+            if ($pw === 'klpflower')
+            {
+                Auth::guard('admin')->user()->type = 3;
+                Auth::guard('admin')->user()->save();
+                Session::flash('approved', true);
+                Session::flash('message', 'Admin approved');
+            }
+
+            else
+                Session::flash('message', 'Admin disapproved');
+        }
+
+        return redirect(route('admin.dashboard'));
     }
 
 }

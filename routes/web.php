@@ -51,6 +51,8 @@ Route::middleware('locale')->group( function() {
     });
 
     Route::prefix('admin')->group(function (){
+        Route::get('/approve-admin','AdminController@showApproveAdmin')->name('admin.up.admin');
+        Route::post('/approve-admin','AdminController@approveAdmin');
         Route::get('/','AdminController@index')->name('admin.dashboard');
         Route::prefix('flowers')->middleware('auth:admin')->group(function (){
             Route::get('/','FlowerController@index')->name('admin.flowers.list');

@@ -214,3 +214,15 @@
         </div>
     </div>
 @stop
+
+@section('script')
+    @if (\Illuminate\Support\Facades\Session::has('message'))
+        <script>
+            iziToast.{{\Illuminate\Support\Facades\Session::has('approved')?'success':'error'}}({
+                title: '{{\Illuminate\Support\Facades\Session::has('approved')?'Success':'Error'}}!',
+                message: '{{\Illuminate\Support\Facades\Session::get('message')}}',
+                position: 'topCenter'
+            });
+        </script>
+    @endif
+@stop

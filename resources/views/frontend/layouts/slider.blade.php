@@ -74,7 +74,7 @@
                                         </div>
 
                                         <div class="box-timer">
-                                            <div class="timer-grid"  data-time="2018/11/10">
+                                            <div class="timer-grid"  data-time="{{\Carbon\Carbon::today()->addDay()->format('Y/m/d')}}">
                                             </div>
                                         </div>
 
