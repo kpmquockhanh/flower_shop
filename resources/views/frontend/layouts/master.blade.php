@@ -327,27 +327,24 @@
 {{--<script type='text/javascript' src='{{asset('assets/plugins/mailchimp-for-wp/assets/js/forms-api.min.js')}}'></script>--}}
 
 
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/bootstrap.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.cookie.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/countdown.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/parallax.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/common.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/revslider.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.bxslider.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.flexslider.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.mobile-menu.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/owl.carousel.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/cloud-zoom.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/plugins/megamenu/js/maxmegamenu.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/core.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/widget.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/mouse.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/slider.min.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/includes/js/underscore.min.js')}}'></script>--}}
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/bootstrap.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.cookie.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/countdown.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/parallax.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/common.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/revslider.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.bxslider.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.flexslider.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.mobile-menu.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/owl.carousel.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/cloud-zoom.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/plugins/megamenu/js/maxmegamenu.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/core.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/widget.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/mouse.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/slider.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/includes/js/underscore.min.js')}}'></script>
 
-
-
-<script type='text/javascript' src='{{asset('js/klpflower.js')}}'></script>
 
 
 @yield('script')
