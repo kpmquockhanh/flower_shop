@@ -14,6 +14,7 @@
     </style>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+{{--    <link rel='stylesheet' href='{{asset('css/klpflower.css')}}' type='text/css' media='all' />--}}
     <link rel='stylesheet' href='{{asset('assets/plugins/contact-form-7/includes/css/styles.css')}}' type='text/css' media='all' />
     <link rel='stylesheet' href='{{asset('assets/plugins/magik-catalog-mode/assets/css/mgkcmo_style.css')}}' type='text/css' media='all' />
     <link rel='stylesheet' href='{{asset('assets/plugins/magik-infinite-scroller/assets/css/mgkisr_style.css')}}' type='text/css' media='all' />
