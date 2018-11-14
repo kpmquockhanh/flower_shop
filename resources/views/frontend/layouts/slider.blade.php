@@ -60,7 +60,7 @@
                                         <div class="box-hover">
                                             <ul class="add-to-links">
                                                 <li>
-                                                    <a class="yith-wcqv-button link-quickview" href="#" data-product_id="{{$flowers->first()->id}}">Quick View</a>
+                                                    <a class="yith-wcqv-button link-quickview" href="#" data-product_id="{{$flowers->first()->id}}">Xem nhanh</a>
                                                 </li>
                                                 {{--<li>--}}
                                                     {{--<a href="/creta/?add_to_wishlist=30"  data-product-id="30"--}}
@@ -117,9 +117,9 @@
                                                 </div>
                                             </div>
                                             <div class="action">
-                                                <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="{{$flowers->first()->id}}"
+                                                <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Thêm vào giỏ hàng' data-quantity="1" data-product_id="{{$flowers->first()->id}}"
                                                    href='#'>
-                                                    <span>Add to cart </span>
+                                                    <span>Thêm vào giỏ hàng</span>
                                                 </a>
                                             </div>
                                         </div>

@@ -14,8 +14,9 @@
 
                         </div>
                         <div class="pretext">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Curabitur eu odio non justo euismod congue ut nec orci.                </div>
-                        <a class="view_more_bnt" href="#">VIEW ALL</a>
+                            Những mặt hàng đang bán chạy nhấp tại trang web bán hoa số một thế giới
+                        </div>
+                        <a class="view_more_bnt" href="#">XEM TOÀN BỘ</a>
                     </div>
 
                     <div class="slider-items slider-width-col4 products-grid block-content">
@@ -37,7 +38,7 @@
                                                     <ul class="add-to-links">
                                                         <li>
                                                             <a class="yith-wcqv-button link-quickview" href="#"
-                                                               data-product_id="{{$flower->id}}">Quick View</a>
+                                                               data-product_id="{{$flower->id}}">Xem nhanh</a>
                                                         </li>
                                                         {{--<li>--}}
                                                         {{--<a href="/creta/?add_to_wishlist=30"  data-product-id="30"--}}
@@ -73,7 +74,7 @@
                                                     <div class="action">
                                                         <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="{{$flower->id}}"
                                                            href='#'>
-                                                            <span>Add to cart </span>
+                                                            <span>Thêm vào giỏ hàng</span>
                                                         </a>
                                                     </div>
                                                 </div>

@@ -57,7 +57,7 @@
                                                             <div class="item-img-info">
                                                                 <a href="{{route('product.index', ['id'=> $flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                                     <figure class="img-responsive" style="height: 250px;">
-                                                                        <img alt="{{$flower->name}}" src="{{asset('images/'.$flower->image)}}" style="height: 100%; width: unset;">
+                                                                        <img alt="{{$flower->name}}" src="{{asset('images/'.$flower->image)}}" >
                                                                     </figure>
 
                                                                 </a>
@@ -69,7 +69,7 @@
                                                                     <ul class="add-to-links">
                                                                         <li>
                                                                             <a class="link-quickview" href="#"
-                                                                               data-product_id="{{$flower->id}}">Quick View</a>
+                                                                               data-product_id="{{$flower->id}}">Xem nhanh</a>
                                                                         </li>
                                                                         {{--<li>--}}
                                                                             {{--<a href="#"  data-product-id="30"--}}
@@ -89,7 +89,7 @@
                                                         <div class="item-info">
                                                             <div class="info-inner">
                                                                 <div class="item-title"><a href="#"
-                                                                                           title="Bunch of Assorted Gerberas in a Glass Vase"> {{$flower->name}}</a>
+                                                                                           title="{{$flower->name}}"> {{$flower->name}}</a>
                                                                 </div>
                                                                 <div class="item-content">
                                                                     <div class="rating">
@@ -119,7 +119,7 @@
                                                                     <div class="action">
                                                                         <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="{{$flower->id}}"
                                                                            href='#'>
-                                                                            <span>Add to cart </span>
+                                                                            <span>Thêm vào giỏ hàng</span>
                                                                         </a>
                                                                     </div>
                                                                 </div>

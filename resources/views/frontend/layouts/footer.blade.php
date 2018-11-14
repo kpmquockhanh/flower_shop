@@ -58,19 +58,29 @@
                                         }
                                     }
                                 })();
-                            </script><!-- MailChimp for WordPress v4.2.5 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1276 mc4wp-form-basic" method="post" data-id="1276" data-name="Default sign-up form" ><div class="mc4wp-form-fields"><p>
+                            </script><!-- MailChimp for WordPress v4.2.5 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+                            <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1276 mc4wp-form-basic" method="post" data-id="1276" data-name="Default sign-up form" >
+                                <div class="mc4wp-form-fields"><p>
                                         <label>SIGN UP FOR EMAILS: </label>
                                         <input type="email"  name="EMAIL" placeholder="Your email address" required />
                                     </p>
 
                                     <p>
                                         <input type="submit" value="Subscribe" />
-                                    </p></div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1540454257" /><input type="hidden" name="_mc4wp_form_id" value="1276" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / MailChimp for WordPress Plugin -->
+                                    </p>
+                                </div>
+                                <label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1540454257" /><input type="hidden" name="_mc4wp_form_id" value="1276" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / MailChimp for WordPress Plugin -->
                         </div>
                         <div class="social">
                             <h4>Follow Us</h4>
                             <ul>
-                                <li class="fb pull-left"><a target="_blank" href='#'></a></li><li class="tw pull-left"><a target="_blank" href='#'></a></li><li class="googleplus pull-left"><a target="_blank" href='#'></a></li><li class="rss pull-left"><a target="_blank" href='#'></a></li><li class="pintrest pull-left"><a target="_blank" href='#'></a></li><li class="linkedin pull-left"><a target="_blank" href='#'></a></li><li class="youtube pull-left"><a target="_blank" href='#'></a></li> </ul>
+                                <li class="fb pull-left"><a target="_blank" href='#'></a></li>
+                                <li class="tw pull-left"><a target="_blank" href='#'></a></li>
+                                <li class="googleplus pull-left"><a target="_blank" href='#'></a></li>
+                                <li class="rss pull-left"><a target="_blank" href='#'></a></li>
+                                <li class="pintrest pull-left"><a target="_blank" href='#'></a></li>
+                                <li class="linkedin pull-left"><a target="_blank" href='#'></a></li>
+                                <li class="youtube pull-left"><a target="_blank" href='#'></a></li> </ul>
                         </div>
 
                         {{--<aside id="text-3" class="widget widget_text">			<div class="textwidget"><div class="payment-accept"><img src="{{asset('assets/uploads/sites/26/2016/02/payment-1.png')}}" alt="payment1"> <img src="{{asset('assets/uploads/sites/26/2016/02/payment-2.png')}}" alt="payment2"> <img src="{{asset('assets/uploads/sites/26/2016/02/payment-3.png')}}" alt="payment3">--}}
@@ -111,6 +121,8 @@
                     <i class="fa fa-mobile"></i> +84989594241
                     <i class="fa fa-envelope">
                     </i> kpmquockhanh@gmail.com
+                    <i class="fa fa-plus">
+                    </i> Nhóm 2 KTPM1 K10 HaUI
                 </address>
             </div>
         </div>
