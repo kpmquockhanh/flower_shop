@@ -107,6 +107,18 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <label class="col-sm-2 col-form-label">Thể loại</label>
+                                <div class="col-lg-5 col-md-6 col-sm-3">
+                                    <select class="selectpicker" data-style="btn btn-info btn-round" multiple title="Thể loại" data-size="7" name="categories[]">
+                                        @if ($categories->count())
+                                            @foreach ($categories as $category)
+                                                <option value="{{$category->id}}" {{in_array($category->id, array_column($flower->categories->toArray(),'category_id'))?'selected':''}}>{{$category->cate_name}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
                                     <div class="form-group">

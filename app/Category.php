@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class Category extends Model
 {
+    protected $fillable = [
+        'cate_name',
+        'cate_code',
+    ];
     public function canChange()
     {
         if (Auth::guard('admin')->check())

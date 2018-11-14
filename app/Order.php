@@ -29,6 +29,11 @@ class Order extends Model
         return $this->belongsTo(Shipper::class);
     }
 
+    public function address_delivery()
+    {
+        return $this->belongsTo(AddressDelivery::class);
+    }
+
     private $status_type = [
         'Chờ xét duyệt',
         'Đang xử lí',

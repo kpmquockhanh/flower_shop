@@ -103,15 +103,22 @@ class FlowerController extends Controller
     {
         if ($id)
         {
-            $flower = Flower::find($id);
+            $flower = Flower::with('categories')->find($id);
+
 
             if (!$flower->canChange())
             {
                 return redirect(route('admin.flowers.list'))->withErrors(['noPermission' => 'Bạn không có quyền thay đổi']);
             }
+            $viewData = [
+                'categories' => Category::all(),
+                'flower' => $flower,
+            ];
+
+
 
             if ($flower)
-                return view('backend.flowers.edit', compact('flower'));
+                return view('backend.flowers.edit')->with($viewData);
             return redirect()->back();
         }
         return redirect()->back();
@@ -151,9 +158,16 @@ class FlowerController extends Controller
                     $data['image'] = $this->processImage($image);
                 }
 
-                $flower->update(array_merge($data, [
-                    'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
-                ]));
+                $flower->update($data);
+
+//                foreach ($request->categories as $category)
+//                {
+//                    dump(CategoryFlower::updateOrCreate([
+//                        'flower_id' => $id,
+//                        'category_id' => $category,
+//                    ]));
+//                }
+//                dd(111);
                 return redirect(route('admin.flowers.list'));
             }
             return redirect()->back();

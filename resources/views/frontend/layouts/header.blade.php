@@ -44,7 +44,7 @@
                                 <!-- Header Top Links -->
                                 <ul id="menu-toplinks" class="top-links1 mega-menu1">
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page narrow ">
-                                        <a href="{{route('admin.dashboard')}}" class=""><span>Admin</span></a>
+                                        <a href="{{route('admin.dashboard')}}" class="" target="_blank"><span>Admin</span></a>
                                     </li>
                                     {{--<li id="nav-menu-item-2118" class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">--}}
                                         {{--<a href="#" class=""><span>My Account</span></a>--}}

@@ -14,7 +14,7 @@ class OrderController extends Controller
     public function index(Request $request)
     {
 
-        $orders = Order::with(['user', 'payment', 'shipper']);
+        $orders = Order::with(['user', 'payment', 'shipper', 'address_delivery']);
         if ($search = $request->search)
         {
             $orders->orWhere('id', $search)
@@ -34,6 +34,8 @@ class OrderController extends Controller
             'orders' => $orders->paginate($page),
             'queries' => $request->query(),
         ];
+
+//        dd($viewData);
         return view('backend.orders.list')->with($viewData);
 
     }

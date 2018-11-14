@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->integer('payment_id');
             $table->integer('shipper_id');
+            $table->integer('address_delivery_id');
             $table->integer('transaction_status');
             $table->date('ship_date')->nullable();
             $table->date('payment_date')->nullable();
