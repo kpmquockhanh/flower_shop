@@ -57,7 +57,7 @@
                     <div class="col-xl-3 col-lg-4 position-relative item-flower">
                         <div class="card">
                             <div class="card-header">
-                                <h5>{{str_limit($flower->name, $limit = 10, $end = '...')}}</h5>
+                                <h5>{{str_limit($flower->name, $limit = 20, $end = '...')}}</h5>
                             </div>
                             <div class="card-body">
                                 <div class="nav-tabs-navigation">
