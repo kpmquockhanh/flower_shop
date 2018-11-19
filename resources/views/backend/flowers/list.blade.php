@@ -54,7 +54,7 @@
             @endif
             <div class="col-md-12 row">
                 @foreach($flowers as $flower)
-                    <div class="col-xl-3 col-lg-4 position-relative item-flower">
+                    <div class="col-xl-3 col-lg-6 position-relative item-flower">
                         <div class="card">
                             <div class="card-header">
                                 <h5>{{str_limit($flower->name, $limit = 20, $end = '...')}}</h5>

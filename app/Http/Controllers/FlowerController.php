@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use function Tinify\fromFile;
+use function Tinify\setKey;
 
 class FlowerController extends Controller
 {
@@ -42,7 +44,7 @@ class FlowerController extends Controller
             $flowers->orderBy($sort, 'desc');
         }
 
-        $page = 8;
+        $page = 12;
         if ($paginate = $request->paginate)
             $page = $paginate;
 
@@ -158,16 +160,18 @@ class FlowerController extends Controller
                     $data['image'] = $this->processImage($image);
                 }
 
+
+                //Update category of flower
+                $requestCate = $request->categories;
+                $currentCate = array_column($flower->categories->toArray(),'category_id');
+
+                $deleteCate = array_diff($currentCate, $requestCate);
+                CategoryFlower::query()->where('flower_id', $id)->whereIn('category_id',$deleteCate)->delete();
+
                 $flower->update($data);
 
-//                foreach ($request->categories as $category)
-//                {
-//                    dump(CategoryFlower::updateOrCreate([
-//                        'flower_id' => $id,
-//                        'category_id' => $category,
-//                    ]));
-//                }
-//                dd(111);
+
+
                 return redirect(route('admin.flowers.list'));
             }
             return redirect()->back();
@@ -229,13 +233,16 @@ class FlowerController extends Controller
     private function processImage($image)
     {
         ini_set('memory_limit','256M');
-        $name = time().'.'.$image->getClientOriginalExtension();;
+        $name = time().'.'.$image->getClientOriginalExtension();
         Image::make($image)
             ->resize(null, 500, function ($constraint) {
                 $constraint->aspectRatio();
             })
             ->insert('img/watermark.png','top-right', 20,20)
             ->save(public_path('images').'/'.$name);
+
+//        setKey("Zt8Tpdw4FvTBz2NVD505HQnzqXY6Fjyc");
+//        fromFile(public_path('images').'/'.$name)->toFile(public_path('images').'/'.$name);
 //            $image->move(public_path('images'), $name);
         return $name;
     }

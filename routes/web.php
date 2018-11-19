@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::middleware('locale')->group( function() {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/shop', 'HomeController@viewShop')->name('shop');
+    Route::get('/test', 'CrawlerController@index');
 
     Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
 
@@ -26,11 +28,12 @@ Route::middleware('locale')->group( function() {
         Route::post('/quick-view', 'HomeController@viewQuick')->name('product.quick-view');
 
     });
+    Route::get('/check-order', 'CartController@checkOrder')->name('check-order');
+
     Route::prefix('cart')->middleware('auth:user')->group(function (){
         Route::get('/', 'CartController@index')->name('cart.index');
         Route::post('/update', 'CartController@updateCart')->name('cart.update');
         Route::get('/checkout', 'CartController@checkoutCart')->name('cart.checkout');
-        Route::get('/check-order', 'CartController@checkOrder')->name('cart.check-order');
         Route::post('/add-order', 'OrderController@store')->name('cart.checkout.add');
         Route::post('/add-cart', 'CartController@addToCart');
         Route::post('/remove-cart', 'CartController@removeFromCart');

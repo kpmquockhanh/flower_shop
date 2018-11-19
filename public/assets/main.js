@@ -166,3 +166,5 @@ jQuery('.link-quickview').on('click', function (e) {
         console.log(e);
     });
 });
+
+

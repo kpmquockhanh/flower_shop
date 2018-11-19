@@ -3,8 +3,9 @@
 <html lang="en-US" id="parallax_scrolling">
 <head>
    @include('frontend.layouts.stylesheet')
+    <title>@yield('title')</title>
 </head>
-<body class="home page-template page-template-homepage page-template-homepage-php page page-id-193 woocommerce-no-js woo-variation-swatches woo-variation-swatches-theme-creta woo-variation-swatches-theme-child-creta woo-variation-swatches-style-rounded woo-variation-swatches-attribute-behavior-blur woo-variation-swatches-tooltip-enabled woo-variation-swatches-stylesheet-enabled cms-index-index cms-home-page currency-usd" >
+<body class="woocommerce woocommerce-page" >
 <div id="page" class="page catalog-category-view">
 
     <!-- Header -->
@@ -297,16 +298,11 @@
 {{--<script type='text/javascript' src='{{asset('assets/plugins/magik-infinite-scroller/assets/js/mgkisr_scoll.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/magik-wooajax-search/assets/js/mgkwooas-autocomplete.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/magik-wooajax-search/assets/js/mgkwooas-frontend.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/mgk_menu.js')}}'></script>--}}
-{{--<script type='text/javascript' src='{{asset('assets/includes/js/hoverIntent.min.js}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/includes/js/hoverIntent.min.js;)}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/jquery-ui-touch-punch/jquery-ui-touch-punch.min.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce-currency-switcher/js/price-slider_33.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce-currency-switcher/js/jquery.ddslick.min.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce-currency-switcher/js/front.js')}}'></script>--}}
-{{--<script type='text/javascript' src='#'></script>--}}
-{{--<script type='text/javascript' src='#'></script>--}}
-<script type='text/javascript' src='{{asset('js/axios.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/main.js')}}'></script>
 {{--<script type='text/javascript' src='{{asset('assets/plugins/contact-form-7/includes/js/scripts.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js')}}'></script>--}}
@@ -326,25 +322,35 @@
 {{--<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/single-product.min.js')}}'></script>--}}
 {{--<script type='text/javascript' src='{{asset('assets/plugins/mailchimp-for-wp/assets/js/forms-api.min.js')}}'></script>--}}
 
-
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/bootstrap.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.cookie.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/countdown.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/parallax.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/common.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/revslider.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.bxslider.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.flexslider.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.mobile-menu.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/owl.carousel.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/themes/creta/js/cloud-zoom.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/plugins/megamenu/js/maxmegamenu.js')}}'></script>
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.cookie.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/parallax.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/cloud-zoom.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/plugins/megamenu/js/maxmegamenu.js')}}'></script>--}}
 <script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/core.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/widget.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/mouse.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/includes/js/jquery/ui/slider.min.js')}}'></script>
-<script type='text/javascript' src='{{asset('assets/includes/js/underscore.min.js')}}'></script>
+{{--<script type='text/javascript' src='{{asset('assets/includes/js/underscore.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.bxslider.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.flexslider.js')}}'></script>--}}
 
+
+{{--<script type='text/javascript' src='{{asset('js/axios.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/mgk_menu.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/main.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/bootstrap.min.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/countdown.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/common.js')}}'></script>--}}
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/revslider.js')}}'></script>--}}
+
+{{--<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.mobile-menu.min.js')}}'></script>--}}
+
+
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/bootstrap.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/plugins/woocommerce/assets/js/frontend/price-slider.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/owl.carousel.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('assets/themes/creta/js/jquery.mobile-menu.min.js')}}'></script>
+<script type='text/javascript' src='{{asset('js/klpflower.js')}}'></script>
 
 
 @yield('script')

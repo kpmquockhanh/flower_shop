@@ -385,7 +385,7 @@ clear: none;
 .widget_layered_nav ul li a:before, .widget_layered_nav_filters ul li a:before {
 line-height: 15px;
 content: "";
-font-family: FontAwesome;
+font-family: 'FontAwesome';
 display: inline-block;
 left: 0;
 top: 0;

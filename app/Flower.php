@@ -17,7 +17,8 @@ class Flower extends Model
         'price',
         'quantity',
         'image',
-        'admin_id'
+        'admin_id',
+        'slug',
     ];
 
 

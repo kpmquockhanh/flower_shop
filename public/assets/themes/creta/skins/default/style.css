@@ -1666,7 +1666,7 @@ nav {
 	margin-top: 10px;
 	position: absolute;
 	text-align: center;
-	top: 3%;
+	top: 0%;
 	width: 2.5%;
 }
 .category-products .text-banner {
@@ -2682,7 +2682,8 @@ ul.products-grid {
 	text-align: center;
 	display: block;
 	position: absolute;
-	top: 0px;
+	top: 20px;
+	left: 20px;
 }
 .hot-label {
 	font-size: 10px;

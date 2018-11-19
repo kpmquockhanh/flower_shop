@@ -16,4 +16,9 @@ class CategoryFlower extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function flower()
+    {
+        return $this->belongsTo(Flower::class);
+    }
 }

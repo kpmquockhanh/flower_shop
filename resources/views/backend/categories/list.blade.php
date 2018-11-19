@@ -104,7 +104,7 @@
                                             {{$category->updated_at->diffForHumans()}}
                                         </td>
                                         <td>
-                                           @if (!$category->canChange())
+                                           @if ($category->canChange())
                                                 <a href="{{route('admin.categories.edit', $category->id)}}" rel="tooltip"
                                                    class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""
                                                    title="">

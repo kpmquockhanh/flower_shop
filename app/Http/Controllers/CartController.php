@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Category;
 use App\Flower;
 use App\Shipper;
 use Illuminate\Http\Request;
@@ -115,7 +116,8 @@ class CartController extends Controller
 
     public function checkoutCart()
     {
-        $viewData = [];
+        $viewData = [
+        ];
         $carts = $this->getCart();
         if (Auth::check())
             $viewData = array_merge($viewData, [
@@ -129,7 +131,8 @@ class CartController extends Controller
 
     public function checkOrder()
     {
-        $viewData = [];
+        $viewData = [
+        ];
         $carts = $this->getCart();
         if (Auth::check())
             $viewData = array_merge($viewData, [

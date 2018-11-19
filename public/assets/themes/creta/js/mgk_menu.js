@@ -1,4 +1,4 @@
-// creta wp Theme
+
 window.theme = {};
 "use strict";
 // Configuration
@@ -6,10 +6,7 @@ window.theme = {};
   theme = theme || {};
   var initialized = false;
   jQuery.extend(theme, {
-    ajax_url: js_creta_vars.ajax_url
-    , container_width: js_creta_vars.container_width
-    , grid_layout_width: js_creta_vars.grid_layout_width
-    , hoverIntentConfig: {
+      hoverIntentConfig: {
       sensitivity: 2
       , interval: 0
       , timeout: 0
@@ -209,6 +206,7 @@ window.theme = {};
     }
   });
 }).apply(this, [window.theme, jQuery]);
+
 // Mobile Panel
 (function(theme, jQuery) {
   theme = theme || {};

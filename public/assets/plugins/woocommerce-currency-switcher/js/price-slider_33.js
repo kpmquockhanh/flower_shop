@@ -1,8 +1,22 @@
 /* global woocommerce_price_slider_params, accounting */
 jQuery( function( $ ) {
 
+    var woocommerce_price_slider_params = {"currency_format_num_decimals":"0","currency_format_symbol":"$","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%s%v"};
+
+    var woocs_is_mobile = 0;
+    var woocs_drop_down_view = "ddslick";
+    var woocs_current_currency = {"name":"USD","rate":1,"symbol":"&#36;","position":"left","is_etalon":1,"hide_cents":0,"decimals":2,"description":"USA dollar","flag":"http:\/\/wpdemo.magikthemes.com\/creta\/wp-content\/plugins\/woocommerce-currency-switcher\/img\/no_flag.png"};
+    var woocs_default_currency = {"name":"USD","rate":1,"symbol":"&#36;","position":"left","is_etalon":1,"hide_cents":0,"decimals":2,"description":"USA dollar","flag":"http:\/\/wpdemo.magikthemes.com\/creta\/wp-content\/plugins\/woocommerce-currency-switcher\/img\/no_flag.png"};
+    var woocs_array_of_get = '{}';
+
+    woocs_array_no_cents = '["JPY","TWD"]';
+
+    var woocs_ajaxurl = "http://wpdemo.magikthemes.com/creta/wp-admin/admin-ajax.php";
+    var woocs_lang_loading = "loading";
+    var woocs_shop_is_cached =0;
+
 	// woocommerce_price_slider_params is required to continue, ensure the object exists
-	if ( typeof woocommerce_price_slider_params === 'undefined' ) {
+	if ( typeof woocommerce_price_slider_params !== 'undefined' ) {
 		return false;
 	}
 
@@ -43,6 +57,7 @@ jQuery( function( $ ) {
 	});
 
 	function init_price_filter() {
+	    alert(111);
 		$( 'input#min_price, input#max_price' ).hide();
 		$( '.price_slider, .price_label' ).show();
 
@@ -77,7 +92,6 @@ jQuery( function( $ ) {
 			}
 		});
 	}
-
 	init_price_filter();
 
 	var hasSelectiveRefresh = (

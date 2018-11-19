@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Category;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $viewData = [];
+        $viewData = [
+        ];
         $carts = $this->getCart();
         if (Auth::check())
             $viewData = array_merge($viewData, [
@@ -25,7 +27,8 @@ class UserController extends Controller
 
     public function showAddr()
     {
-        $viewData = [];
+        $viewData = [
+        ];
         $carts = $this->getCart();
         if (Auth::check())
             $viewData = array_merge($viewData, [

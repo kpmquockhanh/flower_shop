@@ -111,12 +111,13 @@ html.yith-quick-view-is-open body {
     -ms-transition: all 0.2s ease;
 }
 #yith-quick-view-content div.images {
-    width: 40%;
+    width: 100%;
+    padding: 10px;
     float: left;
     opacity: 1 !important;
 }
 #yith-quick-view-content div.summary {
-    margin: 0;
+    margin-top: 30px;
     padding: 15px;
     width: 60%;
     float: left;

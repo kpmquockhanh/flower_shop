@@ -121,7 +121,7 @@
                             <div class="row">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <div class="form-group">
+                                    <div class="form-group float-right">
                                         <button type="submit" class="btn btn-success">Chỉnh sửa hoa</button>
                                     </div>
                                 </div>
@@ -175,8 +175,9 @@
     <script>
         $(function() {
             $('textarea').froalaEditor({
+                language: 'vn',
                 heightMin: 200,
-                spellcheck: false,
+                spellcheck: false
             })
         });
     </script>

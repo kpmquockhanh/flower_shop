@@ -201,7 +201,6 @@ website:   	http://www.magikcommerce.com/
 	text-align: left;
 	letter-spacing: normal;
 	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
 	line-height: 65px;
 }
 .tp-caption.LargeTitle span {
@@ -683,4 +682,4 @@ a.tp-button {
 .tp-rightarrow.default {
  margin-right: 0px;
 }
-}
+}}

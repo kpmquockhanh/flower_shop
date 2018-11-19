@@ -39,11 +39,11 @@
                       </span>
                                     </div>
                                     <p class="availability in-stock pull-right">
-                                        <span> In Stock</span>
+                                        <span> Còn hàng</span>
                                     </p>
                                 </div>
                                 <div class="woocommerce-product-details__short-description short-description">
-                                    <h2>Overview</h2>
+                                    <h2>Thông điệp</h2>
                                     <p>{!! $flower->message !!}</p>
                                 </div>
                                 <form class="cart" action="" method="post" enctype="multipart/form-data">
@@ -60,7 +60,13 @@
                       <span class="sku_wrapper">SKU:
                         <span class="sku">tsh3432</span>
                       </span>
-                                    <span class="posted_in">Categories: empty
+                                    <span class="posted_in">Categories:
+                                        @foreach ($flower->categories->load('category') as $key => $category)
+                                            @if ($key)
+                                                ,
+                                            @endif
+                                            <strong>{{($category->category->cate_name)}}</strong>
+                                        @endforeach
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/" rel="tag">Anniversary</a>,--}}
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/fabric-handbags/" rel="tag">Anniversary Flowers</a>,--}}
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/furniture/" rel="tag">Birthday</a>,--}}

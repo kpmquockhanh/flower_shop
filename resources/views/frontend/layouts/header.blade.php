@@ -9,8 +9,8 @@
 
                         <div class="dropdown block-language-wrapper">
                             <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#">
-                                <img src="{{asset('assets/themes/creta/images/english.png')}}" alt="English">
-                                English
+                                <img src="{{asset('assets/themes/creta/images/english.png')}}" alt="VietNam">
+                                Việt nam
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="welcome-msg">
-                            Default welcome msg!
+                            Chào mừng bạn đến với website bán hoa số một Việt nam!
                         </div>
 
                     </div>
@@ -56,21 +56,21 @@
                                         {{--<a href="#" class=""><span>Wishlist</span></a>--}}
                                     {{--</li>--}}
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                        <a href="{{route('cart.checkout')}}" class=""><span>Checkout</span></a>
+                                        <a href="{{route('cart.checkout')}}" class=""><span>Thanh toán</span></a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
+                                        <a href="{{route('check-order')}}" class=""><span>Kiểm tra đơn hàng</span></a>
                                     </li>
                                     @if (!\Illuminate\Support\Facades\Auth::guard('user')->check())
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                            <a href="#" class=""><span>Track Order</span></a>
-                                        </li>
                                         <li class="menu-item">
-                                            <a href="{{route('login')}}"> Login/Register</a>
+                                            <a href="{{route('login')}}">Đăng nhập / Đăng kí</a>
                                         </li>
                                     @else
 
-                                        <li class="menu-item"><a href="{{route('user.account')}}">Hello {{\Illuminate\Support\Facades\Auth::guard('user')->user()->name}}</a>
+                                        <li class="menu-item"><a href="{{route('user.account')}}">Xin chào {{\Illuminate\Support\Facades\Auth::guard('user')->user()->name}}</a>
                                         </li>
 
-                                        <li class="menu-item"><a href="{{route('logout')}}">Logout</a>
+                                        <li class="menu-item"><a href="{{route('logout')}}">Đăng xuất</a>
                                         </li>
                                     @endif
 
@@ -90,10 +90,8 @@
 
 
                     <div class="search-box">
-                        <form name="myform"  method="GET" action="#">
-                            <input type="text" placeholder="Search entire store here..." maxlength="70" name="s" class="mgksearch" value="">
-
-                            <input type="hidden" value="product" name="post_type">
+                        <form method="GET" action="{{route('shop')}}">
+                            <input type="text" placeholder="Tìm hoa bạn cần tại đây..." maxlength="70" name="s" class="mgksearch" value="">
 
                             <button class="search-btn-bg" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 

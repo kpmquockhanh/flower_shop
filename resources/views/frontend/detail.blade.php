@@ -51,14 +51,14 @@
                                         </div>
 
                                         <div class="woocommerce-product-details__short-description short-description">
-                                            <h2>Quick Overview</h2>
+                                            <h2>Thông điệp</h2>
                                             <p>{!! $flower->message !!}</p>
                                         </div>
 
                                         <div class="action pull-right">
                                             <a class="single_add_to_cart_button add_to_cart_button  product_type_simple ajax_add_to_cart button btn-cart" title='Add to cart' data-quantity="1" data-product_id="{{$flower->id}}"
                                                href='#'>
-                                                <span>Add to cart </span>
+                                                <span>Thêm vào giỏ hàng </span>
                                             </a>
                                         </div>
 
@@ -90,7 +90,23 @@
                                         <div class="clear"></div><a href="#" class="compare button" data-product_id="113" rel="nofollow">Compare</a>
                                         <div class="product_meta">
 
-                                            <span class="posted_in">Categories: <a href="#" rel="tag">Anniversary</a>, <a href="#" rel="tag">Birthday</a>, <a href="#" rel="tag">Birthday Flowers</a>, <a href="#" rel="tag">Everyday Occasions</a>, <a href="#" rel="tag">Favourite Flowers</a>, <a href="#" rel="tag">Flower with</a>, <a href="#" rel="tag">Flowers &amp; Combos</a>, <a href="#" rel="tag">Occasion</a>, <a href="#" rel="tag">Occasional Day</a></span>
+                                            <span class="posted_in">Categories:
+                                                @foreach ($flower->categories->load('category') as $key => $category)
+                                                    @if ($key)
+                                                        ,
+                                                    @endif
+                                                        <a href="{{route('shop', ['cate'=> $category->category_id])}}" rel="tag">{{$category->category->cate_name}}</a>
+                                                @endforeach
+                                                {{--<a href="#" rel="tag">Anniversary</a>,--}}
+                                                {{--<a href="#" rel="tag">Birthday</a>,--}}
+                                                {{--<a href="#" rel="tag">Birthday Flowers</a>,--}}
+                                                {{--<a href="#" rel="tag">Everyday Occasions</a>,--}}
+                                                {{--<a href="#" rel="tag">Favourite Flowers</a>,--}}
+                                                {{--<a href="#" rel="tag">Flower with</a>,--}}
+                                                {{--<a href="#" rel="tag">Flowers &amp; Combos</a>,--}}
+                                                {{--<a href="#" rel="tag">Occasion</a>,--}}
+                                                {{--<a href="#" rel="tag">Occasional Day</a>--}}
+                                            </span>
                                             <span class="tagged_as">Tags: <a href="#" rel="tag">beaded handbags</a>, <a href="#" rel="tag">handbags</a></span>
 
                                         </div>
@@ -98,31 +114,31 @@
                                         <div class="social">
                                             <ul>
                                                 <li class="fb pull-left">
-                                                    <a onclick="window.open('https://www.facebook.com/sharer.php?s=100&amp;p[url]=http%3A%2F%2Fwpdemo.magikthemes.com%2Fcreta%2Fproduct%2Fbasket-of-roses-with-dairymilk-silk%2F','sharer', 'toolbar=0,status=0,width=620,height=280');" href="javascript:;">
+                                                    <a onclick="window.open('https://www.facebook.com/sharer.php?s=100&amp;p[url]={{route('product.index', ['id' => $flower->id])}}','sharer', 'toolbar=0,status=0,width=620,height=280');" href="javascript:;">
 
                                                     </a>
                                                 </li>
 
                                                 <li class="tw pull-left">
-                                                    <a onclick="popUp=window.open('http://twitter.com/home?status=Basket+of+Roses+with+Dairymilk+Silk http%3A%2F%2Fwpdemo.magikthemes.com%2Fcreta%2Fproduct%2Fbasket-of-roses-with-dairymilk-silk%2F','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
+                                                    <a onclick="popUp=window.open('http://twitter.com/home?status={{route('product.index', ['id' => $flower->id])}}','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
 
                                                     </a>
                                                 </li>
 
                                                 <li class="googleplus pull-left">
-                                                    <a href="javascript:;" onclick="popUp=window.open('https://plus.google.com/share?url=http%3A%2F%2Fwpdemo.magikthemes.com%2Fcreta%2Fproduct%2Fbasket-of-roses-with-dairymilk-silk%2F','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;">
+                                                    <a href="javascript:;" onclick="popUp=window.open('https://plus.google.com/share?url={{route('product.index', ['id' => $flower->id])}}','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;">
 
                                                     </a>
                                                 </li>
 
                                                 <li class="linkedin pull-left">
-                                                    <a onclick="popUp=window.open('http://linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwpdemo.magikthemes.com%2Fcreta%2Fproduct%2Fbasket-of-roses-with-dairymilk-silk%2F&amp;title=Basket+of+Roses+with+Dairymilk+Silk','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
+                                                    <a onclick="popUp=window.open('http://linkedin.com/shareArticle?mini=true&amp;url={{route('product.index', ['id' => $flower->id])}}','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
 
                                                     </a>
                                                 </li>
 
                                                 <li class="pintrest pull-left">
-                                                    <a onclick="popUp=window.open('http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwpdemo.magikthemes.com%2Fcreta%2Fproduct%2Fbasket-of-roses-with-dairymilk-silk%2F&amp;description=Basket+of+Roses+with+Dairymilk+Silk&amp;media=#','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
+                                                    <a onclick="popUp=window.open('http://pinterest.com/pin/create/button/?url={{route('product.index', ['id' => $flower->id])}}','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:;">
 
                                                     </a>
                                                 </li>
@@ -194,3 +210,5 @@
         </div>
     </div>
 @stop
+@section('title',$flower->name.' - '.'klpflower.com')
+
