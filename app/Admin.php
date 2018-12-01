@@ -12,7 +12,7 @@ class Admin extends Authenticatable
     public function canChange()
     {
         if (Auth::guard('admin')->check())
-            return $this->id == Auth::guard('admin')->id() || Auth::guard('admin')->user()->type == 3;
+            return $this->id == Auth::guard('admin')->id() || (Auth::guard('admin')->user()->type == 3 && $this->type !=3);
         else
             return false;
     }

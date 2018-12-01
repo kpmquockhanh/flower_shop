@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-
+@section('title','Đăng nhập / Đăng kí')
 @section('content')
     <div class="main-container col1-layout wow bounceInUp animated" style="visibility: visible;">
         <div class="main container">
@@ -17,8 +17,6 @@
                             <div class="page-content">
                                 <div class="woocommerce">
 
-
-
                                     <div class="u-columns col2-set" id="customer_login">
 
                                         <div class="u-column1 col-1">
@@ -30,13 +28,13 @@
                                                 @csrf
                                                 @if ($errors->first() && !old('name'))
                                                     <div class="text-danger">
-                                                        <strong>{{ $errors->first() }}</strong>
+                                                        <strong class="">{{ $errors->first() }}</strong>
                                                     </div>
                                                 @endif
 
                                                 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                                     <label for="username">Email&nbsp;<span class="required">*</span></label>
-                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" autocomplete="email" value="{{old('email')}}">			</p>
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" autocomplete="email" value="{{!old('name')?old('email'):''}}">			</p>
                                                 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                                     <label for="password">Mật khẩu&nbsp;<span class="required">*</span></label>
                                                     <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password">
@@ -67,17 +65,17 @@
                                                 @csrf
                                                 @if ($errors->first() && old('name'))
                                                     <div class="text-danger">
-                                                        <strong>{{ $errors->first() }}</strong>
+                                                        <strong class="">{{ $errors->first() }}</strong>
                                                     </div>
                                                 @endif
                                                 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                                     <label for="reg_email">Tên&nbsp;<span class="required">*</span></label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="name" autocomplete="name" value="">
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="name" autocomplete="name" value="{{old('name')}}">
                                                 </p>
 
                                                 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                                     <label for="reg_email">Email&nbsp;<span class="required">*</span></label>
-                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" autocomplete="email" value="">
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" autocomplete="email" value="{{old('email')}}">
                                                 </p>
 
                                                 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">

@@ -88,6 +88,18 @@
                                 <span class="sidebar-normal"> Thể loại </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.flowers.images')}}">
+                                <span class="sidebar-mini-icon">I</span>
+                                <span class="sidebar-normal"> Ảnh đã upload </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.crawler.index')}}">
+                                <span class="sidebar-mini-icon">C</span>
+                                <span class="sidebar-normal">Crawler </span>
+                            </a>
+                        </li>
                         {{--<li>--}}
                             {{--<a href="">--}}
                                 {{--<span class="sidebar-mini-icon">X</span>--}}

@@ -208,7 +208,7 @@ $('.change-saler-status').on('click', function () {
     let tagI = button.find('i');
     let id = $(this).attr('data-id');
     iziToast.question({
-        timeout: 10000,
+        timeout: 2000,
         close: false,
         overlay: true,
         displayMode: 'once',
@@ -263,6 +263,215 @@ $('.change-saler-status').on('click', function () {
                                 message: 'Thay đổi không thành công',
                                 position: 'topCenter'
                             });
+                        }
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+
+            }, true],
+            ['<button>Không</button>', function (instance, toast) {
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            }],
+        ],
+        onClosing: function(instance, toast, closedBy){
+            // console.info('Closing | closedBy: ' + closedBy);
+        },
+        onClosed: function(instance, toast, closedBy){
+            // console.info('Closed | closedBy: ' + closedBy);
+        }
+    });
+});
+$('body').on('click','.btn-optimize-image', function () {
+    let that = $(this);
+    let id = $(this).attr('data-id');
+    let tr = $(this).parents('tr');
+    let i = $(this).children('i');
+
+
+    iziToast.question({
+        timeout: 10000,
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        id: 'question',
+        zindex: 999,
+        title: 'Tối ưu ảnh',
+        message: 'Bạn có muốn tối ưu ảnh này không?',
+        position: 'center',
+        buttons: [
+            ['<button><b>Có</b></button>', function (instance, toast) {
+
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                i.removeClass('fa-cog');
+                i.addClass('fa-spinner');
+                that.removeClass('btn-success');
+                that.addClass('btn-danger');
+
+                axios.post('/admin/flowers/optimize-image', {id: id})
+                    .then(function (res) {
+                        if (res.data.status)
+                        {
+                            // console.log(res);
+                            tr.replaceWith(res.data.data);
+                            iziToast.success({
+                                title: 'Thành công',
+                                message: 'Đã tối ưu ảnh thành công!',
+                                position: 'topCenter'
+                            });
+
+                        }
+                        else
+                        {
+                            console.log(res);
+                            iziToast.error({
+                                title: 'Lỗi',
+                                message: 'Tối ưu không thành công',
+                                position: 'topCenter'
+                            });
+                        }
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+
+            }, true],
+            ['<button>Không</button>', function (instance, toast) {
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            }],
+        ],
+        onClosing: function(instance, toast, closedBy){
+            // console.info('Closing | closedBy: ' + closedBy);
+        },
+        onClosed: function(instance, toast, closedBy){
+            // console.info('Closed | closedBy: ' + closedBy);
+        }
+    });
+});
+$('.btn-compress-all').on('click', function () {
+    let i = $(this).children('i');
+    let that = $(this);
+    iziToast.question({
+        timeout: 2000,
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        id: 'question',
+        zindex: 999,
+        title: 'Tối ưu ảnh',
+        message: 'Bạn có muốn tối ưu toàn bộ ảnh không?',
+        position: 'center',
+        buttons: [
+            ['<button><b>Có</b></button>', function (instance, toast) {
+
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                i.removeClass('fa-cogs');
+                i.addClass('fa-spinner fa-spin');
+                that.removeClass('btn-success');
+                that.addClass('btn-danger');
+
+                axios.post('/admin/flowers/optimize-all-image')
+                    .then(function (res) {
+                        if (res.data.status)
+                        {
+                            // console.log(res);
+                            iziToast.success({
+                                title: 'Thành công',
+                                message: 'Đã tối ưu ảnh thành công!',
+                                position: 'topCenter'
+                            });
+                            i.addClass('fa-cogs');
+                            i.removeClass('fa-spinner fa-spin');
+                            that.addClass('btn-success');
+                            that.removeClass('btn-danger');
+                        }
+                        else
+                        {
+                            console.log(res);
+                            iziToast.error({
+                                title: 'Lỗi',
+                                message: 'Tối ưu không thành công',
+                                position: 'topCenter'
+                            });
+                            i.addClass('fa-cogs');
+                            i.removeClass('fa-spinner fa-spin');
+                            that.addClass('btn-success');
+                            that.removeClass('btn-danger');
+                        }
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+
+            }, true],
+            ['<button>Không</button>', function (instance, toast) {
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            }],
+        ],
+        onClosing: function(instance, toast, closedBy){
+            // console.info('Closing | closedBy: ' + closedBy);
+        },
+        onClosed: function(instance, toast, closedBy){
+            // console.info('Closed | closedBy: ' + closedBy);
+        }
+    });
+});
+
+$('body').on('click','.btn-download', function () {
+    let that = $(this);
+    let index = $(this).attr('data-index');
+    let tr = $(this).parents('tr');
+    let i = $(this).children('i');
+
+
+    iziToast.question({
+        timeout: 10000,
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        id: 'question',
+        zindex: 999,
+        title: 'Crawl',
+        message: 'Bạn có muốn crawl link này không?',
+        position: 'center',
+        buttons: [
+            ['<button><b>Có</b></button>', function (instance, toast) {
+
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                i.removeClass('fa-download');
+                i.addClass('fa-spinner fa-spin');
+                that.removeClass('btn-success');
+                that.addClass('btn-danger');
+
+                axios.post('/admin/crawler/crawl', {index: index})
+                    .then(function (res) {
+                        if (res.data.status)
+                        {
+                            // console.log(res);
+                            iziToast.success({
+                                title: 'Thành công',
+                                message: 'Crawl thành công!',
+                                position: 'topCenter'
+                            });
+
+                            tr.replaceWith(res.data.data);
+                        }
+                        else
+                        {
+                            // console.log(res);
+                            iziToast.error({
+                                title: 'Lỗi',
+                                message: 'Crawl không thành công',
+                                position: 'topCenter'
+                            });
+
+                            i.addClass('fa-download');
+                            i.removeClass('fa-spinner fa-spin');
+                            that.addClass('btn-success');
+                            that.removeClass('btn-danger');
                         }
                     })
                     .catch(function (err) {

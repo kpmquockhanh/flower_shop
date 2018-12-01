@@ -12,11 +12,10 @@
 */
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
 Route::middleware('locale')->group( function() {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::post('/subscribe', 'HomeController@addSub')->name('subscribe');
     Route::get('/shop', 'HomeController@viewShop')->name('shop');
-    Route::get('/test', 'CrawlerController@index');
 
     Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
 
@@ -55,11 +54,18 @@ Route::middleware('locale')->group( function() {
     });
 
     Route::prefix('admin')->group(function (){
+        Route::prefix('crawler')->group(function (){
+            Route::get('/', 'CrawlerController@index')->name('admin.crawler.index');
+            Route::post('/crawl', 'CrawlerController@crawl')->name('admin.crawler.crawl');
+        });
         Route::get('/approve-admin','AdminController@showApproveAdmin')->name('admin.up.admin');
         Route::post('/approve-admin','AdminController@approveAdmin');
         Route::get('/','AdminController@index')->name('admin.dashboard');
         Route::prefix('flowers')->middleware('auth:admin')->group(function (){
             Route::get('/','FlowerController@index')->name('admin.flowers.list');
+            Route::get('/images','FlowerController@listImages')->name('admin.flowers.images');
+            Route::post('/optimize-image','FlowerController@compressImage')->name('admin.flowers.optimize');
+            Route::post('/optimize-all-image','FlowerController@compressAllImages')->name('admin.flowers.optimize.all');
             Route::get('/add','FlowerController@create')->name('admin.flowers.add');
             Route::post('/add','FlowerController@store')->name('admin.flowers.store');
             Route::get('/edit/{id}','FlowerController@edit')->name('admin.flowers.edit');

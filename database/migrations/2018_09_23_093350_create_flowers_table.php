@@ -17,7 +17,7 @@ class CreateFlowersTable extends Migration
             $table->increments('id');
             $table->integer('admin_id');
             $table->string('slug')->nullable();
-            $table->enum('integer', [1,2,3,4,5])->nullable();
+            $table->integer('views')->default(0);
             $table->boolean('show')->default(false);
             $table->string('name');
             $table->text('message')->nullable();

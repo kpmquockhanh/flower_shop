@@ -9,13 +9,13 @@
 
                         <div class="dropdown block-language-wrapper">
                             <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#">
-                                <img src="{{asset('assets/themes/creta/images/english.png')}}" alt="VietNam">
+                                <img src="{{asset('assets/themes/creta/images/vietnam.png')}}" alt="VietNam">
                                 Việt nam
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/english.png')}}" alt="Việt Nam">    Việt Nam</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/english.png')}}" alt="English">    English</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/vietnam.png')}}" alt="Việt Nam">    Việt Nam</a></li>
+{{--                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/english.png')}}" alt="English">    English</a></li>--}}
                                 {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/francais.png')}}" alt="French"> French </a></li>--}}
                                 {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="{{asset('assets/themes/creta/images/german.png')}}" alt="German">   German</a></li>--}}
                             </ul>

@@ -16,35 +16,6 @@
 								<i class="fa fa-home"></i>
 							</span>
                         </a>
-                        {{--
-
-						<div class="mgk-popup">
-							<div class="inner" style="">
-								<ul class="sub-menu">
-                                    --}}
-                        {{--
-
-									<li id="nav-menu-item-2040" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active" data-cols="1">
-										<a href="#" class="">
-											<span>Home Layout 1</span>
-										</a>
-									</li>
-                        --}}
-                        {{--
-
-									<li id="nav-menu-item-2039" class="menu-item menu-item-type-custom menu-item-object-custom " data-cols="1">
-										<a href="#" class="">
-											<span>Home Layout 2</span>
-										</a>
-									</li>
-                        --}}
-                        {{--
-
-								</ul>
-							</div>
-						</div>
-            --}}
-
                     </li>
                     <li id="nav-menu-item-2008" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub wide  col-6">
                         <a href="{{route('home')}}" class="">
@@ -58,7 +29,8 @@
                         <div class="mgk-popup">
                             <div class="inner" style="">
                                 <ul class="sub-menu">
-                                   @foreach (\App\Category::all() as $category)
+                                    <?php $categories = \App\Category::all(); ?>
+                                   @foreach ($categories as $category)
                                         <li class="menu-item menu-item-type-custom menu-item-object-custom " data-cols="1" style="width: 100%;">
                                             <a href="{{route('shop', ['cate'=>$category->id])}}" class="">
                                                 <span>{{$category->cate_name}}</span>
@@ -69,21 +41,21 @@
                             </div>
                         </div>
                     </li>
-                    <li id="nav-menu-item-2037" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat  narrow ">
-                        <a href="#" class="">
-                            <span>Demo</span>
-                        </a>
-                    </li>
+                    {{--<li id="nav-menu-item-2037" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat  narrow ">--}}
+                        {{--<a href="#" class="">--}}
+                            {{--<span>Demo</span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                     <li id="nav-menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
                         <a href="{{route('shop')}}" class="">
                             <span>Shop</span>
                         </a>
                     </li>
-                    <li id="nav-menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has-sub narrow ">
-                        <a href="#" class="">
-                            <span>Ý nghĩa hoa</span>
-                        </a>
-                    </li>
+                    {{--<li id="nav-menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has-sub narrow">--}}
+                        {{--<a href="#" class="">--}}
+                            {{--<span>Ý nghĩa hoa</span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                     {{--<li id="nav-menu-item-2327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  has-sub wide  col-4">--}}
                         {{--<a href="#" class="">--}}
                             {{--<span>Shop</span>--}}

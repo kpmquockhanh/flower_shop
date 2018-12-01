@@ -23,13 +23,7 @@ class FlowerController extends Controller
     {
 
         $flowers = Flower::with('admin');
-//
-//        // open file a image resource
-//        $img = Image::make('images/'.$flowers->first()->image);
-//        // crop image
-//        $img->crop(100, 100, 25, 25);
-//        dd($img->save());
-//        dd($flowers->first());
+
         if (Auth::guard('admin')->user()->type != 3 )
             $flowers->where('admin_id', Auth::guard('admin')->id());
 
@@ -58,6 +52,8 @@ class FlowerController extends Controller
 
     public function create()
     {
+        if (!Auth::guard('admin')->user()->status)
+            return redirect(route('admin.flowers.list'));
 
         $viewData = [
             'categories' => Category::all(),
@@ -68,38 +64,19 @@ class FlowerController extends Controller
 
     public function store(FlowerRequest $request)
     {
-        $data = $request->only([
-            'name',
-            'show',
-            'message',
-            'saleoff',
-            'price',
-            'quantity',
-        ]);
 
-        $data['admin_id'] = Auth::guard('admin')->user()->id;
+        if (!Auth::guard('admin')->user()->status)
+            return redirect(route('admin.flowers.list'));
 
-        if (isset($data['show']))
-            $data['show'] = $data['show']==='on'? true : false;
-
-        if ($image = $request->image)
-        {
-            $data['image'] = $this->processImage($image);
-        }
-
+        $data = $this->getDataForStore($request);
 
         $flower_inserted = Flower::create(array_merge($data));
 
-        foreach ($request->categories as $category)
-        {
-            CategoryFlower::create([
-                'flower_id' => $flower_inserted->id,
-                'category_id' => $category,
-            ]);
-        }
+        $this->insertCategoryFlower($request->categories, $flower_inserted);
 
         return redirect(route('admin.flowers.list'));
     }
+
 
     public function edit($id)
     {
@@ -116,8 +93,6 @@ class FlowerController extends Controller
                 'categories' => Category::all(),
                 'flower' => $flower,
             ];
-
-
 
             if ($flower)
                 return view('backend.flowers.edit')->with($viewData);
@@ -160,7 +135,6 @@ class FlowerController extends Controller
                     $data['image'] = $this->processImage($image);
                 }
 
-
                 //Update category of flower
                 $requestCate = $request->categories;
                 $currentCate = array_column($flower->categories->toArray(),'category_id');
@@ -169,7 +143,6 @@ class FlowerController extends Controller
                 CategoryFlower::query()->where('flower_id', $id)->whereIn('category_id',$deleteCate)->delete();
 
                 $flower->update($data);
-
 
 
                 return redirect(route('admin.flowers.list'));
@@ -246,4 +219,113 @@ class FlowerController extends Controller
 //            $image->move(public_path('images'), $name);
         return $name;
     }
+
+    public function insertCategoryFlower($categories, $flowerId)
+    {
+        foreach ($categories as $category)
+        {
+            CategoryFlower::create([
+                'flower_id' => $flowerId->id,
+                'category_id' => $category,
+            ]);
+        }
+    }
+
+    public function getDataForStore(Request $request)
+    {
+        $data = $request->only([
+            'name',
+            'show',
+            'message',
+            'saleoff',
+            'price',
+            'quantity',
+        ]);
+
+        $data['admin_id'] = Auth::guard('admin')->user()->id;
+
+        if (isset($data['show']))
+            $data['show'] = $data['show']==='on'? true : false;
+
+        if ($image = $request->image)
+        {
+            $data['image'] = $this->processImage($image);
+        }
+
+        return $data;
+    }
+
+    public function listImages(Request $request)
+    {
+        $images = Flower::query()->where('admin_id', Auth::guard('admin')->id())->select('image','id');
+
+        $page = 12;
+        if ($paginate = $request->paginate)
+            $page = $paginate;
+
+        $viewData = [
+            'images' => $images->paginate($page),
+        ];
+        return view('backend.flowers.images.list')->with($viewData);
+    }
+
+    public function compressImage(Request $request)
+    {
+        if ($id = $request->id)
+        {
+            $flower = Flower::query()->findOrFail($id);
+
+            $this->cropAndWaterMarkImage('images/'.$flower->image);
+
+            $this->optimizeImage('images/'.$flower->image);
+
+//            setKey("Zt8Tpdw4FvTBz2NVD505HQnzqXY6Fjyc");
+//            fromFile(public_path('images').'/'.$flower->image)->toFile(public_path('images').'/'.$flower->image);
+//            $image->move(public_path('images'), $flower->image);
+
+            return response()->json([
+                'status' => true,
+                'data' => view('backend.flowers.images.tr')->with(['image'=> $flower])->render(),
+            ]);
+        }
+        return response()->json([
+            'status' => false,
+        ]);
+
+    }
+
+    public function compressAllImages()
+    {
+        $images = Flower::query()->where('admin_id', Auth::guard('admin')->id())->select('image','id')->get();
+
+        foreach ($images as $image)
+        {
+            $this->cropAndWaterMarkImage('images/'.$image->image);
+            $this->optimizeImage('images/'.$image->image);
+        }
+
+        return response()->json([
+            'status' => true,
+        ]);
+    }
+
+    public function cropAndWaterMarkImage(string $image)
+    {
+        Image::make($image)
+            ->resize(null, 500, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->insert('img/watermark.png','top-right', 20,20)
+            ->save($image);
+    }
+
+    public function optimizeImage($image_file)
+    {
+        $img = imagecreatefromjpeg($image_file);
+
+        imagejpeg($img,$image_file,50);
+
+    }
+
+
 }

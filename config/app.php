@@ -150,7 +150,6 @@ return [
         /*
          * Package Service Providers...
          */
-
         /*
          * Application Service Providers...
          */
@@ -161,7 +160,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
     ],
 
     /*

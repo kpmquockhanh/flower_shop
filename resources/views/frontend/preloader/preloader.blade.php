@@ -176,9 +176,3 @@
         <i></i>
     </div>
 </section>
-
-<script>
-    jQuery(document).ready(function($){
-        jQuery('#preloader').fadeOut();
-    });
-</script>

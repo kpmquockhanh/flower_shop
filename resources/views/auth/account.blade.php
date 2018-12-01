@@ -11,9 +11,9 @@
                         <div id="faq" class="panel-group">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h5 class="panel-title"><span>1</span> <a data-toggle="collapse" data-parent="#faq"
-                                                                              href="#my-account-1">Edit your account
-                                            information </a></h5>
+                                    <h5 class="panel-title"><span>1</span>
+                                        <a data-toggle="collapse" data-parent="#faq" href="#my-account-1">Sửa thông tin tài khoản </a>
+                                    </h5>
                                 </div>
                                 <div id="my-account-1" class="panel-collapse collapse show">
                                     <div class="panel-body">
@@ -21,14 +21,14 @@
                                             <form action="{{route('change-info')}}" method="post">
                                                 @csrf()
                                                 <div class="account-info-wrapper">
-                                                    <h4>My Account Information</h4>
-                                                    <h5>Your Personal Details</h5>
+                                                    <h4>Thông tin tài khoản</h4>
+                                                    <h5>Chi tiết tài khoản</h5>
                                                 </div>
                                                 <div class="row">
 
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
-                                                            <label>Name</label>
+                                                            <label>Tên</label>
                                                             <input type="text" name="name"
                                                                    value="{{old('name', $user->name)}}">
 
@@ -41,7 +41,7 @@
                                                     </div>
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
-                                                            <label>Email Address</label>
+                                                            <label>Email</label>
                                                             <input type="email" value="{{$user->email}}" disabled>
                                                         </div>
                                                     </div>

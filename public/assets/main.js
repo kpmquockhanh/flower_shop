@@ -1,4 +1,9 @@
-
+jQuery(window).scroll(function() {
+    jQuery(this).scrollTop() > 1 ? jQuery("nav").addClass("sticky-header") : jQuery("nav").removeClass("sticky-header")
+});
+jQuery(window).scroll(function() {
+    jQuery(this).scrollTop() > 1 ? jQuery(".top-cart-contain").addClass("sticky-topcart") : jQuery(".top-cart-contain").removeClass("sticky-topcart")
+});
 jQuery('body').on('click', '.ajax_add_to_cart', function (e) {
     e.preventDefault();
     jQuery('#preloader').fadeIn();
@@ -14,7 +19,7 @@ jQuery('body').on('click', '.ajax_add_to_cart', function (e) {
             jQuery(res.data.data).replaceAll('#cart-refresh');
             if (jQuery(this).scrollTop() > 1)
             {
-                // console.log(jQuery('#cart-refresh .ajax-cart'));
+                console.log(jQuery('#cart-refresh .ajax-cart'));
                 jQuery('#cart-refresh .ajax-cart').addClass('sticky-topcart');
             }
             jQuery('#yith-quick-view-modal').fadeOut(300, function () {

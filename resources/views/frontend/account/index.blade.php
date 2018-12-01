@@ -9,7 +9,7 @@
                         <div class="static-contain">
                             <div class="page-title">
                                 <h2 class="entry-title">
-                                    My Account      </h2>
+                                    Tài khoản của tôi      </h2>
                             </div>
 
                             <div class="page-content">
@@ -17,11 +17,9 @@
 
                                     <div class="col-sm-8">
 
-                                        <p>Hello <strong>{{\Illuminate\Support\Facades\Auth::guard('user')->user()->name}}</strong>
-                                            (not <strong>{{\Illuminate\Support\Facades\Auth::guard('user')->user()->name}}</strong>?
+                                        <p>Xin chào <strong>{{\Illuminate\Support\Facades\Auth::guard('user')->user()->name}}</strong>
+                                            (không phải <strong>{{\Illuminate\Support\Facades\Auth::guard('user')->user()->name}}</strong>?
                                             <a href="{{route('logout')}}">Log out</a>)</p>
-
-                                        <p>From your account dashboard you can view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a>, and <a href="#">edit your password and account details</a>.</p>
 
                                     </div>
 

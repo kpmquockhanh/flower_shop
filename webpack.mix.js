@@ -36,10 +36,9 @@ mix.styles('public/assets/themes/creta/skins/default/mgk_menu.css', 'public/asse
 // ], 'public/css/klpflower.css');
 
 mix.babel([
-    'public/js/axios.min.js',
     'public/assets/themes/creta/js/mgk_menu.js',
-    'public/assets/main.js',
     'public/assets/themes/creta/js/countdown.js',
     'public/assets/themes/creta/js/common.js',
     'public/assets/themes/creta/js/revslider.js',
+    'public/assets/main.js',
 ], 'public/js/klpflower.js');

@@ -18,4 +18,9 @@ class Category extends Model
         else
             return false;
     }
+
+    public function flowers()
+    {
+        $this->hasMany(Flower::class);
+    }
 }

@@ -14,7 +14,7 @@
 
                         </div>
                         <div class="pretext">
-                            Những mặt hàng đang bán chạy nhấp tại trang web bán hoa số một thế giới
+                            Những mặt hàng đang được xem nhiều nhất tại trang web bán hoa số một Việt Nam
                         </div>
                         <a class="view_more_bnt" href="{{route('shop')}}">XEM TOÀN BỘ</a>
                     </div>
@@ -22,7 +22,7 @@
                     <div class="slider-items slider-width-col4 products-grid block-content">
 
                         <!-- best seller category fashion -->
-                        @if ($flowers->count())
+                        @if ($flowers)
                             @foreach($flowers as $flower)
                                 <div class="item">
                                     <div class="item-inner">
@@ -30,7 +30,7 @@
                                             <div class="item-img-info">
                                                 <a href="{{route('product.index', ['id'=>$flower->id])}}" title="{{$flower->name}}" class="product-image">
                                                     <figure class="img-responsive" style="height: 200px;">
-                                                        <img alt="" src="{{asset('images/'.$flower->image)}}" style="height: 100%; width: unset;">
+                                                        <img class="lazy" alt="{{$flower->name}}" data-src="{{asset('images/'.$flower->image)}}" style="height: 100%;width: unset;" >
                                                     </figure>
                                                 </a>
                                                 <div class="new-label new-top-left">Sale {{$flower->saleoff*100}}%</div>

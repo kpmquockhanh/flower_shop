@@ -8,7 +8,7 @@
                         <div class="static-contain">
                             <div class="page-title">
                                 <h2 class="entry-title">
-                                    Checkout
+                                    Thanh toán
                                 </h2>
                             </div>
                             <div class="page-content">
@@ -20,13 +20,25 @@
                                         <div class="col2-set" id="customer_details">
                                             <div class="col-1">
                                                 <div class="woocommerce-billing-fields">
+                                                    @if ($errors->first())
+                                                        <div class="text-danger">
+                                                            <strong>{{ $errors->first() }}</strong>
+                                                        </div>
+                                                    @endif
                                                     <div class="step-title">
-                                                        <h3 class="one_page_heading">Billing details</h3>
+                                                        <h3 class="one_page_heading">Chi tiết hóa đơn</h3>
                                                     </div>
+
                                                     <fieldset class="group-select">
                                                         <div class="woocommerce-billing-fields__field-wrapper">
+                                                            @if ($errors->first() && !old('name'))
+                                                                <div class="text-danger">
+                                                                    <strong>{{ $errors->first() }}</strong>
+                                                                </div>
+                                                            @endif
+
                                                             <p class="form-row form-row-wide">
-                                                                <label for="billing_first_name" class="">Name&nbsp;<abbr
+                                                                <label for="billing_first_name" class="">Tên&nbsp;<abbr
                                                                             class="required"
                                                                             title="required">*</abbr></label>
                                                                 <span class="woocommerce-input-wrapper">
@@ -42,7 +54,7 @@
                                                             <p class="form-row form-row-wide address-field validate-required"
                                                                id="billing_address_1_field" data-priority="50">
                                                                 <label for="billing_address_1"
-                                                                       class="">Address&nbsp;<abbr class="required"
+                                                                       class="">Địa chỉ&nbsp;<abbr class="required"
                                                                                                    title="required">*</abbr></label>
                                                                 <span class="woocommerce-input-wrapper">
                                                                     <input type="text" class="input-text "
@@ -54,7 +66,7 @@
                                                             </p>
                                                             <p class="form-row form-row-wide validate-required validate-phone"
                                                                id="billing_phone_field" data-priority="100">
-                                                                <label for="billing_phone" class="">Phone&nbsp;<abbr
+                                                                <label for="billing_phone" class="">Số điện thoại&nbsp;<abbr
                                                                             class="required"
                                                                             title="required">*</abbr></label>
                                                                 <span class="woocommerce-input-wrapper">
@@ -65,8 +77,7 @@
                                                             </p>
                                                             <p class="form-row form-row-wide validate-required validate-email"
                                                                id="billing_email_field" data-priority="110">
-                                                                <label for="billing_email" class="">Email
-                                                                    address&nbsp;</label>
+                                                                <label for="billing_email" class="">Email&nbsp;</label>
                                                                 <span class="woocommerce-input-wrapper">
                                                                     <input type="email" class="input-text "
                                                                            name="billing_email" id="billing_email"
@@ -83,9 +94,9 @@
                                                     <div class="woocommerce-additional-fields__field-wrapper">
                                                         <p class="form-row notes" id="order_comments_field"
                                                            data-priority="">
-                                                            <label for="order_comments" class="">Order notes&nbsp;
+                                                            <label for="order_comments" class="">Ghi chú&nbsp;
                                                                 <span
-                                                                        class="optional">(optional)</span>
+                                                                        class="optional">(tùy chọn)</span>
                                                             </label>
                                                             <span class="woocommerce-input-wrapper">
                                                                 <textarea
@@ -99,20 +110,20 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3 id="order_review_heading">Your order</h3>
+                                        <h3 id="order_review_heading">Đơn hàng của bạn</h3>
                                         <div id="order_review" class="woocommerce-checkout-review-order">
                                             <table class="shop_table woocommerce-checkout-review-order-table">
                                                 <thead>
                                                 <tr>
-                                                    <th class="product-name">Product</th>
-                                                    <th class="product-total">Total</th>
+                                                    <th class="product-name">Sản phẩm</th>
+                                                    <th class="product-total">Tổng</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 @if (!$carts->count())
                                                     <tr>
                                                         <td colspan="2">
-                                                            <div>nothing.</div>
+                                                            <div>không có gì.</div>
                                                         </td>
                                                     </tr>
                                                 @endif
@@ -132,14 +143,14 @@
                                                 </tbody>
                                                 <tfoot>
                                                 <tr class="cart-subtotal">
-                                                    <th>Subtotal</th>
+                                                    <th>Tổng tiền</th>
                                                     <td><span class="woocs_special_price_code"><span
                                                                     class="woocommerce-Price-amount amount">{{number_format($subtotal)}}
                                                                 <span class="woocommerce-Price-currencySymbol">đ</span></span></span>
                                                     </td>
                                                 </tr>
                                                 <tr class="shipping">
-                                                    <th>Shipping <i>(non avaiable yet.)</i></th>
+                                                    <th>Phí vận chuyển <i>(đang xây dựng.)</i></th>
                                                     <td data-title="Shipping">
                                                         @if ($shippers->count())
                                                             <ul id="shipping_method">
@@ -155,13 +166,13 @@
                                                             </ul>
                                                             @else
                                                             <label for="shipping_method_0_legacy_flat_rate">
-                                                                No shippers avaiable.
+                                                                Không có đơn vị vận chuyển khả dụng.
                                                             </label>
                                                         @endif
                                                     </td>
                                                 </tr>
                                                 <tr class="order-total">
-                                                    <th>Total</th>
+                                                    <th>Tổng tiền</th>
                                                     <td>
                                                         <strong>
                                                             <span class="woocs_special_price_code"><span
@@ -179,13 +190,19 @@
                                                         <input id="payment_method_bacs" type="radio" class="input-radio"
                                                                name="payment_method" value="bacs" checked="checked"
                                                                data-order_button_text="">
-                                                        <label for="payment_method_bacs">Direct transfer</label>
+                                                        <label for="payment_method_bacs">Thanh toán trực tiếp</label>
                                                         <div class="payment_box payment_method_bacs"
                                                              style="display: block;">
-                                                            <p>Make your payment directly into our bank account. Please
-                                                                use your Order ID as the payment reference. Your order
-                                                                will not be shipped until the funds have cleared in our
-                                                                account.</p>
+                                                            <p>Thanh toán khi nhận hàng.</p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="wc_payment_method payment_method_bacs">
+                                                        <input id="payment_method_bacs" type="radio" class="input-radio"
+                                                               name="payment_method" value="bacs" data-order_button_text="">
+                                                        <label for="payment_method_bacs">Thanh toán ngân hàng</label>
+                                                        <div class="payment_box payment_method_bacs"
+                                                             style="display: block;">
+                                                            <p>Thanh toán qua ngân hàng (chưa xây dựng).</p>
                                                         </div>
                                                     </li>
 
@@ -206,7 +223,7 @@
                                                     </div>
                                                     <button type="submit" class="button alt"
                                                             name="woocommerce_checkout_place_order" id="place_order"
-                                                            value="Place order" data-value="Place order">Place order
+                                                            value="Place order" data-value="Place order">Đặt hàng
                                                     </button>
                                                     <input type="hidden" id="woocommerce-process-checkout-nonce"
                                                            name="woocommerce-process-checkout-nonce" value="ecc913e347"><input

@@ -49,71 +49,30 @@
                         <ul class="woocommerce-widget-layered-nav-list">
                             <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term {{isset($queries['price'])?'':'chosen'}}">
                                 <a rel="nofollow" href="{{route('shop', array_except($queries, ['price']))}}">Tất cả</a>
-                                <span class="count">(2)</span>
-                            </li>
-                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term {{isset($queries['price'])?$queries['price']==1000?'chosen':'':''}}">
-                                <a rel="nofollow" href="{{route('shop', array_merge($queries, ['price'=>1000]))}}">Lớn hơn 1,000đ</a>
-                                <span class="count">(2)</span>
+                                {{--<span class="count">(2)</span>--}}
                             </li>
                             <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term {{isset($queries['price'])?$queries['price']==50000?'chosen':'':''}}">
                                 <a rel="nofollow" href="{{route('shop', array_merge($queries, ['price'=>50000]))}}">Lớn hơn 50,000đ</a>
-                                <span class="count">(10)</span>
+                                {{--<span class="count">(2)</span>--}}
+                            </li>
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term {{isset($queries['price'])?$queries['price']==100000?'chosen':'':''}}">
+                                <a rel="nofollow" href="{{route('shop', array_merge($queries, ['price'=>100000]))}}">Lớn hơn 100,000đ</a>
+                                {{--<span class="count">(10)</span>--}}
+                            </li>
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term {{isset($queries['price'])?$queries['price']==300000?'chosen':'':''}}">
+                                <a rel="nofollow" href="{{route('shop', array_merge($queries, ['price'=>300000]))}}">Lớn hơn 300,000đ</a>
+                                {{--<span class="count">(10)</span>--}}
+                            </li>
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term {{isset($queries['price'])?$queries['price']==500000?'chosen':'':''}}">
+                                <a rel="nofollow" href="{{route('shop', array_merge($queries, ['price'=>500000]))}}">Lớn hơn 500,000đ</a>
+                                {{--<span class="count">(10)</span>--}}
+                            </li>
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term {{isset($queries['price'])?$queries['price']==1000000?'chosen':'':''}}">
+                                <a rel="nofollow" href="{{route('shop', array_merge($queries, ['price'=>1000000]))}}">Lớn hơn 1,000,000đ</a>
+                                {{--<span class="count">(10)</span>--}}
                             </li>
                         </ul>
                     </div>
-                    {{--<div id="price_filter" class="block woocommerce widget_layered_nav woocommerce-widget-layered-nav">--}}
-                        {{--<div class="block-title">Filter by price</div>--}}
-                        {{--<ul class="woocommerce-widget-layered-nav-list">--}}
-                            {{--<li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term chosen"><a rel="nofollow" href="http://wpdemo.magikthemes.com/creta/shop/?filter_flower-color=red-roses">Red Roses</a> <span class="count">(2)</span></li>--}}
-                            {{--<li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a rel="nofollow" href="http://wpdemo.magikthemes.com/creta/shop/?filter_flower-color=yellow-rose">Yellow Rose</a> <span class="count">(3)</span></li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                    {{--<div id="yith-woocompare-widget-2" class="block yith-woocompare-widget">--}}
-                        {{--<div class="block-title">Compare</div>--}}
-                        {{--<ul class="products-list" data-lang="">--}}
-                            {{--<li class="list_empty">No products to compare</li>--}}
-                        {{--</ul>--}}
-
-                        {{--<a href="http://wpdemo.magikthemes.com/creta?action=yith-woocompare-remove-product&amp;id=all" data-product_id="all" class="clear-all" rel="nofollow">Clear all</a>--}}
-                        {{--<a href="/creta/shop/?action=yith-woocompare-view-table&amp;iframe=yes" class="compare added button" rel="nofollow">Compare</a>--}}
-
-                    {{--</div>--}}
-                    {{--<div id="woocommerce_recent_reviews-2" class="block woocommerce widget_recent_reviews">--}}
-                        {{--<div class="block-title">Recent Reviews</div>--}}
-                        {{--<ul class="product_list_widget">--}}
-                            {{--<li>--}}
-
-                                {{--<a href="http://wpdemo.magikthemes.com/creta/product/pink-roses-in-a-glass-vase/#comment-58">--}}
-                                    {{--<img width="300" height="300" src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product15.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt=""> <span class="product-title">Pink Roses &amp; Gerberas in a Glass Vase</span>--}}
-                                {{--</a>--}}
-
-                                {{--<div class="star-rating"><span style="width:80%">Rated <strong class="rating">4</strong> out of 5</span></div>--}}
-                                {{--<span class="reviewer">by Maria</span>--}}
-
-                            {{--</li>--}}
-                            {{--<li>--}}
-
-                                {{--<a href="http://wpdemo.magikthemes.com/creta/product/glass-vase-of-yellow-roses/#comment-39">--}}
-                                    {{--<img width="300" height="300" src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product9.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt=""> <span class="product-title">Glass Vase of Yellow Roses</span>--}}
-                                {{--</a>--}}
-
-                                {{--<div class="star-rating"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div>--}}
-                                {{--<span class="reviewer">by Maria</span>--}}
-
-                            {{--</li>--}}
-                            {{--<li>--}}
-
-                                {{--<a href="http://wpdemo.magikthemes.com/creta/product/one-sided-basket-of-beautiful-assorted-flowers/#comment-45">--}}
-                                    {{--<img width="300" height="300" src="http://wpdemo.magikthemes.com/creta/wp-content/uploads/sites/26/2017/07/product16.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt=""> <span class="product-title">One Sided Basket of Beautiful Assorted Flowers</span>--}}
-                                {{--</a>--}}
-
-                                {{--<div class="star-rating"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div>--}}
-                                {{--<span class="reviewer">by Stuart</span>--}}
-
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-
                 </div>
 
                 <div class="col-sm-9 col-xs-12">
@@ -165,8 +124,7 @@
                                                         <div class="pimg">
 
                                                             <a href="{{route('product.index', ['id'=>$flower->id])}}" class="product-image">
-
-                                                                <img src="{{'images/'.$flower->image}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" style="width: auto;height: 300px;">
+                                                                <img class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" data-src="{{asset('images/'.$flower->image)}}" alt="" style="width: auto;height: 300px;">
                                                             </a>
 
                                                         </div>
@@ -187,7 +145,7 @@
                                                 <div class="item-info">
                                                     <div class="info-inner">
                                                         <div class="item-title">
-                                                            <a href="http://wpdemo.magikthemes.com/creta/product/basket-arrangement-lilies-orchids/">
+                                                            <a href="{{route('product.index', ['id' => $flower->id])}}">
                                                                 {{$flower->name}}
                                                             </a>
                                                         </div>
@@ -257,7 +215,7 @@
             </div>
         </div>
     </div>
-    @include('frontend.layouts.best-sell')
+    @include('frontend.layouts.best-sell', ['flowers' => $hotFlowers])
 
 
 
@@ -269,5 +227,7 @@
         /* <![CDATA[ */
         var woocommerce_price_slider_params = {"currency_format_num_decimals":"0","currency_format_symbol":"$","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%s%v"};
         /* ]]> */
+
+        jQuery('.lazy').lazy();
     </script>
 @stop

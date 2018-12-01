@@ -44,11 +44,13 @@
                    </span>
                 </form>
             </div>
-            <div class="col-md-2 m-auto pr-5">
-                <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-50 pull-right" style="display: flex;justify-content: center;">
-                    <i class="fa fa-plus-circle"></i>
-                </a>
-            </div>
+           @if (\Illuminate\Support\Facades\Auth::guard('admin')->user()->status)
+                <div class="col-md-2 m-auto pr-5">
+                    <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-50 pull-right" style="display: flex;justify-content: center;">
+                        <i class="fa fa-plus-circle"></i>
+                    </a>
+                </div>
+           @endif
             @if (!count($flowers))
                 <div class="alert alert-info m-auto w-100">Không có hoa nào trong cơ sở dữ liệu. <a href="{{route('admin.flowers.list')}}" class="text-light font-weight-bold">Quay lại trang chủ</a></div>
             @endif

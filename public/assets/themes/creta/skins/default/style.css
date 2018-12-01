@@ -6099,7 +6099,7 @@ ol#compare-items li.last {
 .product-view .short-description {
 	font-size: 13px;
 	padding: 20px 0px;
-	border-bottom: 1px #ddd dotted
+	/*border-bottom: 1px #ddd dotted*/
 }
 .product-view .short-description h2 {
 	font-size: 14px;
@@ -11776,7 +11776,7 @@ body table.compare-list .add-to-cart td a {
 }
 .product-view .product-shop .product_meta {
 	padding-top: 12px;
-	border-top: 1px dotted #ddd;
+	/*border-top: 1px dotted #ddd;*/
 	margin-top: 10px;
 	font-size: 13px;
 }

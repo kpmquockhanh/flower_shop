@@ -62,32 +62,32 @@
                                             </a>
                                         </div>
 
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-113">
-                                            <div class="yith-wcwl-add-button show" style="display:block">
+                                        {{--<div class="yith-wcwl-add-to-wishlist add-to-wishlist-113">--}}
+                                            {{--<div class="yith-wcwl-add-button show" style="display:block">--}}
 
-                                                <a href="/creta/product/basket-of-roses-with-dairymilk-silk/?add_to_wishlist=113" rel="nofollow" data-product-id="113" data-product-type="simple" class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="#" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden">
-                                            </div>
+                                                {{--<a href="/creta/product/basket-of-roses-with-dairymilk-silk/?add_to_wishlist=113" rel="nofollow" data-product-id="113" data-product-type="simple" class="add_to_wishlist">--}}
+                                                    {{--Add to Wishlist</a>--}}
+                                                {{--<img src="#" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden">--}}
+                                            {{--</div>--}}
 
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="#" rel="nofollow">
-                                                    Browse Wishlist	        </a>
-                                            </div>
+                                            {{--<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">--}}
+                                                {{--<span class="feedback">Product added!</span>--}}
+                                                {{--<a href="#" rel="nofollow">--}}
+                                                    {{--Browse Wishlist	        </a>--}}
+                                            {{--</div>--}}
 
-                                            <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="#" rel="nofollow">
-                                                    Browse Wishlist	        </a>
-                                            </div>
+                                            {{--<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">--}}
+                                                {{--<span class="feedback">The product is already in the wishlist!</span>--}}
+                                                {{--<a href="#" rel="nofollow">--}}
+                                                    {{--Browse Wishlist	        </a>--}}
+                                            {{--</div>--}}
 
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
+                                            {{--<div style="clear:both"></div>--}}
+                                            {{--<div class="yith-wcwl-wishlistaddresponse"></div>--}}
 
-                                        </div>
+                                        {{--</div>--}}
 
-                                        <div class="clear"></div><a href="#" class="compare button" data-product_id="113" rel="nofollow">Compare</a>
+                                        {{--<div class="clear"></div><a href="#" class="compare button" data-product_id="113" rel="nofollow">Compare</a>--}}
                                         <div class="product_meta">
 
                                             <span class="posted_in">Categories:
@@ -154,56 +154,7 @@
                         </div>
                         <!--  -->
                     </div>
-
-                    <div class="product-collateral  col-lg-12 col-sm-12 col-xs-12">
-
-                        <div class="add_info">
-
-                            <div class="woocommerce-tabs">
-                                <div class="tabs">
-                                    <ul class="tabs nav nav-tabs product-tabs" id="product-detail-tab">
-                                        <li class="description_tab ">
-                                            <a href="#tab-description">Description</a> </li>
-                                        <li class="reviews_tab">
-                                            <a href="#tab-reviews">Reviews (0)</a> </li>
-                                    </ul>
-
-                                </div>
-
-                                <div id="productTabContent" class="tab-content">
-                                    <div class="panel entry-content" id="tab-description" style="display: block;">
-
-                                        <h2>Product Description</h2>
-
-                                        <p>{!! $flower->message !!}</p>
-                                    </div>
-                                    <div class="panel entry-content" id="tab-reviews" style="display: none;">
-                                        <div id="reviews" class="woocommerce-Reviews">
-                                            <div id="comments">
-                                                <h2 class="woocommerce-Reviews-title">Reviews</h2>
-
-                                                <p class="woocommerce-noreviews">There are no reviews yet.</p>
-
-                                            </div>
-
-                                            <div id="review_form_wrapper">
-                                                <div id="review_form">
-                                                    <div id="respond" class="comment-respond">
-                                                        <span id="reply-title" class="comment-reply-title">Be the first to review “Basket of Roses with Dairymilk Silk” <small><a rel="nofollow" id="cancel-comment-reply-link" href="/creta/product/basket-of-roses-with-dairymilk-silk/#respond" style="display:none;">Cancel reply</a></small></span>
-                                                        <p class="must-log-in">You must be <a href="#">logged in</a> to post a review.</p>
-                                                    </div>
-                                                    <!-- #respond -->
-                                                </div>
-                                            </div>
-
-                                            <div class="clear"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    @include('frontend.layouts.related-products', ['flowers' => $relatedFlowers])
                 </div>
             </div>
 

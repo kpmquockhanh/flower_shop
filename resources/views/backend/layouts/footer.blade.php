@@ -69,7 +69,7 @@
 {{--<script src="{{asset('backend/demo/jquery.sharrre.js')}}"></script>--}}
 <script src="{{asset('backend/js/plugins/axios.min.js')}}"></script>
 <script src="{{asset('backend/js/plugins/iziToast.min.js')}}"></script>
+{{--<script src="{{asset('backend/plugins/fontawesome-free-5.5.0-web/js/all.min.js')}}"></script>--}}
 <script src="{{asset('backend/js/admin.js')}}"></script>
-
 
 
