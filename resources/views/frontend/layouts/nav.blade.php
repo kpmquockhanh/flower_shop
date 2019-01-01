@@ -10,33 +10,39 @@
         <div id="main-menu-new">
             <div class="nav-inner">
                 <ul id="menu-mainmenu" class="main-menu mega-menu">
-                    <li id="nav-menu-item-2127" class="homecustom menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children active has-sub narrow ">
+                    <li id="nav-menu-item-2127" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children active has-sub narrow ">
                         <a href="/" class=" current ">
 							<span>
 								<i class="fa fa-home"></i>
 							</span>
                         </a>
                     </li>
-                    <li id="nav-menu-item-2008" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  has-sub wide  col-6">
+                    <li id="nav-menu-item-2008" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children has-sub wide col-6">
                         <a href="{{route('home')}}" class="">
                             <span>Trang chủ</span>
                         </a>
                     </li>
-                    <li id="nav-menu-item-2002" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  has-sub narrow ">
+                    <li class="menu-item has-sub wide col-6">
                         <a href="#" class="">
                             <span>Chủ đề</span>
                         </a>
-                        <div class="mgk-popup">
+                        <div class="mgk-popup" style="display: none; left: 0px; right: auto;">
                             <div class="inner" style="">
                                 <ul class="sub-menu">
-                                    <?php $categories = \App\Category::all(); ?>
-                                   @foreach ($categories as $category)
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom " data-cols="1" style="width: 100%;">
-                                            <a href="{{route('shop', ['cate'=>$category->id])}}" class="">
-                                                <span>{{$category->cate_name}}</span>
-                                            </a>
-                                        </li>
-                                   @endforeach
+                                    @foreach ( \App\Category::all()->chunk(4) as $chunk)
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children  sub" data-cols="1" style="width: 16.6667%;">
+                                        <ul class="sub-menu">
+
+                                            @foreach ($chunk as $category)
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom " data-cols="1" style="width: 100%;">
+                                                    <a href="{{route('shop', ['cate'=>$category->id])}}" class="">
+                                                        <span>{{$category->cate_name}}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

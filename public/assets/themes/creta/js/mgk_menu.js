@@ -113,24 +113,20 @@ window.theme = {};
                   else jQuery(this).css('width', (100 / row_number * cols) + '%');
                 });
                 if (jQuerymenu_item.hasClass('pos-center')) { // position center
-                  jQuerypopup.find('> .inner > ul').width(col_width * col_length - padding);
                   var left_position = jQuerypopup.offset().left - (jQuery(window).width() - col_width * col_length) / 2;
                   jQuerypopup.css({
                     'left': -left_position
                   });
                 } else if (jQuerymenu_item.hasClass('pos-left')) { // position left
-                  jQuerypopup.find('> .inner > ul').width(col_width * col_length - padding);
                   jQuerypopup.css({
                     'left': 0
                   });
                 } else if (jQuerymenu_item.hasClass('pos-right')) { // position right
-                  jQuerypopup.find('> .inner > ul').width(col_width * col_length - padding);
                   jQuerypopup.css({
                     'left': 'auto'
                     , 'right': 0
                   });
                 } else { // position justify
-                  jQuerypopup.find('> .inner > ul').width(container_width - padding);
                   jQuerypopup.css({
                     'left': 0
                     , 'right': 'auto'

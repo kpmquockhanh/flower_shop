@@ -76,7 +76,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-clock-o"></i> In the last hour
+                            <i class="fa fa-clock-o"></i> Cập nhật ngay
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Hiển thị</p>
-                                    <p class="card-title">{{$flower_show_num}}/{{$flower_num}} mặt hàng
+                                    <p class="card-title">{{$flower_show_num}}/{{$flower_num}}
                                     <p>
                                 </div>
                             </div>

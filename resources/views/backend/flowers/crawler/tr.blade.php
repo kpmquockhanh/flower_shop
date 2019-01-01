@@ -1,18 +1,18 @@
-<tr>
-    <td class="{{$link['name'] == 'Chưa có'? 'text-danger':''}}">
+<tr class="bg-success">
+    <td class="text-light">
         {{$link['name']}}
     </td>
     <td>
-        {{$link['link']}}
+        <a href="{{$link['link']}}" class="text-light" target="_blank">{{$link['link']}}</a>
     </td>
-    <td >
+    <td class="text-light">
         {{$link['count']}}
     </td>
     <td>
         <a href="#" rel="tooltip"
-           class="btn-lg btn-success btn-icon btn-sm btn-download" data-index="1"
+           class="btn-lg btn-info btn-icon btn-sm"
            title="">
-            <i class="fa fa-download"></i>
+            <i class="fa fa-check"></i>
         </a>
     </td>
 </tr>

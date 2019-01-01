@@ -14,7 +14,7 @@
         }
     </style>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    {{--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">--}}
 <style id='yith-quick-view-inline-css' type='text/css'>
     #yith-quick-view-modal .yith-wcqv-main{background:#ffffff;}
 </style>

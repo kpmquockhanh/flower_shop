@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title', "Danh sách ảnh")
+@section('title', "Crawler")
 @section('content')
     <div class="content">
         <div class="row">
@@ -46,7 +46,7 @@
                                             {{$link['name']}}
                                         </td>
                                         <td>
-                                            {{$link['link']}}
+                                            <a href="{{$link['link']}}" target="_blank">{{$link['link']}}</a>
                                         </td>
                                         <td >
                                             {{$link['count']}}

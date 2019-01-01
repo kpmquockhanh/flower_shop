@@ -57,6 +57,7 @@ Route::middleware('locale')->group( function() {
         Route::prefix('crawler')->group(function (){
             Route::get('/', 'CrawlerController@index')->name('admin.crawler.index');
             Route::post('/crawl', 'CrawlerController@crawl')->name('admin.crawler.crawl');
+            Route::get('/crawl', 'CrawlerController@crawl')->name('admin.crawler.crawl');
         });
         Route::get('/approve-admin','AdminController@showApproveAdmin')->name('admin.up.admin');
         Route::post('/approve-admin','AdminController@approveAdmin');
