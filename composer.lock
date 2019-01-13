@@ -3350,10 +3350,8 @@
                 "psr-7"
             ],
             "time": "2018-09-05T19:29:37+00:00"
-        }
-    ],
-    "packages-dev": [
-        {
+        },
+		{
             "name": "barryvdh/laravel-debugbar",
             "version": "v3.2.1",
             "source": {
@@ -3420,7 +3418,9 @@
                 "webprofiler"
             ],
             "time": "2018-11-09T08:37:55+00:00"
-        },
+        }
+    ],
+    "packages-dev": [
         {
             "name": "beyondcode/laravel-dump-server",
             "version": "1.2.2",
