@@ -13,16 +13,24 @@ use App\CategoryFlower;
 use App\Flower;
 use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
+use Openbuildings\Spiderling\Exception_Notfound;
+use Openbuildings\Spiderling\Page;
 
 class Crawler
 {
-    public $baseUrls = [
-        'https://hoayeuthuong.com/dien-hoa.aspx',
-        'https://hoayeuthuong.com/cua-hang-hoa.aspx',
-        'https://hoayeuthuong.com/hoa-tuoi.aspx',
-    ];
+    public $baseUrls;
 
+    protected $page;
 
+    public function __construct()
+    {
+        $this->page = new Page();
+        $this->baseUrls = [
+            'https://hoayeuthuong.com/dien-hoa.aspx',
+            'https://hoayeuthuong.com/cua-hang-hoa.aspx',
+            'https://hoayeuthuong.com/hoa-tuoi.aspx',
+        ];
+    }
 
     public function getListCate(array $baseUrls)
     {
@@ -31,65 +39,69 @@ class Crawler
 
         foreach ($baseUrls as $baseUrl)
         {
-            $html = $this->getPage($baseUrl);
+            $page = $this->getPage($baseUrl);
 
             //get link list category
-            $links = $this->getListBySelector($html,'div.r_nav ul li a');
+            $links = $this->getListBySelector($page,'div.r_nav ul li a');
+//            dd($links);
             foreach ($links as $link)
             {
+                $slug = str_slug(trim($link->text()));
 
-                $slug = str_slug(trim($link->plaintext));
-
-                $catetogory = $categories->where('cate_code', $slug)->first();
-
-                if ($catetogory)
+                $category = $categories->where('cate_code', $slug)->first();
+                if ($category)
                     $linkUrls[] = [
-                        'link' => $this->getFullPath($link->href),
-                        'count' => $cateflowers = CategoryFlower::with('flower')->where('category_id', $catetogory->id)->count(),
-                        'name' => $catetogory->cate_name,
+                        'link' => $this->getFullPath($link->attribute('href')),
+                        'count' => CategoryFlower::with('flower')->where('category_id', $category->id)->count(),
+                        'name' => $category->cate_name,
                     ];
                 else
                     $linkUrls[] = [
-                        'link' => $this->getFullPath($link->href),
+                        'link' => $this->getFullPath($link->attribute('href')),
                         'count' => 0,
                         'name' => $slug,
                     ];
             }
         }
+
         return $linkUrls;
     }
     public function crawl($index)
     {
         if ($index == null)
-            return [
+            return response()->json([
                 'status' => false
-            ];
+            ]);
 
         ini_set('max_execution_time', 0);
         ini_set('memory_limit', '-1');
 
 
         $listCates = $this->getListCate($this->baseUrls);
-        $itemLink = $listCates[$index];
+        if ($index > count($listCates) - 1) {
+            abort(404);
+        }
 
+        $itemLink = $listCates[$index];
         $baseUrl = ($itemLink['link']);
 
+        $page = $this->getPage($baseUrl);
+        try {
+            $dom = $page->find('#ctl00_cphContent_hdfGroupId');
+        }catch(Exception_Notfound $e)
+        {
+            $dom = $dom = $page->find('#ctl00_cphContent_hdfKeyword');
+        }
+        $cateId = $dom->attribute('value');
 
-        $html = $this->getPage($baseUrl);
-
-        if ($dom = $html->find('#ctl00_cphContent_hdfGroupId',0))
-            $cateId = $dom->getAttribute('value');
-        else
-            $cateId = ($html->find('#ctl00_cphContent_hdfKeyword',0)->getAttribute('value'));
 
         if (is_numeric($cateId))
             $url = 'https://hoayeuthuong.com/ajax/ProGroupHandler.ashx';
         else
             $url = 'https://hoayeuthuong.com/ajax/ProKeywordHandler.ashx';
-
-        foreach ($html->find('.items .item .i a') as $flower)
+        foreach ($page->all('.items .item .i a') as $flower)
         {
-            $data = $this->getData($flower->href);
+            $data = $this->getData($flower->attribute('href'));
 
             if ($data['price'] = 0) continue;
 
@@ -181,7 +193,7 @@ class Crawler
 
     public function getFullPath($url)
     {
-        $baseUrl = 'https://hoayeuthuong.com/ajax/ProKeywordHandler.ashx';
+        $baseUrl = $this->baseUrls[0];
         if (!$this->isUrl($url))
         {
             $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})\//';
@@ -207,30 +219,30 @@ class Crawler
     }
     public function getPage($baseURL)
     {
-        try
-        {
-            return file_get_html($baseURL);
-        }catch(\Exception $e)
-        {
-            return null;
-        }
+        $this->page->visit($baseURL);
+        return $this->page;
     }
-    public function getListBySelector($html, string $selector)
+    public function getListBySelector(Page $html, string $selector)
     {
-        return $html->find($selector);
+        return $html->all($selector);
     }
 
     public function getData($link)
     {
+        $fullPath = $this->getFullPath($link);
+        $content = $this->getPage($fullPath);
 
-        $content = $this->getPage($this->getFullPath($link));
-
-        $data['link'] = $this->getFullPath($link);
+        $data['link'] = $fullPath;
 
         $data['image'] = time().'.jpg';
 
         $regex = '/(\d+\.?)+/';
-        if ($domOld = $content->find('.l_item .b_item .single .old',0))
+        try {
+            $domOld = $content->find('.l_item .b_item .single .old');
+            if (preg_match($regex, $domOld->plaintext, $matches))
+                $data['price'] = str_replace('.','',$matches[0]);
+        }catch (Exception_Notfound $e){}
+        if ($domOld = $content->find('.l_item .b_item .single .old'))
         {
             if (preg_match($regex, $domOld->plaintext, $matches))
                 $data['price'] = str_replace('.','',$matches[0]);
