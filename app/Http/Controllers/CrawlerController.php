@@ -22,7 +22,6 @@ class CrawlerController extends Controller
 
     public function index()
     {
-
         $viewData = [
             'links' => $this->crawler->getListCate($this->crawler->baseUrls),
         ];
