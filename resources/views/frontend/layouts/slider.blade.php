@@ -49,7 +49,8 @@
                                     <div class="item-img">
 
                                         <div class="item-img-info">
-                                            <a href="#" title="{{$flower->name}}" class="product-image">
+                                            <a href="{{ route('product.index', ['id' => $flower->id]) }}"
+                                               title="{{$flower->name}}" class="product-image">
                                                 <figure class="img-responsive">
                                                     <img alt="{{$flower->name}}" src="{{'images/'.$flower->image}}">
                                                 </figure>

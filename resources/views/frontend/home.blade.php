@@ -95,7 +95,8 @@
                                                                 </div>
                                                                 <div class="item-info">
                                                                     <div class="info-inner">
-                                                                        <div class="item-title"><a href="{{route('product.index', ['id' => $flower->id])}}"
+                                                                        <div class="item-title">
+                                                                            <a href="{{route('product.index', ['id' => $flower->id])}}"
                                                                                                    title="{{$flower->name}}"> {{$flower->name}}</a>
                                                                         </div>
                                                                         <div class="item-content">

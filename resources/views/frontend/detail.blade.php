@@ -34,8 +34,8 @@
 
                                     <div class="product-shop col-lg-8 col-sm-7 col-xs-12">
                                         <div id="prev-next" class="product-next-prev">
-                                            <a href="#" class="product-next"><span></span></a>
-                                            <a href="#" class="product-prev"><span></span></a>
+                                            <a href="{{ route('product.index', ['id' => $flower->id + 1]) }}" class="product-next"><span></span></a>
+                                            <a href="{{ route('product.index', ['id' => $flower->id + -1]) }}" class="product-prev"><span></span></a>
                                         </div>
                                         <!--#prev-next -->
 
@@ -47,7 +47,7 @@
                                             </span>
                                             </span>
                                             </div>
-                                            <p class="availability in-stock pull-right"><span> In Stock</span></p>
+                                            {{--<p class="availability in-stock pull-right"><span> In Stock</span></p>--}}
                                         </div>
 
                                         <div class="woocommerce-product-details__short-description short-description">
@@ -90,7 +90,7 @@
                                         {{--<div class="clear"></div><a href="#" class="compare button" data-product_id="113" rel="nofollow">Compare</a>--}}
                                         <div class="product_meta">
 
-                                            <span class="posted_in">Categories:
+                                            <span class="posted_in">Thể loại:
                                                 @foreach ($flower->categories->load('category') as $key => $category)
                                                     @if ($key)
                                                         ,
@@ -107,7 +107,7 @@
                                                 {{--<a href="#" rel="tag">Occasion</a>,--}}
                                                 {{--<a href="#" rel="tag">Occasional Day</a>--}}
                                             </span>
-                                            <span class="tagged_as">Tags: <a href="#" rel="tag">beaded handbags</a>, <a href="#" rel="tag">handbags</a></span>
+                                            {{--<span class="tagged_as">Tags: <a href="#" rel="tag">beaded handbags</a>, <a href="#" rel="tag">handbags</a></span>--}}
 
                                         </div>
 

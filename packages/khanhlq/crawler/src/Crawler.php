@@ -13,6 +13,7 @@ use App\CategoryFlower;
 use App\Flower;
 use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Openbuildings\Spiderling\Exception_Notfound;
 use Openbuildings\Spiderling\Page;
 
@@ -36,11 +37,12 @@ class Crawler
     {
 
         $categories = Category::query()->get();
+        $linkUrls = [];
 
         foreach ($baseUrls as $baseUrl)
         {
             $page = $this->getPage($baseUrl);
-
+            if (!$page) break;
             //get link list category
             $links = $this->getListBySelector($page,'div.r_nav ul li a');
 //            dd($links);
@@ -69,9 +71,9 @@ class Crawler
     public function crawl($index)
     {
         if ($index == null)
-            return response()->json([
+            return [
                 'status' => false
-            ]);
+            ];
 
         ini_set('max_execution_time', 0);
         ini_set('memory_limit', '-1');
@@ -88,9 +90,9 @@ class Crawler
         $page = $this->getPage($baseUrl);
         try {
             $dom = $page->find('#ctl00_cphContent_hdfGroupId');
-        }catch(Exception_Notfound $e)
+        }catch(\Exception $e)
         {
-            $dom = $dom = $page->find('#ctl00_cphContent_hdfKeyword');
+            $dom = $page->find('#ctl00_cphContent_hdfKeyword');
         }
         $cateId = $dom->attribute('value');
 
@@ -99,35 +101,38 @@ class Crawler
             $url = 'https://hoayeuthuong.com/ajax/ProGroupHandler.ashx';
         else
             $url = 'https://hoayeuthuong.com/ajax/ProKeywordHandler.ashx';
-        foreach ($page->all('.items .item .i a') as $flower)
+
+
+        foreach ($this->getListBySelector($page, '.items .item .i a') as $flower)
         {
             $data = $this->getData($flower->attribute('href'));
+            if (!isset($data['price'])) continue;
+            if ($data['price'] == 0) continue;
 
-            if ($data['price'] = 0) continue;
-
-            if (!$this->createFlower($data))
-                return [
-                    'status' => false
-                ];
+            if (!$this->createFlower($data)) continue;
         }
 
         $pIndex = 1;
 
         do
         {
-            $crawlData = (json_decode($this->requestGetFlower($url, '{"catId":"'.$cateId.'","pIndex":'.$pIndex++.',"orderQuery":"","lang":"vn"}')));
+            $crawlData = (
+                json_decode(
+                    $this->requestGetFlower(
+                        $url, '{"catId":"'.$cateId.'","pIndex":'.$pIndex++.',"orderQuery":"","lang":"vn"}'
+                    )
+                )
+            );
 
             foreach($crawlData->dataItem as $item)
             {
                 //Detail
 
                 $data = ($this->getData($item->LinkItem));
-                if ($data['price'] = 0) continue;
 
-                if (!$this->createFlower($data))
-                    return [
-                        'status' => false
-                    ];
+                if (!isset($data['price'] )) $data['price'] = 0;
+
+                if (!$this->createFlower($data)) continue;
             }
         }while($crawlData->dataItem);
 
@@ -143,7 +148,7 @@ class Crawler
             if(!$flower = Flower::query()->where('slug', str_slug($data['name']))->first())
             {
                 $this->downloadImage($data['img_link'],$data['image']);
-
+//                dd($data);
                 $flower = Flower::query()->create($data);
 
             }
@@ -215,42 +220,47 @@ class Crawler
 
     public function downloadImage(string $url, string $name)
     {
-        file_put_contents('images/'.$name, file_get_contents($url));
+        Storage::disk('uploads')->put($name, file_get_contents($url));
     }
     public function getPage($baseURL)
     {
-        $this->page->visit($baseURL);
-        return $this->page;
+        try {
+            $newPage = new Page();
+            $newPage->visit($baseURL);
+            return $newPage;
+        }catch(\Exception $e){
+            return null;
+        }
     }
     public function getListBySelector(Page $html, string $selector)
     {
-        return $html->all($selector);
+        try {
+            return $html->all($selector);
+        }catch (\Exception $e){
+            dd(123123);
+        }
     }
 
     public function getData($link)
     {
         $fullPath = $this->getFullPath($link);
+//        dump($fullPath);
         $content = $this->getPage($fullPath);
 
         $data['link'] = $fullPath;
 
-        $data['image'] = time().'.jpg';
-
         $regex = '/(\d+\.?)+/';
         try {
-            $domOld = $content->find('.l_item .b_item .single .old');
-            if (preg_match($regex, $domOld->plaintext, $matches))
-                $data['price'] = str_replace('.','',$matches[0]);
-        }catch (Exception_Notfound $e){}
-        if ($domOld = $content->find('.l_item .b_item .single .old'))
-        {
-            if (preg_match($regex, $domOld->plaintext, $matches))
-                $data['price'] = str_replace('.','',$matches[0]);
-        }
-        if ($domNew = $content->find('.l_item .b_item .single .new span',0))
-        {
-            if (preg_match($regex, $domNew->plaintext, $matches))
+            $domNew = $content->find('.l_item .b_item .single .new span');
+            if (preg_match($regex, $domNew->text(), $matches))
                 $data['sale_price'] = str_replace('.','',$matches[0]);
+        }catch (\Exception $e){}
+        try {
+            $domOld = $content->find('.l_item .b_item .single .old');
+            if (preg_match($regex, $domOld->text(), $matches))
+                $data['price'] = str_replace('.','',$matches[0]);
+        }catch (\Exception $e){
+            return [];
         }
 
         $data['saleoff'] = 0;
@@ -258,16 +268,21 @@ class Crawler
             if ($data['sale_price']!=0 && $data['price'] !=0)
                 $data['saleoff'] = round(1-($data['sale_price']/$data['price']), 2);
 
-        $data['name'] = explode(' - ', trim($content->find('.r_item h1',0)->plaintext))[1];
-        $data['category'] = explode(' - ', trim($content->find('.r_item h1',0)->plaintext))[0];
-        $data['message'] = trim($content->find('.r_item .desc',0)->plaintext);
-        $data['slug'] = str_slug($data['name']);
-        $data['quantity'] = 0;
-        $data['admin_id'] = Auth::guard('admin')->id();
-        $data['show'] = 1;
-        if (!isset($data['price']))
-            $data['price'] = 0;
-        $data['img_link'] = $content->find('.l_item .t_item img',0)->attr['data-original'];
+        try {
+            $data['name'] = explode(' - ', trim($content->find('.r_item h1')->text()))[1];
+            $data['category'] = explode(' - ', trim($content->find('.r_item h1')->text()))[0];
+            $data['message'] = trim($content->find('.r_item .desc')->text());
+            $data['slug'] = str_slug($data['name']);
+            $data['quantity'] = 0;
+            $data['admin_id'] = Auth::guard('admin')->id()??1;
+            $data['show'] = 1;
+            if (!isset($data['price'])) $data['price'] = 0;
+            $data['img_link'] = $content->find('.l_item .t_item img')->attribute('data-original');
+            $imgInfo =pathinfo($data['img_link']);
+            $data['image'] = time().'_'.$imgInfo['filename'].'.'.$imgInfo['extension'];
+        }catch(\Exception $e){
+            return [];
+        }
 
         return $data;
     }

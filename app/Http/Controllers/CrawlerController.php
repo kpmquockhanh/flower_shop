@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Khanhlq\Crawler\Crawler;
 
-include 'simple_html_dom.php';
-
 class CrawlerController extends Controller
 {
     public $crawler;
@@ -22,6 +20,8 @@ class CrawlerController extends Controller
 
     public function index()
     {
+
+//        dd(123123);
         $viewData = [
             'links' => $this->crawler->getListCate($this->crawler->baseUrls),
         ];
@@ -32,9 +32,13 @@ class CrawlerController extends Controller
     public function crawl(Request $request)
     {
         $data = $this->crawler->crawl($request->index);
-        return response()->json(array_merge($data,[
-            'data' => view('backend.flowers.crawler.tr')->with(['link' => $data['data']])->render(),
-        ]));
+
+        if ($data['status'])
+        {
+            $data['data'] = view('backend.flowers.crawler.tr')->with(['link' => $data['data']])->render();
+        }
+
+        return response()->json($data);
     }
 
 }

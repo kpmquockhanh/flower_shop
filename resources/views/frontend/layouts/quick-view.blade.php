@@ -38,9 +38,9 @@
                         </ins>
                       </span>
                                     </div>
-                                    <p class="availability in-stock pull-right">
-                                        <span> Còn hàng</span>
-                                    </p>
+                                    {{--<p class="availability in-stock pull-right">--}}
+                                        {{--<span> Còn hàng</span>--}}
+                                    {{--</p>--}}
                                 </div>
                                 <div class="woocommerce-product-details__short-description short-description">
                                     <h2>Thông điệp</h2>
@@ -57,15 +57,15 @@
                                     <a type="submit" class="single_add_to_cart_button button alt ajax_add_to_cart " data-quantity="1" data-product_id="{{$flower->id}}">Add to cart</a>
                                 </form>
                                 <div class="product_meta">
-                      <span class="sku_wrapper">SKU:
-                        <span class="sku">tsh3432</span>
-                      </span>
-                                    <span class="posted_in">Categories:
+                      {{--<span class="sku_wrapper">SKU:--}}
+                        {{--<span class="sku">tsh3432</span>--}}
+                      {{--</span>--}}
+                                    <span class="posted_in">Thể loại:
                                         @foreach ($flower->categories->load('category') as $key => $category)
                                             @if ($key)
                                                 ,
                                             @endif
-                                            <strong>{{($category->category->cate_name)}}</strong>
+                                            <strong><a href="{{route('shop', ['cate'=> $category->category->id])}}">{{($category->category->cate_name)}}</a></strong>
                                         @endforeach
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/men/" rel="tag">Anniversary</a>,--}}
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/fabric-handbags/" rel="tag">Anniversary Flowers</a>,--}}
@@ -92,10 +92,10 @@
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/swimwear/" rel="tag">Upcoming Occasions</a>,--}}
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/apparel/dresses-apparel/" rel="tag">Valentine Day Flowers</a>,--}}
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-category/women/handbags/backpack/" rel="tag">Wedding Flowers</a>--}}
-                      </span>
-                                    <span class="tagged_as">Tag: empty
+                      {{--</span>--}}
+                                    {{--<span class="tagged_as">Tag: empty--}}
                         {{--<a href="http://wpdemo.magikthemes.com/creta/product-tag/womens-tshirts/" rel="tag">womens tshirts</a>--}}
-                      </span>
+                      {{--</span>--}}
                                 </div>
                             </div>
                         </div>
