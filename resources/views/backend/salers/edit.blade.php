@@ -14,9 +14,9 @@
                             <input type="text" name="id" class="form-control" value="{{$saler->id}}" hidden>
                             <div class="row">
                                 <label class="col-sm-2 col-form-label">ID</label>
-                                <div class="col-sm-1 text-center">
+                                <div class="col-sm-2 text-center">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control text-center" value="{{$saler->id}}" disabled>
+                                        <input type="text" class="form-control text-center" value="{{$saler->id}}" disabled>
                                         {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
                                     @endif
                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                         <div class="fileinput-new thumbnail">
-                                            <img src="{{$saler->avatar?asset('images/'.$saler->image):asset('backend/img/image_placeholder.jpg')}}" alt="...">
+                                            <img src="{{$saler->avatar?asset('images/avatars/'.$saler->avatar):asset('backend/img/image_placeholder.jpg')}}" alt="...">
                                         </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                         <div>

@@ -17,9 +17,9 @@
             <!-- End Navbar -->
 
             @yield('content')
+            @include('backend.layouts.footer')
         </div>
     </div>
-@include('backend.layouts.footer')
 @yield('script')
 </body>
 </html>

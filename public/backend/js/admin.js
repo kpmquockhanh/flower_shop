@@ -419,7 +419,8 @@ $('.btn-compress-all').on('click', function () {
     });
 });
 
-$('body').on('click','.btn-download', function () {
+$('body').on('click','.btn-download', function (e) {
+    e.preventDefault();
     let that = $(this);
     let index = $(this).attr('data-index');
     let tr = $(this).parents('tr');

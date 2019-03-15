@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class SalerController extends Controller
 {
@@ -82,6 +83,7 @@ class SalerController extends Controller
 
     public function update(Request $request)
     {
+
         $rules = [
             'name' => 'required',
             'location' => 'required',
@@ -116,14 +118,16 @@ class SalerController extends Controller
 
                 if ($image = $request->image)
                 {
-                    $name = time().'.'.$image->getClientOriginalExtension();;
+                    $name = time().'.'.$image->getClientOriginalExtension();
                     $image->move(public_path('images/avatars'), $name);
-                    $data['image'] = $name;
+
+                    if ($saler->image)
+                        Storage::disk('avatars')->delete($saler->image);
+
+                    $data['avatar'] = $name;
                 }
 
-                $saler->update(array_merge($data, [
-                    'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
-                ]));
+                $saler->update(array_merge($data));
                 return redirect(route('admin.salers.list'));
             }
             return redirect()->back();

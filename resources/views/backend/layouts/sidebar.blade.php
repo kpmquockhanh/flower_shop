@@ -5,7 +5,9 @@
     <div class="logo">
         <a href="" class="simple-text logo-mini">
             <div class="logo-image-small">
-                <img src="{{asset('backend/img/logo-small.png')}}">
+                <img src="{{\Illuminate\Support\Facades\Auth::guard('admin')->user()->avatar
+                ?'/images/avatars/'.\Illuminate\Support\Facades\Auth::guard('admin')->user()->avatar
+                :asset('backend/img/logo-small.png')}}">
             </div>
         </a>
         <a href="{{route('admin.dashboard')}}" class="simple-text logo-normal">
@@ -18,7 +20,9 @@
     <div class="sidebar-wrapper">
         <div class="user">
             <div class="photo">
-                <img src="{{asset('backend/img/faces/ayo-ogunseinde-2.jpg')}}" />
+                <img src="{{\Illuminate\Support\Facades\Auth::guard('admin')->user()->avatar
+                ?'/images/avatars/'.\Illuminate\Support\Facades\Auth::guard('admin')->user()->avatar
+                :asset('backend/img/faces/ayo-ogunseinde-2.jpg')}}" />
             </div>
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">

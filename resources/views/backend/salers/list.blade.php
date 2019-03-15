@@ -105,7 +105,7 @@
                                             {{$saler->email}}
                                         </td>
                                         <td width="5vw">
-                                            <img src="{{asset('backend/img/faces/ayo-ogunseinde-2.jpg')}}"/>
+                                            <img src="{{$saler->avatar?'images/avatars'.$saler->avatar:asset('backend/img/faces/ayo-ogunseinde-2.jpg')}}"/>
                                         </td>
                                         <td style="width: 10%;" class="{{$saler->status?'text-success':'text-danger'}}" id="saler-status">
                                             {{$saler->name_status}}
