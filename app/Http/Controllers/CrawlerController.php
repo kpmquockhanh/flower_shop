@@ -8,14 +8,17 @@ use App\Flower;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Khanhlq\Crawler\Crawler;
+use Khanhlq\Crawler\CrawlerV2;
 
 class CrawlerController extends Controller
 {
     public $crawler;
+    public $crawlerV2;
     public function __construct()
     {
         $this->middleware('auth:admin');
         $this->crawler = new Crawler();
+        $this->crawlerV2 = new CrawlerV2('abc');
     }
 
     public function index()
@@ -33,12 +36,16 @@ class CrawlerController extends Controller
     {
         $data = $this->crawler->crawl($request->index);
 
-        if ($data['status'])
-        {
+        if ($data['status']) {
             $data['data'] = view('backend.flowers.crawler.tr')->with(['link' => $data['data']])->render();
         }
 
         return response()->json($data);
+    }
+
+    public function testCrawl()
+    {
+        $this->crawlerV2->crawl();
     }
 
 }

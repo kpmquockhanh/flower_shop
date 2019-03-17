@@ -19,28 +19,63 @@ class CrawlerV2
      */
     private $path;
 
-    private $crawler;
+//    private $crawler;
 
 
-    public function __construct($path, Page $page)
+    public function __construct($path)
     {
         $this->path = $path;
-        $this->crawler = $page;
+//        $this->crawler = $page;
     }
 
 
     public function crawl()
     {
-        //
         $this->path = [
             'root' => 'https://hoayeuthuong.com/',
-            'list_link' => [1 => 'div.r_nav ul li a'],
+            'list_link' => '#top_menu li a',
             'fields' => [
-                'title'
+                [
+                    'type' => 'text',
+                    'name' => 'title',
+                    'selector' => '.r_item h1 span'
+                ],
+                [
+                    'type' => 'text',
+                    'name' => 'desc',
+                    'selector' => '.r_item .desc'
+                ]
+
             ],
         ];
 
         $rootPage = $this->getPage($this->path['root']);
+
+
+        //Get list link
+        $links = $this->getListLinkSimple($rootPage, $this->path['list_link']);
+        foreach ($links as $link) {
+            if ($link == $this->getBaseUrl()) {
+                continue;
+            }
+            $currentPage = new Page();
+            $currentPage->visit($link);
+
+            // Get list detail page
+            $detailLinks = $this->getListLinkSimple($currentPage, '.items .item .i a');
+
+            $crawledDatas = [];
+            foreach ($detailLinks as $detailLink) {
+                $detailPage = (new Page())->visit($detailLink);
+
+                $data = $this->getData($detailPage, $this->path['fields']);
+
+                $crawledDatas[] = $data;
+            }
+
+            dd($crawledDatas);
+        }
+
     }
 
     /**
@@ -53,7 +88,7 @@ class CrawlerV2
     {
         $arrLinks = [];
         foreach ($page->all($selector) as $item) {
-            $arrLinks[] = $this->getAttribute($item, 'href');
+            $arrLinks[] = $this->getFullUrl($this->getAttribute($item, 'href'));
         }
         return $arrLinks;
     }
@@ -121,59 +156,79 @@ class CrawlerV2
 
     /**
      * @param Page $page
-     * @param string $name
-     * @param string $selector
-     * @param int $type
-     * @param string $attr
+     * @param array $field
      * @param bool $isMultiple
      * @param string $glue
+     * @param string|null $attr
+     * @return array
      */
     public function getValue(
         Page $page,
-        string $name,
-        string $selector,
-        int $type, // 1: text, 2: attribute, 3:html
-        string $attr,
+        array $field,
         bool $isMultiple = false,
-        string $glue = " "
+        string $glue = " ",
+        string $attr = null
     ) {
-        $data = [];
-
+        $result = '';
         if ($isMultiple) {
-            $elements = $page->all($selector);
+            $elements = $page->all($field['selector']);
             $result = '';
             foreach ($elements as $index => $item) {
                 $endGlue = ($index < count($elements) -1)?$glue:'';
-                switch ($type) {
-                    case 1:
+                switch ($field['type']) {
+                    case 'text':
                         $result .= $this->getText($item).$endGlue;
                         break;
-                    case 2:
+                    case 'attribute':
                         $result .= $this->getAttribute($item, $attr).$endGlue;
                         break;
-                    case 3:
+                    case 'html':
                         $result = $this->getHtml($item);
                         break;
                 }
             }
         } else {
-            $result = '';
-            $element = $page->find($selector);
-            switch ($type) {
-                case 1:
+            $element = $page->find($field['selector']);
+            switch ($field['type']) {
+                case 'text':
                     $result = $this->getText($element);
                     break;
-                case 2:
+                case 'attribute':
                     $result = $this->getAttribute($element, $attr);
                     break;
-                case 3:
+                case 'html':
                     $result = $this->getHtml($element);
                     break;
             }
         }
-
-        $data[$name] = $result;
+        return [$field['name'] => $result];
     }
 
+    public function getFullUrl($url)
+    {
+        if (!filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_HOSTNAME)) {
+            $parsedUrl = parse_url($this->path['root']);
+            return $parsedUrl['scheme'].'://'.$parsedUrl['host'].'/'.$url;
+        }
+        return $url;
+    }
 
+    public function getBaseUrl()
+    {
+        $parsedUrl = parse_url($this->path['root']);
+
+        return $parsedUrl['scheme'].'://'.$parsedUrl['host'].'//';
+    }
+
+    public function getData(Page $detailPage, array $fields)
+    {
+        $data = [];
+
+        foreach ($fields as $field) {
+            $val = $this->getValue($detailPage, $field);
+            $data[] = $val;
+        }
+
+        return $data;
+    }
 }
