@@ -8,7 +8,7 @@
     <td>
         {{round(Intervention\Image\Facades\Image::make('images/'.$image->image)->filesize()/1024, 1)}} KB
     </td>
-    <td>
+    <td class="text-center">
         <a href="#" rel="tooltip"
            class="btn-lg btn-success btn-icon btn-sm btn-optimize-image" data-id="{{$image->id}}"
            title="">

@@ -51,7 +51,7 @@ class AdminLoginController extends Controller
     }
     protected function attemptLogin(Request $request)
     {
-        return $this->guard()->attempt(
+        return $this->guard('admin')->attempt(
             $this->credentials($request), $request->filled('remember')
         );
     }

@@ -9,7 +9,7 @@
 
                         <div class="dropdown block-language-wrapper">
                             <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#">
-                                <img src="{{asset('assets/themes/creta/images/vietnam.png')}}" alt="VietNam">
+                                <img src="{{asset('img/vietnam.png')}}" alt="VietNam">
                                 Việt nam
                                 <span class="caret"></span>
                             </a>

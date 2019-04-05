@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class Admin extends Authenticatable
 {
+    const ADMIN_CODE = 3;
+    const MOD_CODE = 2;
+    const SALER_CODE = 1;
 
+    const ACTIVE_STATUS = 1;
+    const DEACTIVATE_STATUS = 0;
     public function canChange()
     {
         if (Auth::guard('admin')->check())
@@ -54,6 +59,16 @@ class Admin extends Authenticatable
 
     public function getNameStatusAttribute(){
         return array_get($this->status_name,$this->status);
+    }
+
+    public function isOperator()
+    {
+        return $this->status == self::ACTIVE_STATUS && $this->type >= self::MOD_CODE;
+    }
+
+    public function isAdmin()
+    {
+        return $this->status == self::ACTIVE_STATUS && $this->type == self::ADMIN_CODE;
     }
 
 

@@ -67,7 +67,7 @@
                                     @endif
                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                         <div class="fileinput-new thumbnail">
-                                            <img src="{{asset('assets/admin/assets/img/image_placeholder.jpg')}}" alt="...">
+                                            <img src="{{asset('backend/img/image_placeholder.jpg')}}" alt="...">
                                         </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                         <div>

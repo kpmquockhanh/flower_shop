@@ -24,7 +24,6 @@
                             @csrf()
                             <input type="text" name="id" class="form-control" value="{{$flower->id}}" hidden>
                             <div class="row">
-
                                 @if ($errors->has('name'))
                                     <div class="text-danger col-md-12 offset-md-2">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -34,21 +33,6 @@
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control" value="{{old('name', $flower->name)}}">
-                                        {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                @if ($errors->has('message'))
-                                    <div class="text-danger col-md-12 offset-md-2">
-                                        <strong>{{ $errors->first('message') }}</strong>
-                                    </div>
-                                @endif
-                                <label class="col-sm-2 col-form-label">Thông điệp</label>
-                                <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <textarea type="text" name="message"
-                                                  class="form-control">{{old('message', $flower->message)}}</textarea>
                                         {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
                                     </div>
                                 </div>
@@ -110,12 +94,29 @@
                                 <label class="col-sm-2 col-form-label">Thể loại</label>
                                 <div class="col-lg-5 col-md-6 col-sm-3">
                                     <select class="selectpicker" data-style="btn btn-info btn-round" multiple title="Thể loại" data-size="7" name="categories[]">
-                                        @if ($categories->count())
-                                            @foreach ($categories as $category)
-                                                <option value="{{$category->id}}" {{in_array($category->id, array_column($flower->categories->toArray(),'category_id'))?'selected':''}}>{{$category->cate_name}}</option>
-                                            @endforeach
-                                        @endif
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}"
+                                                {{in_array($category->id, $listIdCate)?'selected':''}}>
+                                                {{$category->cate_name}}
+                                            </option>
+                                        @endforeach
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                @if ($errors->has('message'))
+                                    <div class="text-danger col-md-12 offset-md-2">
+                                        <strong>{{ $errors->first('message') }}</strong>
+                                    </div>
+                                @endif
+                                <label class="col-sm-2 col-form-label">Thông điệp</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <textarea type="text" name="message"
+                                                  class="form-control">{{old('message', $flower->message)}}</textarea>
+                                        {{--<span class="form-text">A block of help text that breaks onto a new line.</span>--}}
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -173,12 +174,10 @@
 
     <!-- Initialize the editor. -->
     <script>
-        $(function() {
-            $('textarea').froalaEditor({
-                language: 'vn',
-                heightMin: 200,
-                spellcheck: false
-            })
+        $('textarea').froalaEditor({
+            language: 'vn',
+            heightMin: 200,
+            spellcheck: false
         });
     </script>
 

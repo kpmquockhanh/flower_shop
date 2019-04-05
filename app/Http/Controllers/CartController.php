@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Category;
 use App\Flower;
+use App\Payment;
 use App\Shipper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -122,7 +123,8 @@ class CartController extends Controller
         if (Auth::check())
             $viewData = array_merge($viewData, [
                 'carts'=> $carts,
-                'shippers'=> Shipper::query()->get(),
+                'shippers'=> Shipper::getActiveShippers(),
+                'payments'=> Payment::getActivePayments(),
                 'subtotal' => $carts->sum(function ($item){
                     return $item->flower->sale_price*$item->quantity;
                 })]);

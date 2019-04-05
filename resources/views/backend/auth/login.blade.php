@@ -17,9 +17,9 @@
                                 </div>
 
                                 <div class="card-body ">
-                                    @if($errors->has('fail'))
+                                    @if($errors->first())
                                         <div class="text-white bg-danger py-2 mb-2 text-center">
-                                                <strong>{{$errors->first('fail')}}</strong>
+                                                <strong>{{$errors->first()}}</strong>
                                         </div>
                                     @endif
                                         @if ($errors->has('email'))

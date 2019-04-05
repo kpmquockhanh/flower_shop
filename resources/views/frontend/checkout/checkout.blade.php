@@ -150,16 +150,16 @@
                                                     </td>
                                                 </tr>
                                                 <tr class="shipping">
-                                                    <th>Phí vận chuyển <i>(đang xây dựng.)</i></th>
+                                                    <th>Phí vận chuyển</th>
                                                     <td data-title="Shipping">
                                                         @if ($shippers->count())
                                                             <ul id="shipping_method">
                                                                 @foreach($shippers as $shipper)
                                                                     <li>
                                                                         <input type="radio" name="shipping_method" id="shipping_method_0_legacy_flat_rate" class="shipping_method"
-                                                                               checked="checked">
-                                                                        <label for="shipping_method_0_legacy_flat_rate">{{$shipper->shipper_name}}:
-                                                                            <span class="woocommerce-Price-amount amount">1000</span>
+                                                                               checked="checked" value="{{ $shipper->id }}">
+                                                                        <label for="shipping_method_0_legacy_flat_rate">{{$shipper->shipper_name}}
+                                                                            {{--<span class="woocommerce-Price-amount amount">1000</span>--}}
                                                                         </label>
                                                                     </li>
                                                                 @endforeach
@@ -175,60 +175,41 @@
                                                     <th>Tổng tiền</th>
                                                     <td>
                                                         <strong>
-                                                            <span class="woocs_special_price_code"><span
-                                                                        class="woocommerce-Price-amount amount">
-                                                                    {{number_format($subtotal)}} <span
-                                                                            class="woocommerce-Price-currencySymbol">đ</span></span></span>
+                                                            <span class="woocs_special_price_code">
+                                                                <span class="woocommerce-Price-amount amount">
+                                                                    {{number_format($subtotal)}}
+                                                                    <span class="woocommerce-Price-currencySymbol">đ</span>
+                                                                </span>
+                                                            </span>
                                                         </strong>
                                                     </td>
                                                 </tr>
                                                 </tfoot>
                                             </table>
                                             <div id="payment" class="woocommerce-checkout-payment">
-                                                <ul class="wc_payment_methods payment_methods methods">
-                                                    <li class="wc_payment_method payment_method_bacs">
-                                                        <input id="payment_method_bacs" type="radio" class="input-radio"
-                                                               name="payment_method" value="bacs" checked="checked"
-                                                               data-order_button_text="">
-                                                        <label for="payment_method_bacs">Thanh toán trực tiếp</label>
-                                                        <div class="payment_box payment_method_bacs"
-                                                             style="display: block;">
-                                                            <p>Thanh toán khi nhận hàng.</p>
-                                                        </div>
-                                                    </li>
-                                                    <li class="wc_payment_method payment_method_bacs">
-                                                        <input id="payment_method_bacs" type="radio" class="input-radio"
-                                                               name="payment_method" value="bacs" data-order_button_text="">
-                                                        <label for="payment_method_bacs">Thanh toán ngân hàng</label>
-                                                        <div class="payment_box payment_method_bacs"
-                                                             style="display: block;">
-                                                            <p>Thanh toán qua ngân hàng (chưa xây dựng).</p>
-                                                        </div>
-                                                    </li>
+                                                @if (count($payments))
+                                                    <ul class="wc_payment_methods payment_methods methods">
+                                                        @foreach ($payments as $key => $payment)
+                                                            <li class="wc_payment_method payment_method_bacs">
+                                                                <input id="payment_method_bacs" type="radio" class="input-radio"
+                                                                       name="payment_method" value="{{ $payment->id }}"
+                                                                       {{ $key === 0 ? 'checked':'' }}
+                                                                       data-order_button_text="">
+                                                                <label for="payment_method_bacs">{{ $payment->payment_type }}</label>
+                                                                {{--<div class="payment_box payment_method_bacs"--}}
+                                                                     {{--style="display: block;">--}}
+                                                                    {{--<p>Thanh toán khi nhận hàng.</p>--}}
+                                                                {{--</div>--}}
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @else
 
-                                                </ul>
+                                                @endif
                                                 <div class="form-row place-order">
-                                                    <noscript>
-                                                        Since your browser does not support JavaScript, or it is
-                                                        disabled, please ensure you click the &lt;em&gt;Update Totals&lt;/em&gt;
-                                                        button before placing your order. You may be charged more than
-                                                        the amount stated above if you fail to do so. <br/>
-                                                        <button type="submit" class="button alt"
-                                                                name="woocommerce_checkout_update_totals"
-                                                                value="Update totals">Update totals
-                                                        </button>
-                                                    </noscript>
-                                                    <div class="woocommerce-terms-and-conditions-wrapper">
-                                                        <div class="woocommerce-privacy-policy-text"></div>
-                                                    </div>
-                                                    <button type="submit" class="button alt"
-                                                            name="woocommerce_checkout_place_order" id="place_order"
-                                                            value="Place order" data-value="Place order">Đặt hàng
+                                                    <button type="submit" class="button alt" id="place_order" data-value="Place order">
+                                                        Đặt hàng
                                                     </button>
-                                                    <input type="hidden" id="woocommerce-process-checkout-nonce"
-                                                           name="woocommerce-process-checkout-nonce" value="ecc913e347"><input
-                                                            type="hidden" name="_wp_http_referer"
-                                                            value="/creta/?wc-ajax=update_order_review">
                                                 </div>
                                             </div>
                                         </div>

@@ -8,44 +8,18 @@
                     <div class="card-header">
                         <h4 class="card-title"> Danh sách hóa đơn</h4>
                         <div class="row">
-                            <div class="col-md-10 row no-gutters">
-                                <form action="" class="m-0 d-flex justify-content-around align-items-center w-100">
-                    <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3">
-                       <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round"
-                               title="Sắp xếp theo" tabindex="-98" id="paginate" name="paginate">
-                          <option class="bs-title-option" value="">Phân trang</option>
-                          <option value="1" {{isset($queries['paginate'])?$queries['paginate'] == '1'?'selected':'':''}}>1 item / page</option>
-                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '5'?'selected':'':''}}>5 items / page</option>
-                          <option value="5" {{isset($queries['paginate'])?$queries['paginate'] == '20'?'selected':'':''}}>20 items / page</option>
-                          <option value="50" {{isset($queries['paginate'])?$queries['paginate'] == '50'?'selected':'':''}}>50 items / page</option>
-                          <option value="100" {{isset($queries['paginate'])?$queries['paginate'] == '100'?'selected':'':''}}>100 items / page</option>
-                       </select>
-                    </span>
-                    <span class="btn-group bootstrap-select m-0 d-flex align-items-center col-md-3">
-                       <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round"
-                               title="Sắp xếp theo" tabindex="-98" id="sort" name="sort">
-                          <option class="bs-title-option" value="" >Sắp xếp theo</option>
-                          <option value="id" {{isset($queries['sort'])?$queries['sort'] == 'id'?'selected':'':''}}>ID</option>
-                          <option value="name" {{isset($queries['sort'])?$queries['sort'] == 'name'?'selected':'':''}}>Tên</option>
-                          <option value="status" {{isset($queries['sort'])?$queries['sort'] == 'status'?'selected':'':''}}>Trạng thái</option>
-                          <option value="email" {{isset($queries['sort'])?$queries['sort'] == 'email'?'selected':'':''}}>Email</option>
-                          <option value="type" {{isset($queries['sort'])?$queries['sort'] == 'type'?'selected':'':''}}>Kiểu</option>
-                          <option value="created_at" {{isset($queries['sort'])?$queries['sort'] == 'created_at'?'selected':'':''}}>Thời gian tạo</option>
-                          <option value="updated_at" {{isset($queries['sort'])?$queries['sort'] == 'updated_at'?'selected':'':''}}>Thời gian sửa</option>
-                       </select>
-                    </span>
-                    <span class="input-group no-border m-0 col-md-6">
-                        <input type="text" value="{{isset($queries['search'])?$queries['search']:''}}"
-                            class="form-control" placeholder="Search..." name="search">
-                          <div class="input-group-append">
-                             <div class="input-group-text">
-                                <i class="nc-icon nc-zoom-split"></i>
-                             </div>
-                          </div>
-                        <button type="submit" hidden></button>
-                    </span>
-                        </form>
-                    </div>
+                            @include('backend.layouts.search',
+                             [
+                                'queries' => $queries,
+                                 'sorts' => [
+                                    'id' => 'id',
+                                    'transaction_status' => 'Tên',
+                                    'ship_date' => 'Ngày vận chuyển',
+                                    'payment_date' => 'ngày thanh toán',
+                                    'total_price' => 'Tổng giá',
+                                    'created_at' => 'Ngày tạo',
+                                 ]
+                             ])
                         </div>
                     </div>
                     <div class="card-body">
@@ -134,21 +108,11 @@
                                         <td>
                                             {{$order->updated_at->diffForHumans()}}
                                         </td>
-                                        <td>
-                                            {{--<a href="#" rel="tooltip"--}}
-                                               {{--class="btn btn-{{$order->status_text_color}} btn-icon btn-sm change-order-status" data-id="{{$order->id}}">--}}
-                                                {{--<i class="fa {{$order->transaction_status?'fa-minus':'fa-check'}}"></i>--}}
-                                            {{--</a>--}}
-                                            {{--<a href="{{route('admin.orders.edit', $order->id)}}" rel="tooltip"--}}
-                                               {{--class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""--}}
-                                               {{--title="">--}}
-                                                {{--<i class="fa fa-edit"></i>--}}
-                                            {{--</a>--}}
-                                            {{--<button type="button" rel="tooltip"--}}
-                                                    {{--class="btn btn-danger btn-icon btn-sm btn-remove-saler"--}}
-                                                    {{--data-id="{{$order->id}}" title="">--}}
-                                                {{--<i class="fa fa-times"></i>--}}
-                                            {{--</button>--}}
+                                        <td class="text-center">
+                                            <a href="{{ route('admin.orders.view', ['id' => $order->id]) }}"
+                                               class="btn btn-success btn-icon btn-sm btn-edit">
+                                                <i class="fa fa-search"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

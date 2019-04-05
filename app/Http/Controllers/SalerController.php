@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Admin;
 use App\Flower;
 use App\saler;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -36,6 +37,7 @@ class SalerController extends Controller
             'salers' => $salers->paginate($page),
             'queries' => $request->query(),
         ];
+//        dd($viewData['salers']);
         return view('backend.salers.list')->with($viewData);
     }
 
@@ -176,5 +178,24 @@ class SalerController extends Controller
         return response()->json([
             'status' => false,
         ]);
+    }
+
+    public function showListUser(Request $request)
+    {
+        $users = User::query()->paginate(10);
+        $queries = $request->query();
+        return view('backend.users.list', compact('users', 'queries'));
+    }
+
+    public function view($id)
+    {
+        if ($id)
+        {
+            $saler = Admin::findOrFail($id);
+            if ($saler) {
+                return view('backend.salers.view', compact('saler'));
+            }
+        }
+        return redirect()->back();
     }
 }

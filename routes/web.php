@@ -22,6 +22,7 @@ Route::middleware('locale')->group(function () {
     Route::get('test-cart', 'CartController@test');
 
     Auth::routes();
+    $this->get('logout', 'Auth\LoginController@logout')->name('logout');
     Route::prefix('product')->group(function () {
         Route::get('/', 'HomeController@detailFlower')->name('product.index');
         Route::post('/quick-view', 'HomeController@viewQuick')->name('product.quick-view');
@@ -51,8 +52,8 @@ Route::middleware('locale')->group(function () {
         Route::post('/change-pass', 'UserController@changePassword')->name('change-pass');
     });
 
-    Route::prefix('admin')->group(function () {
-        Route::prefix('crawler')->group(function () {
+    Route::prefix('admin')->middleware('admin.active')->group(function () {
+        Route::prefix('crawler')->middleware('operator.permission')->group(function () {
             Route::get('/', 'CrawlerController@index')->name('admin.crawler.index');
             Route::post('/crawl', 'CrawlerController@crawl')->name('admin.crawler.crawl');
             Route::get('/crawl', 'CrawlerController@crawl')->name('admin.crawler.crawl');
@@ -87,24 +88,30 @@ Route::middleware('locale')->group(function () {
         });
 
         Route::prefix('salers')->middleware('auth:admin')->group(function () {
-            Route::get('/', 'SalerController@index')->name('admin.salers.list');
+            Route::get('/', 'SalerController@index')->middleware('operator.permission')->name('admin.salers.list');
 //            Route::get('/add','SalerController@create')->name('admin.salers.add');
 //            Route::post('/add','SalerController@store')->name('admin.salers.store');
             Route::middleware('change.saler')->group(function () {
                 Route::get('/edit/{id}', 'SalerController@edit')->name('admin.salers.edit');
+                Route::get('/view/{id}', 'SalerController@view')->name('admin.salers.view');
                 Route::post('/edit', 'SalerController@update')->name('admin.salers.update');
                 Route::post('/remove', 'SalerController@delete')->name('admin.salers.remove');
                 Route::post('/change-status', 'SalerController@changeStatus')->name('admin.salers.change_status');
             });
         });
+        Route::prefix('users')->middleware('auth:admin')->group(function () {
+            Route::get('/', 'SalerController@showListUser')->name('admin.users.list');
+
+        });
 
         Route::prefix('orders')->middleware('auth:admin')->group(function () {
             Route::get('/', 'OrderController@index')->name('admin.orders.list');
+            Route::get('/view/{id}', 'OrderController@view')->name('admin.orders.view');
             Route::get('/edit/{id}', 'OrderController@edit')->name('admin.orders.edit');
             Route::post('/edit', 'OrderController@update')->name('admin.orders.update');
             Route::post('/remove', 'OrderController@delete')->name('admin.orders.remove');
         });
-        Route::prefix('shippers')->middleware('auth:admin')->group(function () {
+        Route::prefix('shippers')->middleware('auth:admin', 'operator.permission')->group(function () {
             Route::get('/', 'ShipperController@index')->name('admin.shippers.list');
             Route::get('/add', 'ShipperController@create')->name('admin.shippers.add');
             Route::post('/add', 'ShipperController@store')->name('admin.shippers.store');
@@ -112,7 +119,7 @@ Route::middleware('locale')->group(function () {
             Route::post('/edit', 'ShipperController@update')->name('admin.shippers.update');
             Route::post('/remove', 'ShipperController@delete')->name('admin.shippers.remove');
         });
-        Route::prefix('payments')->middleware('auth:admin')->group(function () {
+        Route::prefix('payments')->middleware('auth:admin', 'operator.permission')->group(function () {
             Route::get('/', 'PaymentController@index')->name('admin.payments.list');
             Route::get('/add', 'PaymentController@create')->name('admin.payments.add');
             Route::post('/add', 'PaymentController@store')->name('admin.payments.store');

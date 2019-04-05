@@ -2,6 +2,10 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\ActiveAdmin;
+use App\Http\Middleware\ChangeSaler;
+use App\Http\Middleware\Locale;
+use App\Http\Middleware\OperatorPermission;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -60,8 +64,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'locale' => \App\Http\Middleware\Locale::class,
-        'change.saler' => \App\Http\Middleware\ChangeSaler::class,
+        'locale' => Locale::class,
+        'change.saler' => ChangeSaler::class,
+        'admin.active' => ActiveAdmin::class,
+        'operator.permission' => OperatorPermission::class,
     ];
 
     /**

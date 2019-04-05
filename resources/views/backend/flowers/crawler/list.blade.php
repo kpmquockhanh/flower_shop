@@ -51,7 +51,7 @@
                                         <td >
                                             {{$link['count']}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <a href="#" rel="tooltip"
                                                class="btn-lg btn-success btn-icon btn-sm btn-download" data-index="{{$index}}"
                                                title="">

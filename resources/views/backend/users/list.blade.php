@@ -1,28 +1,22 @@
 @extends('backend.layouts.master')
-@section('title', "Payments")
+@section('title', "Salers")
 @section('content')
     <div class="content">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title"> Danh sách phương thức thanh toán </h4>
+                        <h4 class="card-title"> Danh sách user</h4>
                         <div class="row">
                             @include('backend.layouts.search',
                              [
                                 'queries' => $queries,
                                  'sorts' => [
                                     'id' => 'id',
-                                    'payment_type' => 'Tên',
-                                    'payment_allowed' => 'Trạng thái',
+                                    'name' => 'Tên',
                                     'created_at' => 'Ngày tạo',
                                  ]
                              ])
-                        <div class="col-md-2 m-auto pr-5">
-                            <a href="{{route('admin.payments.add')}}" class="btn btn-success w-50 pull-right">
-                                <i class="fa fa-plus-circle"></i>
-                            </a>
-                        </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -34,10 +28,13 @@
                                         #
                                     </th>
                                     <th>
-                                        Kiểu
+                                        Tên
                                     </th>
                                     <th>
-                                        Cho phép thanh toán
+                                        Email
+                                    </th>
+                                    <th>
+                                        Avatar
                                     </th>
                                     <th>
                                         Thời gian tạo
@@ -45,53 +42,55 @@
                                     <th>
                                         Thời gian sửa
                                     </th>
-                                    <th>
-                                        Hành động
-                                    </th>
+                                    {{--<th>--}}
+                                        {{--Hành động--}}
+                                    {{--</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if (!count($payments))
+                                @if (!count($users))
                                     <tr>
-                                        <td class="text-center" colspan="10">Không có phương thức thanh toán nào trong cơ sở dữ
+                                        <td class="text-center" colspan="10">Không có tài khoản nào trong cơ sở dữ
                                             liệu
                                         </td>
                                     </tr>
                                 @endif
-                                @foreach($payments as $payment)
+                                @foreach($users as $user)
                                     <tr>
                                         <td class="text-center">
-                                            {{$payment->id}}
+                                            {{$user->id}}
                                         </td>
                                         <td>
-                                            {{$payment->payment_type}}
-                                        </td>
-                                        <td class="{{$payment->payment_allowed?'text-success':'text-danger'}}" id="shipper-status">
-                                            {{$payment->name_status}}
+                                            {{$user->name}}
                                         </td>
                                         <td>
-                                            {{$payment->created_at->diffForHumans()}}
+                                            {{$user->email}}
+                                        </td>
+                                        <td width="5vw">
+                                            <img src="{{$user->avatar?'images/avatars/'.$user->avatar:asset('backend/img/faces/ayo-ogunseinde-2.jpg')}}"/>
                                         </td>
                                         <td>
-                                            {{$payment->updated_at->diffForHumans()}}
+                                            {{$user->created_at->diffForHumans()}}
                                         </td>
-                                        <td class="text-center">
+                                        <td>
+                                            {{$user->updated_at->diffForHumans()}}
+                                        </td>
+                                        {{--<td>--}}
                                             {{--<a href="#" rel="tooltip"--}}
-                                               {{--class="btn btn-{{$payment->status?'primary':'success'}} btn-icon btn-sm change-saler-status" data-id="{{$payment->id}}">--}}
-                                                {{--<i class="fa {{$payment->status?'fa-minus':'fa-check'}}"></i>--}}
+                                               {{--class="btn btn-{{$user->status?'primary':'success'}} btn-icon btn-sm change-saler-status" data-id="{{$user->id}}">--}}
+                                                {{--<i class="fa {{$user->status?'fa-minus':'fa-check'}}"></i>--}}
                                             {{--</a>--}}
-                                            <a href="{{route('admin.payments.edit', $payment->id)}}" rel="tooltip"
-                                               class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""
-                                               title="">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
+                                            {{--<a href="{{route('admin.salers.edit', $user->id)}}" rel="tooltip"--}}
+                                               {{--class="btn btn-success btn-icon btn-sm btn-edit" data-original-title=""--}}
+                                               {{--title="">--}}
+                                                {{--<i class="fa fa-edit"></i>--}}
+                                            {{--</a>--}}
                                             {{--<button type="button" rel="tooltip"--}}
-                                                    {{--class="btn btn-danger btn-icon btn-sm btn-remove-shipper--}}
-{{--"--}}
-                                                    {{--data-id="{{$payment->id}}" title="">--}}
+                                                    {{--class="btn btn-danger btn-icon btn-sm btn-remove-saler"--}}
+                                                    {{--data-id="{{$user->id}}" title="">--}}
                                                 {{--<i class="fa fa-times"></i>--}}
                                             {{--</button>--}}
-                                        </td>
+                                        {{--</td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -99,7 +98,7 @@
                         </div>
                     </div>
                     <div class="card-footer m-auto">
-                        {{$payments->appends($queries)->links()}}
+                        {{$users->appends($queries)->links()}}
                     </div>
                 </div>
             </div>

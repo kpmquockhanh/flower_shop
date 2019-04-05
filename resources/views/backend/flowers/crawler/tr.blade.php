@@ -8,7 +8,7 @@
     <td class="text-light">
         {{$link['count']}}
     </td>
-    <td>
+    <td class="d-flex justify-content-center">
         <a href="#" rel="tooltip"
            class="btn-lg btn-info btn-icon btn-sm"
            title="">

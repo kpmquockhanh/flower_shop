@@ -44,4 +44,9 @@ class Flower extends Model
         return $this->hasMany(CategoryFlower::class);
     }
 
+    public function getSaleAttribute()
+    {
+        return ($this->saleoff*100)."%";
+    }
+
 }

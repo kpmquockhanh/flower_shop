@@ -4,6 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Order
+ * @property integer $id
+ * @property integer $user_id
+ * @property integer $payment_id
+ * @property integer $shipper_id
+ * @property integer $address_delivery_id
+ * @property integer $transaction_status
+ * @property \DateTime $ship_date
+ * @property \DateTime $payment_date
+ * @property integer $total_price
+ * @property \DateTime $created_at
+ * @property \DateTime $updated_at
+ *
+ * @package App
+ */
 class Order extends Model
 {
     protected $fillable = [
@@ -32,6 +48,16 @@ class Order extends Model
     public function address_delivery()
     {
         return $this->belongsTo(AddressDelivery::class);
+    }
+
+    public function order_products()
+    {
+        return $this->hasMany(OrderProduct::class);
+    }
+
+    public function flowers()
+    {
+        return $this->belongsToMany(Flower::class, 'order_products');
     }
 
     private $status_type = [

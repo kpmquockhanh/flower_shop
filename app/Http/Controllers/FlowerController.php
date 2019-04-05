@@ -47,7 +47,7 @@ class FlowerController extends Controller
             'queries' => $request->query(),
         ];
 
-        return view('backend.flowers.list')->with($viewData);
+        return view('backend.flowers.list-table')->with($viewData);
     }
 
     public function create()
@@ -84,7 +84,6 @@ class FlowerController extends Controller
         {
             $flower = Flower::with('categories')->find($id);
 
-
             if (!$flower->canChange())
             {
                 return redirect(route('admin.flowers.list'))->withErrors(['noPermission' => 'Bạn không có quyền thay đổi']);
@@ -92,6 +91,7 @@ class FlowerController extends Controller
             $viewData = [
                 'categories' => Category::all(),
                 'flower' => $flower,
+                'listIdCate' => $flower->categories->pluck('category_id')->all(),
             ];
 
             if ($flower)
@@ -140,12 +140,20 @@ class FlowerController extends Controller
                 $currentCate = array_column($flower->categories->toArray(),'category_id');
 
                 $deleteCate = array_diff($currentCate, $requestCate);
-                CategoryFlower::query()->where('flower_id', $id)->whereIn('category_id',$deleteCate)->delete();
+                $addCates = array_diff($requestCate, $currentCate);
+                foreach ($addCates as  $addCate) {
+                    CategoryFlower::query()->create([
+                        'flower_id' => $id,
+                        'category_id' => $addCate,
+                    ]);
+                }
+
+                CategoryFlower::query()->where('flower_id', $id)
+                    ->whereIn('category_id',$deleteCate)->delete();
 
                 $flower->update($data);
 
-
-                return redirect(route('admin.flowers.list'));
+                return redirect(route('admin.flowers.edit', ['id' => $id]));
             }
             return redirect()->back();
         }

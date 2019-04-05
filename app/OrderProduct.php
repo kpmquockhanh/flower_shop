@@ -11,4 +11,9 @@ class OrderProduct extends Model
         'flower_id',
         'quantity',
     ];
+
+    public function flower()
+    {
+        return $this->belongsTo(Flower::class);
+    }
 }

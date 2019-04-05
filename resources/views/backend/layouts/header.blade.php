@@ -9,5 +9,3 @@
 <link href="{{asset('backend/css/bootstrap.min.css')}}" rel="stylesheet" />
 <link href="{{asset('backend/css/iziToast.min.css')}}" rel="stylesheet" />
 <link href="{{asset('backend/css/paper-dashboard.min.css')}}" rel="stylesheet" />
-<!-- CSS Just for demo purpose, don't include it in your project -->
-{{--<link href="{{asset('backend/demo/demo.css')}}" rel="stylesheet" />--}}

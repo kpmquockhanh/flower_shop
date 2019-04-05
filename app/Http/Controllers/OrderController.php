@@ -8,12 +8,12 @@ use App\Order;
 use App\OrderProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
     public function index(Request $request)
     {
-
         $orders = Order::with(['user', 'payment', 'shipper', 'address_delivery']);
         if ($search = $request->search)
         {
@@ -29,6 +29,10 @@ class OrderController extends Controller
         $page = 8;
         if ($paginate = $request->paginate)
             $page = $paginate;
+
+        if(!Auth::guard('admin')->user()->isAdmin()) {
+            $orders->where('user_id', Auth::guard('admin')->id());
+        }
 
         $viewData = [
             'orders' => $orders->paginate($page),
@@ -46,6 +50,9 @@ class OrderController extends Controller
             'name' =>'required',
             'phone' =>'required',
             'address' =>'required',
+            'billing_email' =>'required',
+            'shipping_method' =>'required',
+            'payment_method' =>'required',
         ];
         $this->validate($request,$rules);
 
@@ -54,35 +61,49 @@ class OrderController extends Controller
             'phone',
             'note',
             'address',
+            'billing_email',
+            'shipping_method',
+            'payment_method',
         ]);
 
-//        dd($data);
-
-        $order_id = Order::create([
-            'user_id' => Auth::guard('user')->id(),
-            'payment_id' => 1,
-            'shipper_id' => 1,
-            'transaction_status' => 0,
-            'total_price' => CartController::getCart()->sum(function ($item){
-                return $item->flower->price*$item->quantity;
-            }),
-        ]);
-
-        foreach (CartController::getCart() as $item)
-        {
-            OrderProduct::create([
-               'order_id' => $order_id->id,
-               'flower_id' => $item->flower_id,
-               'quantity' => $item->quantity,
+        DB::transaction(function () use($data) {
+            $addressDelivery = AddressDelivery::query()->create($data);
+            $order = Order::query()->create([
+                'user_id' => Auth::guard('user')->id(),
+                'payment_id' => $data['shipping_method'],
+                'shipper_id' => $data['shipping_method'],
+                'address_delivery_id' => $addressDelivery->id,
+                'transaction_status' => 0,
+                'total_price' => CartController::getCart()->sum(function ($item){
+                    return $item->flower->price*$item->quantity;
+                }),
             ]);
-        }
 
-        $data['order_id'] = $order_id->id;
-        AddressDelivery::create($data);
+            foreach (CartController::getCart() as $item)
+            {
+                OrderProduct::query()->create([
+                    'order_id' => $order->id,
+                    'flower_id' => $item->flower_id,
+                    'quantity' => $item->quantity,
+                ]);
+            }
 
-        CartController::cleartAll();
+            CartController::cleartAll();
+        });
 
         return redirect(route('home'));
 
+    }
+
+    public function view($id)
+    {
+        $order =  Order::with('user', 'payment', 'shipper', 'address_delivery', 'flowers')->findOrFail($id);
+//        dd($order->flowers);
+        $viewData = [
+            'order' => $order,
+            'flowers' => $order->flowers
+        ];
+
+        return view('backend.orders.view')->with($viewData);
     }
 }

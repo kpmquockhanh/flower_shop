@@ -82,7 +82,7 @@
                                             }catch (\Exception $e){echo "Có lỗi xảy ra";}
                                              @endphp
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <a href="#" rel="tooltip"
                                                class="btn-lg btn-success btn-icon btn-sm btn-optimize-image" data-id="{{$image->id}}"
                                                title="">

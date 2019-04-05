@@ -9,8 +9,7 @@
                             <div class="textwidget">
                                 <ul class="links">
                                     <li><a href="https://www.facebook.com/kpmquockhanh">Lưu Quốc Khánh</a></li>
-                                    <li><a href="https://www.facebook.com/danglan1597">Đặng Thị Lan</a></li>
-                                    <li><a href="https://www.facebook.com/pam.pavin">Pavin</a></li>
+                                    <li><a href="https://www.facebook.com/tuyen.kien1237">Vũ Thị Kim Tuyến</a></li>
                                 </ul>
                             </div>
                         </aside>                                            </div>
@@ -31,13 +30,13 @@
                                     </li>
                                     <li>
                                         <a style="">
-                                           nhom2ktpm1k10@gmail.com
+                                           nhom5ptpm@gmail.com
                                         </a>
                                     </li>
 
                                     <li>
                                         <a style="">
-                                            Nhóm 2 KTPM1 K10 HaUI
+                                            Nhóm 5 KTPM1 K10 HaUI
                                         </a>
                                     </li>
                                 </ul>
