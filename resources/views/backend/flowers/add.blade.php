@@ -39,21 +39,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                @if ($errors->has('message'))
-                                    <div class="text-danger col-md-12 offset-md-2">
-                                        <strong>{{ $errors->first('message') }}</strong>
-                                    </div>
-                                @endif
-                                <label class="col-sm-2 col-form-label">Thông điệp</label>
-                                <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <textarea type="text" name="message"
-                                                  class="form-control">{{old('message')}}</textarea>
-                                        
-                                    </div>
-                                </div>
-                            </div>
                             @if ($errors->has('saleoff'))
                                 <div class="text-danger col-md-12 offset-md-2 p-0">
                                     <strong>{{ $errors->first('saleoff') }}</strong>
@@ -75,7 +60,7 @@
                                     <div class="form-group">
                                         <input type="number" name="saleoff" class="form-control"
                                                value="{{old('saleoff')}}" placeholder="VD: 0.1, 0.15,..." step="0.01">
-                                        
+
                                     </div>
                                 </div>
                                 <label class="col-sm-2 col-form-label">Giá</label>
@@ -117,6 +102,21 @@
                                             @endforeach
                                         @endif
                                     </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                @if ($errors->has('message'))
+                                    <div class="text-danger col-md-12 offset-md-2">
+                                        <strong>{{ $errors->first('message') }}</strong>
+                                    </div>
+                                @endif
+                                <label class="col-sm-2 col-form-label">Thông điệp</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <textarea type="text" name="message"
+                                                  class="form-control">{{old('message')}}</textarea>
+                                        
+                                    </div>
                                 </div>
                             </div>
 

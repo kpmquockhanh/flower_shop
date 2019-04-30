@@ -20,10 +20,17 @@
 
             <div class="card-body">
                 @if (\Illuminate\Support\Facades\Auth::guard('admin')->user()->status)
-                    <div class="col-12 m-auto d-flex justify-content-center">
-                        <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-100 pull-right" style="display: flex;justify-content: center;">
-                            <i class="fa fa-plus-circle"></i>
-                        </a>
+                    <div class="row">
+                        <div class="col-10 d-flex justify-content-center">
+                            <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-100 pull-right" style="display: flex;justify-content: center;">
+                                <i class="fa fa-plus-circle"></i>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="{{route('admin.flowers.list', ['list_type' => 'grid'])}}" class="btn btn-info w-100 pull-right" style="display: flex;justify-content: center;">
+                                <i class="fa fa-th-large"></i>
+                            </a>
+                        </div>
                     </div>
                 @endif
                 <div class="table-responsive table-hover" style="overflow: hidden;">

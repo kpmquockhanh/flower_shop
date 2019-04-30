@@ -83,10 +83,10 @@
                                         <td style="width: 10%;" class="{{$saler->status?'text-success':'text-danger'}}" id="saler-status">
                                             {{$saler->name_status}}
                                         </td>
-                                        <td style="width: 10%;">
+                                        <td style="width: 10%;" class="text-center">
                                             {{$saler->location ?? "Không có"}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$saler->name_type}}
                                         </td>
                                         <td>

@@ -48,11 +48,8 @@
                 <div class="col-xs-12 col-lg-4">
                     <div class="footer-column-last">
 
-
-
-
                         <div class="newsletter-wrap">
-                            <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1276 mc4wp-form-basic" method="post" action="{{route('subscribe')}}">
+                            <form class="mc4wp-form mc4wp-form-1276 mc4wp-form-basic" method="post" action="{{route('subscribe')}}">
                                 <div class="mc4wp-form-fields"><p>
                                         @csrf
                                         <label>ĐĂNG KÍ NHẬN EMAIL: </label>

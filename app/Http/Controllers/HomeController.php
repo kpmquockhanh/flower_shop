@@ -156,8 +156,7 @@ class HomeController extends Controller
                 'status' => true,
                 'data' => view('frontend.layouts.quick-view')->with(['flower' => $flower])->render(),
             ]);
-        }
-        else
+        } else
             return response()->json([
                 'status' => false,
             ]);
@@ -165,15 +164,9 @@ class HomeController extends Controller
     }
     public function addSub(Request $request)
     {
-        $this->validate($request, ['email' => 'required']);
+        $this->validate($request, ['email' => 'required|email|unique:subscribes']);
 
-        try
-        {
-            Subscribe::query()->create($request->all());
-        }catch(\Exception $e)
-        {
-            return redirect(route('home'));
-        }
+        Subscribe::query()->create($request->all());
 
         return redirect(route('home'));
     }

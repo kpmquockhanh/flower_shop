@@ -40,8 +40,6 @@ Route::middleware('locale')->group(function () {
     });
 
 
-
-
     Route::middleware('auth:user')->prefix('account')->group(function () {
         Route::get('/', 'UserController@index')->name('user.account');
         Route::get('/addresses', 'UserController@showAddr')->name('user.addresses');

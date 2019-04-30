@@ -60,19 +60,19 @@
                                         <td class="text-center">
                                             {{$user->id}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$user->name}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$user->email}}
                                         </td>
-                                        <td width="5vw">
+                                        <td width="5vw" class="text-center">
                                             <img src="{{$user->avatar?'images/avatars/'.$user->avatar:asset('backend/img/faces/ayo-ogunseinde-2.jpg')}}"/>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$user->created_at->diffForHumans()}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$user->updated_at->diffForHumans()}}
                                         </td>
                                         {{--<td>--}}

@@ -3,16 +3,45 @@
 @section('content')
     <div class="content">
         <div class="row">
-            @include('backend.layouts.search', ['queries' => $queries])
+            @include('backend.layouts.search',
+            [
+               'queries' => $queries,
+                'sorts' => [
+                   'id' => 'id',
+                   'views' => 'Lượt xem',
+                   'show' => 'Hiển thị',
+                   'name' => 'Tên',
+                   'saleoff' => 'Giảm giá',
+                   'price' => 'Giá',
+                   'quantity' => 'Số lượng',
+                   'created_at' => 'Ngày tạo',
+                ]
+            ])
             @if (!count($flowers))
                 <div class="alert alert-info m-auto w-100">Không có hoa nào trong cơ sở dữ liệu. <a href="{{route('admin.flowers.list')}}" class="text-light font-weight-bold">Quay lại trang chủ</a></div>
             @else
-                <div class="col-md-12 row">
+                <div class="row">
+                    @if (\Illuminate\Support\Facades\Auth::guard('admin')->user()->status)
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-10 d-flex justify-content-center">
+                                    <a href="{{route('admin.flowers.add')}}" class="btn btn-success w-100 pull-right" style="display: flex;justify-content: center;">
+                                        <i class="fa fa-plus-circle"></i>
+                                    </a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="{{route('admin.flowers.list', ['list_type' => 'table'])}}" class="btn btn-info w-100 pull-right" style="display: flex;justify-content: center;">
+                                        <i class="fa fa-list"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                     @foreach($flowers as $flower)
                         <div class="col-xl-4 col-lg-6 position-relative item-flower">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>{{str_limit($flower->name, $limit = 20, $end = '...')}}</h5>
+                                    <h5 style="font-size: 15px">{{str_limit($flower->name, $limit = 20, $end = '...')}}</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="nav-tabs-navigation">
@@ -64,21 +93,19 @@
                                         <div class="tab-pane" id="messages{{$flower->id}}" role="tabpanel"
                                              aria-expanded="false">
                                             {{--<p>Thông tin chi tiết đang được cập nhật</p>--}}
-                                            <p>Tên hoa: <strong>{{$flower->name}}</strong></p>
-                                            <p>Giá: <strong>{{number_format($flower->price)}}đ</strong></p>
-                                            <p>Số lượng: <strong>{{$flower->quantity}}</strong></p>
-                                            <p>Thể loại:
+                                            <p class="m-0">Tên hoa: <strong>{{$flower->name}}</strong></p>
+                                            <p class="m-0">Giá: <strong>{{number_format($flower->price)}}đ</strong></p>
+                                            <p class="m-0">Số lượng: <strong>{{$flower->quantity}}</strong></p>
+                                            <p class="m-0">Thể loại:
                                                 @foreach ($flower->categories->load('category') as $key => $category)
-                                                    @if ($key)
-                                                        ,
-                                                    @endif
+                                                    @if ($key),@endif
                                                     <strong>{{($category->category->cate_name)}}</strong>
                                                 @endforeach
                                             </p>
-                                            <p>Giảm giá: <strong>{{$flower->sale}} </strong></p>
-                                            <p>Người đăng: <strong>{{$flower->admin->name}}</strong></p>
-                                            <p>Ngày tạo: <strong>{{$flower->created_at}}</strong></p>
-                                            <p>Ngày sửa: <strong>{{$flower->updated_at}}</strong></p>
+                                            <p class="m-0">Giảm giá: <strong>{{$flower->sale}} </strong></p>
+                                            <p class="m-0">Người đăng: <strong>{{$flower->admin->name}}</strong></p>
+                                            <p class="m-0">Ngày tạo: <strong>{{$flower->created_at}}</strong></p>
+                                            <p class="m-0">Ngày sửa: <strong>{{$flower->updated_at}}</strong></p>
                                         </div>
                                     </div>
                                 </div>

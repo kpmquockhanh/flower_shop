@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Category;
 use App\CategoryFlower;
 use App\Flower;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use function Tinify\fromFile;
@@ -21,10 +23,10 @@ class FlowerController extends Controller
 {
     public function index(Request $request)
     {
-
+        $defaulNumberPaginate = 12;
         $flowers = Flower::with('admin');
 
-        if (Auth::guard('admin')->user()->type != 3 )
+        if (Auth::guard('admin')->user()->type != Admin::ADMIN_CODE )
             $flowers->where('admin_id', Auth::guard('admin')->id());
 
         if ($search = $request->search)
@@ -38,7 +40,7 @@ class FlowerController extends Controller
             $flowers->orderBy($sort, 'desc');
         }
 
-        $page = 12;
+        $page = $defaulNumberPaginate;
         if ($paginate = $request->paginate)
             $page = $paginate;
 
@@ -47,7 +49,16 @@ class FlowerController extends Controller
             'queries' => $request->query(),
         ];
 
-        return view('backend.flowers.list-table')->with($viewData);
+        if ($request->list_type == 'table') {
+            Session::put('list_type', 'table');
+        }elseif ($request->list_type == 'grid') {
+            Session::put('list_type', 'grid');
+        }
+
+        if (Session::get('list_type') == 'table') {
+            return view('backend.flowers.list-table')->with($viewData);
+        }
+        return view('backend.flowers.list')->with($viewData);
     }
 
     public function create()

@@ -49,14 +49,14 @@
                         {{--</li>--}}
                         <li>
                             <a href="{{route('admin.salers.edit', \Illuminate\Support\Facades\Auth::guard('admin')->id())}}">
-                                <span class="sidebar-mini-icon">S</span>
-                                <span class="sidebar-normal">Settings</span>
+                                <span class="sidebar-mini-icon">C</span>
+                                <span class="sidebar-normal">Cập nhật thông tin</span>
                             </a>
                         </li>
                         <li>
                             <a href="{{route('admin.logout')}}">
-                                <span class="sidebar-mini-icon">L</span>
-                                <span class="sidebar-normal">Logout</span>
+                                <span class="sidebar-mini-icon">Đ</span>
+                                <span class="sidebar-normal">Đăng xuất</span>
                             </a>
                         </li>
                     </ul>
@@ -227,12 +227,12 @@
                 </li>
             @endif
 
-            <li>
-                <a href="https://demos.creative-tim.com/paper-dashboard-2-pro/examples/charts.html">
-                    <i class="nc-icon nc-chart-bar-32"></i>
-                    <p>Demo</p>
-                </a>
-            </li>
+            {{--<li>--}}
+                {{--<a href="https://demos.creative-tim.com/paper-dashboard-2-pro/examples/charts.html">--}}
+                    {{--<i class="nc-icon nc-chart-bar-32"></i>--}}
+                    {{--<p>Demo</p>--}}
+                {{--</a>--}}
+            {{--</li>--}}
         </ul>
     </div>
 </div>

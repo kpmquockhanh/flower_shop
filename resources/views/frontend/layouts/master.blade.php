@@ -25,6 +25,11 @@
 
 <div class="menu-overlay"></div>
 <div id="nav-panel" class="">
+    @if ($errors->first())
+        <script>
+            alert('{{$errors->first()}}')
+        </script>
+    @endif
     <div class="mobile-search">
         <div class="search-box">
             <form name="myform"  method="GET" action="{{route('shop')}}">
