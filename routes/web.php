@@ -27,7 +27,9 @@ Route::middleware('locale')->group(function () {
         Route::get('/', 'HomeController@detailFlower')->name('product.index');
         Route::post('/quick-view', 'HomeController@viewQuick')->name('product.quick-view');
     });
-    Route::get('/check-order', 'CartController@checkOrder')->name('check-order');
+    Route::get('/check-order', 'CartController@checkOrder')
+        ->middleware('auth:user')
+        ->name('check-order');
 
     Route::prefix('cart')->middleware('auth:user')->group(function () {
         Route::get('/', 'CartController@index')->name('cart.index');
@@ -108,6 +110,7 @@ Route::middleware('locale')->group(function () {
             Route::get('/edit/{id}', 'OrderController@edit')->name('admin.orders.edit');
             Route::post('/edit', 'OrderController@update')->name('admin.orders.update');
             Route::post('/remove', 'OrderController@delete')->name('admin.orders.remove');
+            Route::post('/confirm', 'OrderController@orderConfirm')->name('admin.orders.confirm');
         });
         Route::prefix('shippers')->middleware('auth:admin', 'operator.permission')->group(function () {
             Route::get('/', 'ShipperController@index')->name('admin.shippers.list');

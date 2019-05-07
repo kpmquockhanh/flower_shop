@@ -69,7 +69,7 @@
                                     <label class="d-flex align-items-center m-0">Trạng thái</label>
                                     <div class="d-flex align-items-center">
                                         <div class="form-group m-0 change-delivery" style="cursor: pointer">
-                                            <strong class="{{ $order->transaction_status==2? 'text-primary':$order->transaction_status==1?'text-about':'text-danger' }} p-2 bg-light">
+                                            <strong class="text-{{ $order->status_class }} p-2 bg-light transaction_status">
                                                 {{ $order->status }}
                                             </strong>
                                         </div>
@@ -151,7 +151,11 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-success pull-right" disabled>Chốt đơn</button>
+                                        <a class="btn btn-success pull-right order-confirm-btn"
+                                           {{ !$order->transaction_status ? '' : 'disabled' }}
+                                           data-id="{{ $order->id }}" data-action="{{ route('admin.orders.confirm') }}">
+                                            Chốt đơn
+                                        </a>
                                     </div>
                                 </div>
                             </div>

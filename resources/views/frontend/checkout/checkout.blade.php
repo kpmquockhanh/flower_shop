@@ -101,9 +101,8 @@
                                                             <span class="woocommerce-input-wrapper">
                                                                 <textarea
                                                                         name="note" class="input-text "
-                                                                        placeholder="Notes about your order, e.g. special notes for delivery."
-                                                                        rows="2" cols="5">
-                                                                </textarea>
+                                                                        placeholder="Ghi chú gửi tới người vận chuyển hàng"
+                                                                        rows="2" cols="5"></textarea>
                                                             </span>
                                                         </p>
                                                     </div>

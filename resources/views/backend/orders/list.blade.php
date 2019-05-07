@@ -94,7 +94,7 @@
                                             <div class="text-{{$order->status_text_color}}">{{$order->status}}</div>
                                         </td>
                                         <td>
-                                            {{$order->address?:'Chưa có'}}
+                                            {{$order->address_delivery->address?:'Chưa có'}}
                                         </td>
                                         <td>
                                             {{$order->ship_date?:'Chưa có'}}

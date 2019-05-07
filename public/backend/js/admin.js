@@ -492,3 +492,66 @@ $('body').on('click','.btn-download', function (e) {
         }
     });
 });
+
+$('.order-confirm-btn').click(e => {
+    e.preventDefault();
+    const target = $(e.target);
+    const id = target.attr('data-id');
+    const action = target.attr('data-action');
+
+    iziToast.question({
+        timeout: 10000,
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        id: 'question',
+        zindex: 999,
+        title: 'Xác nhận',
+        message: 'Bạn có muốn xác nhận đơn hàng này không?',
+        position: 'center',
+        buttons: [
+            ['<button><b>Có</b></button>', function (instance, toast) {
+
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                axios.post(action, {id})
+                    .then(function (res) {
+                        if (res.data.status)
+                        {
+                            // console.log(res);
+                            iziToast.success({
+                                title: 'Thành công',
+                                message: 'Xác nhận thành công!',
+                                position: 'topCenter'
+                            });
+                            target.attr('disabled', 'disabled');
+                            $('.transaction_status').html(res.data.text);
+                            $('.transaction_status').addClass('text-'+res.data.class);
+                            $('.transaction_status').removeClass('text-about').removeClass('text-danger').removeClass('text-success');
+                        }
+                        else
+                        {
+                            iziToast.error({
+                                title: 'Lỗi',
+                                message: 'Đã xảy ra lỗi!',
+                                position: 'topCenter'
+                            });
+                        }
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+
+            }, true],
+            ['<button>Không</button>', function (instance, toast) {
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            }],
+        ],
+        onClosing: function(instance, toast, closedBy){
+            // console.info('Closing | closedBy: ' + closedBy);
+        },
+        onClosed: function(instance, toast, closedBy){
+            // console.info('Closed | closedBy: ' + closedBy);
+        }
+    });
+});

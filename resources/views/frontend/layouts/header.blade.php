@@ -58,9 +58,11 @@
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
                                         <a href="{{route('cart.checkout')}}" class=""><span>Thanh toán</span></a>
                                     </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
-                                        <a href="{{route('check-order')}}" class=""><span>Kiểm tra đơn hàng</span></a>
-                                    </li>
+                                    @if (\Illuminate\Support\Facades\Auth::guard('user')->check())
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page  narrow ">
+                                            <a href="{{route('check-order')}}" class=""><span>Kiểm tra đơn hàng</span></a>
+                                        </li>
+                                    @endif
                                     @if (!\Illuminate\Support\Facades\Auth::guard('user')->check())
                                         <li class="menu-item">
                                             <a href="{{route('login')}}">Đăng nhập / Đăng kí</a>

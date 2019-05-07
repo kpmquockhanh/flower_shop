@@ -27,7 +27,7 @@
 <div id="nav-panel" class="">
     @if ($errors->first())
         <script>
-            alert('{{$errors->first()}}')
+            alert('{{$errors->first('email')}}')
         </script>
     @endif
     <div class="mobile-search">

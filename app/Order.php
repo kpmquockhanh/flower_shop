@@ -28,6 +28,7 @@ class Order extends Model
         'shipper_id',
         'transaction_status',
         'total_price',
+        'address_delivery_id'
     ];
 
     public function user()
@@ -63,17 +64,28 @@ class Order extends Model
     private $status_type = [
         'Chờ xét duyệt',
         'Đang xử lí',
-        'Đang vận chuyển',
+        'Hoàn thành',
     ];
     private $status_color = [
         'primary',
         'info',
         'success',
     ];
+
+    private $status_class = [
+        'danger',
+        'about',
+        'success'
+    ];
     public function getStatusAttribute()
     {
         return array_get($this->status_type, $this->transaction_status);
     }
+    public function getStatusClassAttribute()
+    {
+        return array_get($this->status_class, $this->transaction_status);
+    }
+
     public function getStatusTextColorAttribute()
     {
         return array_get($this->status_color, $this->transaction_status);

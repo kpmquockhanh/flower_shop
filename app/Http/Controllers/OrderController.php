@@ -15,6 +15,7 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         $orders = Order::with(['user', 'payment', 'shipper', 'address_delivery']);
+
         if ($search = $request->search)
         {
             $orders->orWhere('id', $search)
@@ -70,7 +71,7 @@ class OrderController extends Controller
             $addressDelivery = AddressDelivery::query()->create($data);
             $order = Order::query()->create([
                 'user_id' => Auth::guard('user')->id(),
-                'payment_id' => $data['shipping_method'],
+                'payment_id' => $data['payment_method'],
                 'shipper_id' => $data['shipping_method'],
                 'address_delivery_id' => $addressDelivery->id,
                 'transaction_status' => 0,
@@ -98,12 +99,33 @@ class OrderController extends Controller
     public function view($id)
     {
         $order =  Order::with('user', 'payment', 'shipper', 'address_delivery', 'flowers')->findOrFail($id);
-//        dd($order->flowers);
         $viewData = [
             'order' => $order,
             'flowers' => $order->flowers
         ];
 
         return view('backend.orders.view')->with($viewData);
+    }
+
+    public function orderConfirm(Request $request)
+    {
+        if ($request->id) {
+            Order::query()->findOrFail($request->id);
+            $status = Order::query()->update([
+                'transaction_status' => 1
+            ]);
+
+            if ($status) {
+                $order = Order::query()->findOrFail($request->id);
+                return response()->json([
+                    'status' => 1,
+                    'text' => $order->status,
+                    'class' => $order->status_class
+                ]);
+            }
+        }
+        return response()->json([
+            'status' => 0
+        ]);
     }
 }

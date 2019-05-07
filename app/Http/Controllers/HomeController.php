@@ -166,7 +166,11 @@ class HomeController extends Controller
     {
         $this->validate($request, ['email' => 'required|email|unique:subscribes']);
 
-        Subscribe::query()->create($request->all());
+        $createData = $request->only([
+            'email'
+        ]);
+
+        Subscribe::query()->create($createData);
 
         return redirect(route('home'));
     }

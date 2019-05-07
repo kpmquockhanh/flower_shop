@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Category;
 use App\Flower;
+use App\Order;
 use App\Payment;
 use App\Shipper;
 use Illuminate\Http\Request;
@@ -134,12 +135,10 @@ class CartController extends Controller
     public function checkOrder()
     {
         $viewData = [
+            'orders' => Order::with('user', 'payment', 'shipper', 'address_delivery', 'flowers')->where('user_id', Auth::guard('user')->id())->get(),
+            'carts' => $this->getCart()
         ];
-        $carts = $this->getCart();
-        if (Auth::check())
-            $viewData = array_merge($viewData, [
-                'carts'=> $carts,
-                ]);
+
         return view('frontend.checkout.track-order')->with($viewData);
     }
 
