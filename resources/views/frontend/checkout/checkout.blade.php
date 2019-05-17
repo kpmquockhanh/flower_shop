@@ -173,7 +173,7 @@
                                                 <tr>
                                                     <th>Giá ship</th>
                                                     <td>
-                                                        @if ($subtotal < 1000000)
+                                                        @if ($subtotal >= 1000000)
                                                             0 đ
                                                         @else
                                                             {{ number_format(30000) }} đ
@@ -186,7 +186,7 @@
                                                         <strong>
                                                             <span class="woocs_special_price_code">
                                                                 <span class="woocommerce-Price-amount amount">
-                                                                    {{number_format($subtotal + ($subtotal < 1000000 ? 0 : 30000))}}
+                                                                    {{number_format($subtotal + ($subtotal >= 1000000 ? 0 : 30000))}}
                                                                     <span class="woocommerce-Price-currencySymbol">đ</span>
                                                                 </span>
                                                             </span>
