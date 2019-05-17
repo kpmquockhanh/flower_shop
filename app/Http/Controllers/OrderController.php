@@ -76,7 +76,7 @@ class OrderController extends Controller
 
             $shipCost = 0;
             if ($totalPrice < 1000000) {
-                $shipCost =
+                $shipCost = 30000;
             }
 
             $order = Order::query()->create([
@@ -85,6 +85,7 @@ class OrderController extends Controller
                 'shipper_id' => $data['shipping_method'],
                 'address_delivery_id' => $addressDelivery->id,
                 'transaction_status' => 0,
+                'ship_cost' => $shipCost,
                 'total_price' => $totalPrice,
             ]);
 
