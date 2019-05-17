@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="content">
-        <div class="row d-flex justify-content-center">
-            <div class="alert alert-danger">Chức năng crawl đang không thể hoạt động vì trang hoayeuthuong.com đã chặn IP</div>
-        </div>
+        {{--<div class="row d-flex justify-content-center">--}}
+            {{--<div class="alert alert-danger">Chức năng crawl đang không thể hoạt động vì trang hoayeuthuong.com đã chặn IP</div>--}}
+        {{--</div>--}}
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="card-footer ">
-                        <hr
+                        <hr>
                         <div class="stats">
                             <i class="fa fa-refresh"></i> Cập nhật ngay
                         </div>
