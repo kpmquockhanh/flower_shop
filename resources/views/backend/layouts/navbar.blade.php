@@ -22,16 +22,16 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-                <div class="input-group no-border">
-                    <input type="text" value="" class="form-control" placeholder="Search...">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <i class="nc-icon nc-zoom-split"></i>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            {{--<form>--}}
+                {{--<div class="input-group no-border">--}}
+                    {{--<input type="text" value="" class="form-control" placeholder="Search...">--}}
+                    {{--<div class="input-group-append">--}}
+                        {{--<div class="input-group-text">--}}
+                            {{--<i class="nc-icon nc-zoom-split"></i>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</form>--}}
             <ul class="navbar-nav">
                 <li class="nav-item btn-rotate dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

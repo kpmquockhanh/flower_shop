@@ -40,6 +40,9 @@
                                         Tổng tiền
                                     </th>
                                     <th>
+                                        Phí ship
+                                    </th>
+                                    <th>
                                         Shipper
                                     </th>
                                     <th>
@@ -84,28 +87,31 @@
                                         <td>
                                             {{$order->payment->payment_type}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{number_format($order->total_price)}} đ
                                         </td>
-                                        <td>
+                                        <td class="text-center">
+                                            {{ number_format($order->ship_cost) }} đ
+                                        </td>
+                                        <td class="text-center">
                                             {{$order->shipper->shipper_name}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <div class="text-{{$order->status_text_color}}">{{$order->status}}</div>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$order->address_delivery->address?:'Chưa có'}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$order->ship_date?:'Chưa có'}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$order->payment_date?:'Chưa có'}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$order->created_at->diffForHumans()}}
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{$order->updated_at->diffForHumans()}}
                                         </td>
                                         <td class="text-center">

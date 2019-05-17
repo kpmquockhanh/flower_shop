@@ -3,7 +3,7 @@
 <html lang="en-US" id="parallax_scrolling">
 <head>
    @include('frontend.layouts.stylesheet')
-    <title>@yield('title', 'Không tiêu đề') - klpflower.com</title>
+    <title>@yield('title', 'Không tiêu đề')</title>
 </head>
 <body class="woocommerce woocommerce-page" >
 <div id="page" class="page catalog-category-view">

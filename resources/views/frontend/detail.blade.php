@@ -42,10 +42,19 @@
                                         <div class="product-name">
                                             <h1 itemprop="name" class="product_title entry-title">{{$flower->name}}</h1></div>
                                         <div class="price-block">
-                                            <div class="price-box price"><span class="woocs_price_code" data-product-id="113"><span class="woocs_price_code" data-product-id="113">
-                                                        <span class="woocommerce-Price-amount amount">{{number_format($flower->price)}} <span class="woocommerce-Price-currencySymbol">đ</span></span>
-                                            </span>
-                                            </span>
+                                            <div class="price-box price">
+                                                <span class="woocs_price_code" data-product-id="30">
+                                                    <del>
+                                                        <span class="woocommerce-Price-amount amount">{{ number_format($flower->price) }}
+                                                            <span class="woocommerce-Price-currencySymbol">đ</span>
+                                                        </span>
+                                                    </del>
+                                                    <ins>
+                                                        <span class="woocommerce-Price-amount amount">{{number_format($flower->sale_price)}}
+                                                            <span class="woocommerce-Price-currencySymbol">đ</span>
+                                                        </span>
+                                                    </ins>
+                                                </span>
                                             </div>
                                             {{--<p class="availability in-stock pull-right"><span> In Stock</span></p>--}}
                                         </div>

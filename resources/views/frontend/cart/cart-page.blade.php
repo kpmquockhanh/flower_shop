@@ -1,4 +1,7 @@
 @extends('frontend.layouts.master')
+@section('title')
+    Giỏ hàng
+@stop
 @section('content')
     {{--@include('frontend.layouts.slider')--}}
     <div class="main-container col1-layout wow bounceInUp animated" style="visibility: visible;">

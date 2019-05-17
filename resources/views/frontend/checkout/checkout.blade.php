@@ -142,14 +142,14 @@
                                                 </tbody>
                                                 <tfoot>
                                                 <tr class="cart-subtotal">
-                                                    <th>Tổng tiền</th>
+                                                    <th>Tổng giá</th>
                                                     <td><span class="woocs_special_price_code"><span
                                                                     class="woocommerce-Price-amount amount">{{number_format($subtotal)}}
                                                                 <span class="woocommerce-Price-currencySymbol">đ</span></span></span>
                                                     </td>
                                                 </tr>
                                                 <tr class="shipping">
-                                                    <th>Phí vận chuyển</th>
+                                                    <th>Đơn vị vận chuyển</th>
                                                     <td data-title="Shipping">
                                                         @if ($shippers->count())
                                                             <ul id="shipping_method">
@@ -170,13 +170,23 @@
                                                         @endif
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <th>Giá ship</th>
+                                                    <td>
+                                                        @if ($subtotal < 1000000)
+                                                            0 đ
+                                                        @else
+                                                            {{ number_format(30000) }} đ
+                                                        @endif
+                                                    </td>
+                                                </tr>
                                                 <tr class="order-total">
                                                     <th>Tổng tiền</th>
                                                     <td>
                                                         <strong>
                                                             <span class="woocs_special_price_code">
                                                                 <span class="woocommerce-Price-amount amount">
-                                                                    {{number_format($subtotal)}}
+                                                                    {{number_format($subtotal + ($subtotal < 1000000 ? 0 : 30000))}}
                                                                     <span class="woocommerce-Price-currencySymbol">đ</span>
                                                                 </span>
                                                             </span>

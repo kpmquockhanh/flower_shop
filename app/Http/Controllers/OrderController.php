@@ -9,6 +9,7 @@ use App\OrderProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use mysql_xdevapi\Session;
 
 class OrderController extends Controller
 {
@@ -86,7 +87,7 @@ class OrderController extends Controller
                 'address_delivery_id' => $addressDelivery->id,
                 'transaction_status' => 0,
                 'ship_cost' => $shipCost,
-                'total_price' => $totalPrice,
+                'total_price' => $totalPrice + $shipCost,
             ]);
 
             foreach (CartController::getCart() as $item)

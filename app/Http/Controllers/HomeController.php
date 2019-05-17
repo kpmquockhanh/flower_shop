@@ -85,7 +85,7 @@ class HomeController extends Controller
             $flowers->whereIn('id', $idsFlower);
         }
         if ($price = $request->price)
-            $flowers->where('price','>', $price);
+            $flowers->where('price','>=', $price);
 
         if ($request->s)
         {
