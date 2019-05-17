@@ -86,7 +86,7 @@
                                         <strong>{{ $errors->first('type') }}</strong>
                                     </div>
                                 @endif
-                                @if ($saler->type == 3)
+                                @if (\Illuminate\Support\Facades\Auth::guard('admin')->user()->isAdmin())
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
                                     <div class="form-group">

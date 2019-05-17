@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 d-flex justify-content-between py-2 border-left border-right">
-                                    <label class="d-flex align-items-center m-0">Liên hệ vận chuyển</label>
+                                    <label class="d-flex align-items-center m-0">Địa chỉ vận chuyển</label>
                                     <div class="d-flex align-items-center">
                                         <div class="form-group m-0 change-delivery" style="cursor: pointer">
                                             <strong class="{{ $order->address_delivery? 'text-primary':'text-danger' }} p-2 bg-light">

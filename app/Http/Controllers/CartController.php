@@ -138,7 +138,6 @@ class CartController extends Controller
             'orders' => Order::with('user', 'payment', 'shipper', 'address_delivery', 'flowers')->where('user_id', Auth::guard('user')->id())->get(),
             'carts' => $this->getCart()
         ];
-
         return view('frontend.checkout.track-order')->with($viewData);
     }
 

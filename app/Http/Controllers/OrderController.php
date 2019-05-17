@@ -69,15 +69,23 @@ class OrderController extends Controller
 
         DB::transaction(function () use($data) {
             $addressDelivery = AddressDelivery::query()->create($data);
+
+            $totalPrice = CartController::getCart()->sum(function ($item){
+                return $item->flower->price*$item->quantity;
+            });
+
+            $shipCost = 0;
+            if ($totalPrice < 1000000) {
+                $shipCost =
+            }
+
             $order = Order::query()->create([
                 'user_id' => Auth::guard('user')->id(),
                 'payment_id' => $data['payment_method'],
                 'shipper_id' => $data['shipping_method'],
                 'address_delivery_id' => $addressDelivery->id,
                 'transaction_status' => 0,
-                'total_price' => CartController::getCart()->sum(function ($item){
-                    return $item->flower->price*$item->quantity;
-                }),
+                'total_price' => $totalPrice,
             ]);
 
             foreach (CartController::getCart() as $item)

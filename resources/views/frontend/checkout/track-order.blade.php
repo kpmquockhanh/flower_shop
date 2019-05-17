@@ -32,9 +32,10 @@
                                                         <table class="shop_table shop_table_responsive1 cart woocommerce-cart-form__contents data-table cart-table" id="shopping-cart-table" cellspacing="0">
                                                             <thead>
                                                             <tr>
-                                                                <th>Đơn hàng</th>
+                                                                <th>Mã đơn hàng</th>
                                                                 <th>Tổng tiền</th>
                                                                 <th>Trạng thái</th>
+                                                                <th>Sản phẩm</th>
                                                                 <th>Thời gian đặt</th>
                                                             </tr>
                                                             </thead>
@@ -56,6 +57,15 @@
                                                                        <span>
                                                                            {{ $item->status }}
                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <ul style="padding: 0">
+                                                                            @foreach ($item->flowers as $flower)
+                                                                                <li>
+                                                                                    <a href="{{ route('product.index', ['id' => $flower->id]) }}">{{ $flower->name }}</a>
+                                                                                </li>
+                                                                            @endforeach
+                                                                        </ul>
                                                                     </td>
                                                                     <td class="product-subtotal" data-title="Total">
                                                                         {{ $item->created_at->diffForHumans() }}

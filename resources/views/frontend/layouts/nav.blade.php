@@ -57,6 +57,11 @@
                             <span>Shop</span>
                         </a>
                     </li>
+                    <li id="nav-menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                        <a href="{{route('shop')}}" class="">
+                            <span>Thêm mới</span>
+                        </a>
+                    </li>
                     {{--<li id="nav-menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has-sub narrow">--}}
                         {{--<a href="#" class="">--}}
                             {{--<span>Ý nghĩa hoa</span>--}}

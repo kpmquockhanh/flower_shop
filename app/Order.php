@@ -28,7 +28,8 @@ class Order extends Model
         'shipper_id',
         'transaction_status',
         'total_price',
-        'address_delivery_id'
+        'address_delivery_id',
+        'ship_cost'
     ];
 
     public function user()
