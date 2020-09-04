@@ -14,7 +14,7 @@
 
                         </div>
                         <div class="pretext">
-                            Những mặt hàng đang được xem nhiều nhất tại trang web bán hoa số một Việt Nam
+                            Những mặt hàng đang được xem nhiều nhất.
                         </div>
                         <a class="view_more_bnt" href="{{route('shop')}}">XEM TOÀN BỘ</a>
                     </div>

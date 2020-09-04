@@ -1,5 +1,5 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/logo2.png')}}" />
-    {{--@include('frontend.preloader.preloader')--}}
+    @include('frontend.preloader.preloader')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{--<link rel="profile" href="http://gmpg.org/xfn/11">--}}
@@ -14,9 +14,12 @@
         }
     </style>
 
-    {{--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">--}}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <style id='yith-quick-view-inline-css' type='text/css'>
     #yith-quick-view-modal .yith-wcqv-main{background:#ffffff;}
+    * {
+        font-family: 'Montserrat', sans-serif !important;
+    }
 </style>
 
 

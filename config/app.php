@@ -214,4 +214,6 @@ return [
 
     ],
 
+    'phone_number' => env('PHONE_NUMBER'),
+    'email' => env('EMAIL'),
 ];

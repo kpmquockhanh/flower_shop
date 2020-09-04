@@ -98,5 +98,6 @@
     });
 </script>
 @yield('script')
+@yield('ext-script')
 </body>
 </html>

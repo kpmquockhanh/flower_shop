@@ -31,7 +31,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $categories = Category::all();
 
         $flowerByCategoryId = [];
@@ -48,7 +47,6 @@ class HomeController extends Controller
         }
 
         $viewData = [
-//            'flowers' => Flower::query()->where('show',true)->orderByDesc('id')->take(4)->get(),
             'flowerByCategoryId' => $flowerByCategoryId,
             'hotFlowers' => Flower::query()->orderByDesc('views')->take(3)->get(),
         ];
@@ -68,21 +66,12 @@ class HomeController extends Controller
 
     public function viewShop(Request $request)
     {
-
-
         $flowers = Flower::query()->where('show',true);
-//        dd($flowers);
 
         if ($cate_id = $request->cate)
         {
-            $Cate = CategoryFlower::query()->where('category_id', $cate_id)->get(['flower_id']);
-
-            $idsFlower = [];
-            foreach($Cate->toArray() as $i) {
-                $idsFlower[] = $i['flower_id'];
-            }
-
-            $flowers->whereIn('id', $idsFlower);
+            $cateFlowers = CategoryFlower::query()->where('category_id', $cate_id)->pluck('flower_id');
+            $flowers->whereIn('id', $cateFlowers);
         }
         if ($price = $request->price)
             $flowers->where('price','>=', $price);
@@ -92,7 +81,15 @@ class HomeController extends Controller
             $flowers->where('name','like', '%'.$request->s.'%')
                     ->orWhere('message', 'like', '%'.$request->s.'%');
         }
-        $flowers = $flowers->orderByDesc('id')->paginate(12);
+        switch ($request->orderby) {
+            case 'date': $flowers->orderBy('created_at', 'desc'); break;
+            case 'price': $flowers->orderBy('price'); break;
+            case 'price-desc': $flowers->orderBy('price', 'desc'); break;
+            default: $flowers->orderByDesc('id');
+        }
+
+
+        $flowers = $flowers->paginate(12);
 
         $toItem = $flowers->perPage() == $flowers->count() ?
             $flowers->currentPage() * $flowers->perPage():
@@ -107,7 +104,6 @@ class HomeController extends Controller
         ];
         if (Auth::check())
             $viewData = array_merge($viewData, ['carts'=> Cart::query()->with('flower')->where('user_id', Auth::guard('user')->id())->get()]);
-
 
         return view('frontend.shop')->with($viewData);
     }

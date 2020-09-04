@@ -9,7 +9,6 @@
                             <div class="textwidget">
                                 <ul class="links">
                                     <li><a href="https://www.facebook.com/kpmquockhanh">Lưu Quốc Khánh</a></li>
-                                    <li><a href="https://www.facebook.com/tuyen.kien1237">Vũ Thị Kim Tuyến</a></li>
                                 </ul>
                             </div>
                             <h4>Liên hệ</h4>
@@ -17,40 +16,15 @@
                                 <ul class="links">
                                     <li>
                                         <a style="">
-                                            Đại học Công nghiệp Hà Nội
+                                            {{ config('app.phone_number') }}
                                         </a>
                                     </li>
                                     <li>
                                         <a style="">
-                                            +84989594241
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a style="">
-                                            nhom5ptpm@gmail.com
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a style="">
-                                            Nhóm 5 KTPM1 K10 HaUI
+                                            {{ config('app.email') }}
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
-                        </aside>                                            </div>
-                    <div class="footer-column pull-left" style="width: 45%;">
-                        <aside id="text-5" class="widget widget_text">
-
-                            <div class="mapouter">
-                                <div class="gmap_canvas">
-                                    <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                                    <a href="https://www.pureblack.de"></a>
-                                </div>
-                                <style>
-                                    .mapouter{position:relative;text-align:right;}
-                                    .gmap_canvas {overflow:hidden;background:none!important;}
-                                </style>
                             </div>
                         </aside>
                     </div>

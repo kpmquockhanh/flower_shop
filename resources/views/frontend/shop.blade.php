@@ -9,34 +9,6 @@
                     <div id="woocommerce_product_categories-2" class="block woocommerce widget_product_categories">
                         <div class="block-title">Chủ đề </div>
                         <ul class="product-categories">
-                            {{--<li class="cat-item cat-item-30 cat-parent"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/">Anniversary</a>--}}
-                                {{--<ul class="children" style="display: none;">--}}
-                                    {{--<li class="cat-item cat-item-47 cat-parent"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/">Favourite Flowers</a>--}}
-                                        {{--<ul class="children" style="display: none;">--}}
-                                            {{--<li class="cat-item cat-item-67"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/coats/">Lilies</a></li>--}}
-                                            {{--<li class="cat-item cat-item-70"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/formal-jackets/">Orchids</a></li>--}}
-                                            {{--<li class="cat-item cat-item-62"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/blazers/">Roses Bouquet</a></li>--}}
-                                            {{--<li class="cat-item cat-item-49"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/jackets/leather-jackets/">Tulips</a></li>--}}
-                                        {{--</ul>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="cat-item cat-item-33 cat-parent"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/">Flower with</a>--}}
-                                        {{--<ul class="children" style="display: none;">--}}
-                                            {{--<li class="cat-item cat-item-40"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/canvas-shoes/">Congratulations</a></li>--}}
-                                            {{--<li class="cat-item cat-item-50"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/leather-shoes/">Get Well Soon</a></li>--}}
-                                            {{--<li class="cat-item cat-item-41"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/casual-shoes/">Good Luck</a></li>--}}
-                                            {{--<li class="cat-item cat-item-35"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/shoes/sports-shoes/">I Am Sorry</a></li>--}}
-                                        {{--</ul>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="cat-item cat-item-42 cat-parent"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/">Flowers &amp; Combos</a>--}}
-                                        {{--<ul class="children" style="display: none;">--}}
-                                            {{--<li class="cat-item cat-item-68"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/designer/">Flower &amp; Card</a></li>--}}
-                                            {{--<li class="cat-item cat-item-46"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/hoodies-dresses/">Flower &amp; Chocolates</a></li>--}}
-                                            {{--<li class="cat-item cat-item-65"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/casual/">Flower &amp; Dry Fruit</a></li>--}}
-                                            {{--<li class="cat-item cat-item-44"><a href="http://wpdemo.magikthemes.com/creta/product-category/men/dresses/evening/">Flower &amp; Teddy Bear</a></li>--}}
-                                        {{--</ul>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            {{--</li>--}}
                             @foreach($categories as $category)
                                 <li class="cat-item {{isset($queries['cate'])?$queries['cate'] == $category->id?'current-cat':'':''}}">
                                     <a href="{{route('shop', array_merge($queries,['cate' => $category->id]))}}">{{$category->cate_name}}</a>
@@ -90,21 +62,7 @@
                                 <p class="woocommerce-result-count">
                                     Hiển thị {{$fromItem}}–{{$toItem}} của {{$flowers->total()}} kết quả tìm được</p>
 
-                                <form class="woocommerce-ordering" method="get">
-                                    <div id="sort-by">
-
-                                        <label class="left">Sắp xếp theo: </label>
-                                        <select name="orderby" class="orderby">
-                                            <option value="menu_order" selected="selected">Mặc định</option>
-                                            <option value="popularity">Độ phổ biến</option>
-                                            <option value="rating">Đánh giá</option>
-                                            <option value="date">Mới nhất</option>
-                                            <option value="price">Giá tăng dần</option>
-                                            <option value="price-desc">Giá giảm dần</option>
-                                        </select>
-                                        <input type="hidden" name="paged" value="1">
-                                    </div>
-                                </form>
+                                @include('frontend.layouts.sort-module')
 
                             </div>
                         </div>
